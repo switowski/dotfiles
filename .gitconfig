@@ -1,0 +1,21 @@
+[alias]
+	st = status
+	br = branch
+	l = log
+	d = diff
+	ds = diff --staged
+	sh = show
+	ci = commit
+	co = checkout
+	ss = stash save
+	sa = stash apply
+	lp = log --pretty=oneline
+	amend = commit --amend
+	
+[user]
+	name = Sebastian Witowski
+	email = sebastian.witowski@cern.ch
+[color]
+	ui = true
+[core]
+	editor = vim
