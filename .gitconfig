@@ -1,21 +1,40 @@
-[alias]
-	st = status
-	br = branch
-	l = log
-	d = diff
-	ds = diff --staged
-	sh = show
-	ci = commit
-	co = checkout
-	ss = stash save
-	sa = stash apply
-	lp = log --pretty=oneline
-	amend = commit --amend
-	
 [user]
 	name = Sebastian Witowski
-	email = sebastian.witowski@cern.ch
+	email = sebastian.witowski@gmail.com
+
+[alias]
+	amend = commit --amend
+	br = branch
+	ci = commit
+	co = checkout
+	d = diff
+	ds = diff --staged
+	l = log
+    loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	lp = log --pretty=oneline
+	sa = stash apply
+	sh = show
+	ss = stash save
+	st = status
+	
 [color]
-	ui = true
+	ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
 [core]
 	editor = vim
