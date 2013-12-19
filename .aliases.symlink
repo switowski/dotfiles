@@ -1,0 +1,59 @@
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# List directory contents
+alias sl=ls
+alias ls='ls -G' # Compact view, show colors
+alias la='ls -AF' # Compact view, show hidden
+alias ll='ls -al'
+alias l='ls -a'
+
+# Shortcuts
+alias g="git"
+alias v="vim"
+
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+# GIT aliases
+# Undo a `git push`
+alias undopush="git push -f origin HEAD^:master"
+
+alias ga="git add"
+alias gb="git branch"
+alias gd="git diff"
+alias gl="git log"
+alias gl="git log --pretty=oneline"
+alias gp="git push"
+alias gs="git status"
+alias gsa="git stash apply"
+alias gsh="git show"
+alias gss="git stash save"
+alias gds="git diff --staged"
+alias gco="git checkout"
+alias gpu="git pull"
+alias gcl="git clone"
+alias gf="git reflog"
+
+# Work related aliases, might want to uncomment them
+#Make install aliases
+# alias mi='make install'
+# alias miy='make install-yes-i-know'
+
+# #SSH aliases
+# alias lx='ssh lxplus.cern.ch'
+# alias dev='ssh pccis85'
+# alias cdstest='ssh pccis98'
+
+# #Windows terminal
+# alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
+# #Sync aliases
+# alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
+# alias syncfromremote='rsync -avz lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/ /home/switowsk/src/cds-invenio-cern/'
+# #virtualenv aliases
+# alias master='workon master'
