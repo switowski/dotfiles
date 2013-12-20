@@ -1,2 +1,5 @@
 " Commit message max 80 characters
 au FileType gitcommit set tw=80
+
+" Spell checking
+:set spell spelllang=en_us
