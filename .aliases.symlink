@@ -31,6 +31,7 @@ alias gl="git log"
 alias gl="git log --pretty=oneline"
 alias gp="git push"
 alias gs="git status"
+alias gst="git status"
 alias gsa="git stash apply"
 alias gsh="git show"
 alias gss="git stash save"
@@ -41,7 +42,7 @@ alias gcl="git clone"
 alias gf="git reflog"
 
 # Work related aliases, might want to uncomment them
-#Make install aliases
+# Make install aliases
 # alias mi='make install'
 # alias miy='make install-yes-i-know'
 
