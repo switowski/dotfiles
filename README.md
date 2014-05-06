@@ -7,11 +7,10 @@ Run this
 ```sh
 git clone https://github.com/switowski/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-# Create symlinks
-chmod +x symlink.sh
-./symlink.sh
-
-# Install programs
-chmod +x symlink.sh
-./symlink.sh
+# Create symlinks and install
+chmod +x install.sh
+./install.sh
 ```
+
+TODO:
+* Install sublime, package manager, packages and snippets

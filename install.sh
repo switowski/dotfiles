@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #
-# bootstrap installs things.
-# based on https://github.com/holman/dotfiles
-
+# Create symlinks to different files
 
 DOTFILES_ROOT="`pwd`"
 
@@ -29,26 +27,14 @@ fail () {
 }
 
 setup_gitconfig () {
-  if ! [ -f git/.gitconfig.symlink ]
-  then
-    info 'setup .gitconfig'
+  info 'setup .gitconfig'
 
-    git_credential='cache'
-    # in case of OSX
-    if [ "$(uname -s)" == "Darwin" ]
-    then
-      git_credential='osxkeychain'
-    fi
+  git_authorname="switowski"
+  git_authoremail="witowski.sebastian@gmail.com"
 
-    user ' - What is your github author name?'
-    read -e git_authorname
-    user ' - What is your github author email?'
-    read -e git_authoremail
+  sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/.gitconfig.symlink.example > git/.gitconfig.symlink
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.symlink.example > git/gitconfig.symlink
-
-    success '.gitconfig'
-  fi
+  success '.gitconfig setup successful'
 }
 
 link_files () {
@@ -65,7 +51,7 @@ install_dotfiles () {
 
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
-    dest="$HOME/.`basename \"${source%.*}\"`"
+    dest="$HOME/`basename \"${source%.*}\"`"
 
     if [ -f $dest ] || [ -d $dest ]
     then
@@ -126,18 +112,16 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-# If we're on a Linux and user has not specified that he want's to skip the
-# instalation of new dependencies (by using parameter -s), let's do it right now
-if [ "$(uname -s)" == "Linux"] && [ "$1" != "-s"]
-then
-  info "installing dependencies"
-  if . install-deps.sh > /tmp/install-deps 2>&1
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
-fi
+# Continue with installation of software
+user "Install dependencies ? [y]es, [n]o ?"
+read -n 1 install_deps
+
+case "$install_deps" in
+  y | Y )
+    . ./install-deps.sh;;
+  * )
+    ;;
+esac
 
 echo ''
 echo '  All installed!'

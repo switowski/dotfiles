@@ -2,57 +2,75 @@
 # Exit on error
 set -e
 
-# https://github.com/rupa/z
-echo "Installing z script (https://github.com/rupa/z)"
-cd
-git clone https://github.com/rupa/z.git
-chmod +x ~/z/z.sh
-# also consider moving over your current .z file if possible. it's painful to rebuild :)
+echo ''
 
-echo "Installing vim"
-sudo apt-get install -y vim
+DOTFILES_ROOT="`pwd`"
 
-echo "Installing chromium"
-sudo apt-get install -y chromium-browser
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+}
 
-echo "Installing firefox (should be already installed)"
-sudo apt-get install -y firefox
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1"
+}
 
-echo "Installing terminator"
-sudo apt-get install -y terminator
+install_z_script () {
+	# https://github.com/rupa/z
+	info "Installing z script (https://github.com/rupa/z)"
+	echo ''
+	cd
+	git clone https://github.com/rupa/z.git
+	chmod +x ~/z/z.sh
+	# also consider moving over your current .z file if possible. it's painful to rebuild :)
+	cd $DOTFILES_ROOT
+}
+if ! [ -d ~/z ]
+then
+	install_z_script
+else
+	user "z script already exists. Do you want to replace it [y]es, [n]o ?"
+	read -n 1 replace_z_script
+	echo ''
 
-echo "Installing curl"
-sudo apt-get install -y curl
+	case "$replace_z_script" in
+		y | Y )
+			info "Removing ~/z directory"
+			echo ''
+			rm -rf ~/z
+			install_z_script;;
+		n | N )
+			info "Skipping z script"
+			;;
+		* )
+			;;
+	esac
+fi
 
-echo "Installing gnome-do"
-sudo apt-get install -y gnome-do
+echo ''
+# Add software HERE
+apt_get_software=( vim chromium-browser firefox terminator curl gnome-do )
 
-echo "Installing "
-sudo apt-get install -y
+for package in "${apt_get_software[@]}"
+do
+	info "Installing $package"
+	sudo apt-get install -y $package & wait
+	echo ''
+done
 
-echo "Installing "
-sudo apt-get install -y
+info "---- INSTALL: Finished successfully!"
 
+user "Install additional dependencies ? [y]es, [n]o ?"
+read -n 1 additional_deps
 
-echo "---- INSTALL: Finished successfully!"
-
-case "$1" in
-  a | A )
-	echo "Installing additional dependencies"
-    . install-additional-deps.sh
+case "$additional_deps" in
+  y | Y )
+	echo ''
+	info "---- INSTALL: Installing additional dependencies"
+    . ./install-additional-deps.sh
     ;;
   * )
     ;;
 esac
 
-echo "---- CLEANUP: Running autoremove"
-sudo apt-get autoremove -y
-
-
-
-# Run all dotfiles installers.
-
-# cd "$(dirname $0)"/..
-
-# find the installers and run them iteratively
-# find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+info "---- CLEANUP: Running autoremove"
+sudo apt-get autoremove -y & wait
