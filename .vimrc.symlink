@@ -1,5 +1,16 @@
-" Commit message max 80 characters
-au FileType gitcommit set tw=80
+" Commit message - max 72 chars
+au FileType gitcommit set tw=72
+
+" Tab width for python
+
+" The width of tab is set to 4 
+set tabstop=4
+" Indents will have a width of 4
+set shiftwidth=4 
+" always uses spaces instead of tab characters
+set expandtab
 
 " Spell checking
 :set spell spelllang=en_us
+:hi clear SpellBad
+:hi SpellBad cterm=underline ctermfg=red
