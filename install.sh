@@ -49,7 +49,7 @@ install_dotfiles () {
   backup_all=false
   skip_all=false
 
-  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+  for source in `find $DOTFILES_ROOT -maxdepth 3 -name \*.symlink`
   do
     dest="$HOME/`basename \"${source%.*}\"`"
 

@@ -1,0 +1,24 @@
+[global_config]
+[keybindings]
+  go_up = <Shift>Up
+  broadcast_group = <Ctrl><Shift>g
+  next_tab = <Alt>Right
+  prev_tab = <Alt>Left
+  broadcast_all = <Ctrl><Shift>a
+  go_down = <Shift>Down
+  go_right = <Shift>Right
+  go_left = <Shift>Left
+[profiles]
+  [[default]]
+    scrollback_lines = 10000
+    background_image = None
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
