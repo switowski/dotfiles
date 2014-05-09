@@ -48,7 +48,7 @@ fi
 
 echo ''
 # Add software HERE
-apt_get_software=( vim chromium-browser firefox terminator curl gnome-do )
+apt_get_software=( vim chromium-browser firefox terminator curl gnome-do sublime-text)
 
 for package in "${apt_get_software[@]}"
 do
