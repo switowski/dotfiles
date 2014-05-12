@@ -19,3 +19,4 @@ and then the config files are replaced with my files.
 
 TODO:
 * Install sublime, package manager, packages and snippets
+* Automatic firefox plugins installation
