@@ -18,6 +18,7 @@ and then the config files are replaced with my files.
 
 
 TODO:
+* Set the github username and email during gitconfig symlinking
 * Install sublime, package manager, packages and snippets
 * Automatic firefox plugins installation
 * Export/Import Thunderbird filters: http://askubuntu.com/questions/184288/how-to-export-thunderbird-mail-filters
