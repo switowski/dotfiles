@@ -20,3 +20,6 @@ and then the config files are replaced with my files.
 TODO:
 * Install sublime, package manager, packages and snippets
 * Automatic firefox plugins installation
+* Export/Import Thunderbird filters: http://askubuntu.com/questions/184288/how-to-export-thunderbird-mail-filters
+* Install imagemagick
+* Move additional dependencies to the same file as dependencies (why having two files that do the same ?)

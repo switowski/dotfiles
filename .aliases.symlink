@@ -1,3 +1,9 @@
+# Temporary aliases, remember to remove later
+alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/EPublishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
+
+# get rid of error when doing apt-get
+alias apt-get='sudo apt-get'
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -6,12 +12,20 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+## get rid of command not found ##
+alias cd..='cd ..'
+
 # List directory contents
 alias sl=ls
 alias ls='ls -G --color' # Compact view, show colors
 alias la='ls -AF' # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
+
+# Important one ! Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
 
 # Shortcuts
 alias g="git"
@@ -26,35 +40,46 @@ alias undopush="git push -f origin HEAD^:master"
 
 alias ga="git add"
 alias gb="git branch"
+alias gbr="git branch"
+alias gbrauthors="git for-each-ref --sort=-committerdate --format='%(committerdate) %(authorname) %(refname)'"
+alias gci="git commit"
+alias gcl="git clone"
+alias gco="git checkout"
 alias gd="git diff"
+alias gds="git diff --staged"
+alias gf="git reflog"
 alias gl="git log"
 alias gl="git log --pretty=oneline"
 alias gp="git push"
+alias gpu="git pull"
 alias gs="git status"
-alias gst="git status"
 alias gsa="git stash apply"
 alias gsh="git show"
 alias gss="git stash save"
-alias gds="git diff --staged"
-alias gco="git checkout"
-alias gpu="git pull"
-alias gcl="git clone"
-alias gf="git reflog"
+alias gst="git status"
 
 # Work related aliases, might want to uncomment them
 # Make install aliases
-# alias mi='make install'
-# alias miy='make install-yes-i-know'
+alias mi='make install'
+alias miy='make install-yes-i-know'
+alias cfgur='inveniocfg --update-all --reset-all'
 
-# #SSH aliases
-# alias lx='ssh lxplus.cern.ch'
-# alias dev='ssh pccis85'
-# alias cdstest='ssh pccis98'
+#SSH aliases
+alias lx='ssh lxplus.cern.ch'
+alias dev='ssh pccis85'
+alias cdstest='ssh pccis98'
+alias prod='ssh pcudssx1502'
+alias prod02='ssh pcudssx1502'
+alias prod03='ssh pcudssx1503'
+alias prod05='ssh pcudssx1505'
+alias prod07='ssh pcudssx1507'
+alias prod97='ssh pccis97'
+alias prod99='ssh pccis99'
 
-# #Windows terminal
-# alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
-# #Sync aliases
-# alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
-# alias syncfromremote='rsync -avz lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/ /home/switowsk/src/cds-invenio-cern/'
-# #virtualenv aliases
-# alias master='workon master'
+#Windows terminal
+alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
+#Sync aliases
+alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
+alias syncfromremote='rsync -avz lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/ /home/switowsk/src/cds-invenio-cern/'
+#virtualenv aliases
+alias master='workon master'

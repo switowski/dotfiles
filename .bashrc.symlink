@@ -107,3 +107,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# In case we have venvburrito, uncomment
+# source venvburrito.sh
+# if [ -f /home/switowsk/.venvburrito/startup.sh ]; then
+#     . /home/switowsk/.venvburrito/startup.sh
+# fi
+
+# In case we have pyenv, uncomment
+# export PATH=/home/switowsk/bin:$PATH
+# eval "$(pyenv init -)"

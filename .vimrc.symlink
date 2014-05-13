@@ -3,10 +3,10 @@ au FileType gitcommit set tw=72
 
 " Tab width for python
 
-" The width of tab is set to 4 
+" The width of tab is set to 4
 set tabstop=4
 " Indents will have a width of 4
-set shiftwidth=4 
+set shiftwidth=4
 " always uses spaces instead of tab characters
 set expandtab
 
