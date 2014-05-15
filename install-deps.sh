@@ -14,6 +14,12 @@ info () {
   printf "  [ \033[00;34m..\033[0m ] $1"
 }
 
+
+install () {
+	info "Installing $1"
+	sudo apt-get install -y $1 & wait
+}
+
 install_z_script () {
 	# https://github.com/rupa/z
 	info "Installing z script (https://github.com/rupa/z)"
@@ -84,50 +90,62 @@ function install_packages () {
 }
 
 # Add software HERE
-apt_get_software=( vim chromium-browser firefox terminator curl gnome-do sublime-text)
+apt_get_software=( vim chromium-browser firefox terminator curl gnome-do colordiff)
+install_packages apt_get_software[@]
 
-for package in "${apt_get_software[@]}"
-do
-	if [ "$install_all" == "true" ]
-	then
-		install $package
-	else
-		user "Do you want to install $package [y]es or [n]o or install [a]ll"
-		read -n 1 action
 
-		echo ''
-		case $action in
-			a | A )
-				install $package
-				install_all=true
-				;;
-			y | Y )
-				install $package
-				;;
-			n | N )
-				info "Skipping package $package"
-				echo ''
-				;;
-			* )
-				;;
-		esac
-	fi
-done
+function install_sublime () {
+	info "Installing sublime"
+	sudo add-apt-repository ppa:webupd8team/sublime-text-3
+	sudo apt-get update
+	sudo apt-get install sublime-text
+	echo ''
+}
 
-info "---- INSTALL: Finished successfully!"
+# Sublime needs to be install in a different way (we need to add it's repository to ap-get paths)
+if [ "$install_all" == "true" ]
+then
+	install_sublime
+else 
+	user "Do you want to install sublime? [y]es or [n]o"
+	read -n 1 action
 
-user "Install additional dependencies ? [y]es, [n]o ?"
+	echo ''
+	case $action in
+		y | Y )
+			install_sublime
+			;;
+		n | N )
+			info "Skipping sublime installation"
+			echo ''
+			;;
+		* )
+			;;
+	esac
+fi
+			
+info "---- INSTALL: Standard packages installed successfully!"
+
+# Add additional software (additional means you don't want it on every machine) HERE
+apt_get_additional_software=( )
+
+user "Install additional dependencies: ${apt_get_additional_software[@]}? [y]es, [n]o ?"
 read -n 1 additional_deps
 
 case "$additional_deps" in
   y | Y )
 	echo ''
 	info "---- INSTALL: Installing additional dependencies"
-    . ./install-additional-deps.sh
+	install_packages apt_get_additional_software[@]
     ;;
   * )
     ;;
 esac
+
+info "---- INSTALL: Additional packages installed successfully!"
+
+
+
 
 info "---- CLEANUP: Running autoremove"
 sudo apt-get autoremove -y & wait
