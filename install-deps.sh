@@ -24,6 +24,7 @@ install_z_script () {
 	# also consider moving over your current .z file if possible. it's painful to rebuild :)
 	cd $DOTFILES_ROOT
 }
+
 if ! [ -d ~/z ]
 then
 	install_z_script
@@ -46,15 +47,71 @@ else
 	esac
 fi
 
-echo ''
+# Call install_packages with following parameters:
+# $1 parameter: array of packages to be installed
+# $2 parameter: true if you want to install all software without asking user each time if he wants to install this package
+function install_packages () {
+	packages=("${!1}")
+	install_all=$2
+	for package in "${packages[@]}"
+	do
+		if [ "$install_all" == "true" ]
+		then
+			install ${package}
+		else
+			user "Do you want to install $package [y]es or [n]o or install [a]ll"
+			read -n 1 action
+
+			echo ''
+			case $action in
+				a | A )
+					install ${package}
+					install_all=true
+					;;
+				y | Y )
+					install ${package}
+					;;
+				n | N )
+					info "Skipping package $package"
+					echo ''
+					;;
+				* )
+					;;
+			esac
+		fi
+	done
+
+}
+
 # Add software HERE
 apt_get_software=( vim chromium-browser firefox terminator curl gnome-do sublime-text)
 
 for package in "${apt_get_software[@]}"
 do
-	info "Installing $package"
-	sudo apt-get install -y $package & wait
-	echo ''
+	if [ "$install_all" == "true" ]
+	then
+		install $package
+	else
+		user "Do you want to install $package [y]es or [n]o or install [a]ll"
+		read -n 1 action
+
+		echo ''
+		case $action in
+			a | A )
+				install $package
+				install_all=true
+				;;
+			y | Y )
+				install $package
+				;;
+			n | N )
+				info "Skipping package $package"
+				echo ''
+				;;
+			* )
+				;;
+		esac
+	fi
 done
 
 info "---- INSTALL: Finished successfully!"

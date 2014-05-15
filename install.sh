@@ -29,8 +29,12 @@ fail () {
 setup_gitconfig () {
   info 'setup .gitconfig'
 
-  git_authorname="switowski"
-  git_authoremail="witowski.sebastian@gmail.com"
+  user ' - What is your github author name?'
+  read -e git_authorname
+
+  user ' - What is your github author email?'
+  read -e git_authoremail
+
 
   sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/.gitconfig.symlink.example > git/.gitconfig.symlink
 
@@ -109,19 +113,23 @@ install_dotfiles () {
   done
 }
 
+install_dependencies () {
+  # Install some software
+  user "Install dependencies ? [y]es, [n]o ?"
+  read -n 1 install_deps
+
+  case "$install_deps" in
+    y | Y )
+      . ./install-deps.sh;;
+    * )
+      ;;
+  esac
+
+  echo ''
+  echo '  All installed!'
+}
+
+
+install_dependencies
 setup_gitconfig
 install_dotfiles
-
-# Continue with installation of software
-user "Install dependencies ? [y]es, [n]o ?"
-read -n 1 install_deps
-
-case "$install_deps" in
-  y | Y )
-    . ./install-deps.sh;;
-  * )
-    ;;
-esac
-
-echo ''
-echo '  All installed!'
