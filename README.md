@@ -19,10 +19,11 @@ and then the config files are replaced with my files.
 RECENTLY DONE:
 * Install sublime
 * Set the github username and email during gitconfig symlinking
+* Move additional dependencies to the same file as dependencies (why having two files that do the same ?)
+* Install imagemagick
 
 TODO:
-* Move additional dependencies to the same file as dependencies (why having two files that do the same ?)
 * Install package manager, packages and snippets for sublime
+* Copy terminator shortcuts
 * Automatic firefox plugins installation
 * Export/Import Thunderbird filters: http://askubuntu.com/questions/184288/how-to-export-thunderbird-mail-filters
-* Install imagemagick

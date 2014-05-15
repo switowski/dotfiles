@@ -1,0 +1,19 @@
+[{
+  "caption": "JSHint",
+  "command": "jshint"
+}, {
+  "caption": "JSHint: Set Linting Preferences",
+  "command": "jshint_set_linting_prefs"
+}, {
+  "caption": "JSHint: Set Plugin Options",
+  "command": "jshint_set_plugin_options"
+}, {
+  "caption": "JSHint: Set Keyboard Shortcuts",
+  "command": "jshint_set_keyboard_shortcuts"
+}, {
+  "caption": "JSHint: Set `node` Path",
+  "command": "jshint_set_node_path"
+}, {
+  "caption": "JSHint: Clear Annotations",
+  "command": "jshint_clear_annotations"
+}]

@@ -90,7 +90,7 @@ function install_packages () {
 }
 
 # Add software HERE
-apt_get_software=( vim chromium-browser firefox terminator curl gnome-do colordiff)
+apt_get_software=( vim chromium-browser firefox terminator curl gnome-do colordiff imagemagick)
 install_packages apt_get_software[@]
 
 
@@ -106,7 +106,7 @@ function install_sublime () {
 if [ "$install_all" == "true" ]
 then
 	install_sublime
-else 
+else
 	user "Do you want to install sublime? [y]es or [n]o"
 	read -n 1 action
 
@@ -123,11 +123,11 @@ else
 			;;
 	esac
 fi
-			
+
 info "---- INSTALL: Standard packages installed successfully!"
 
 # Add additional software (additional means you don't want it on every machine) HERE
-apt_get_additional_software=( )
+apt_get_additional_software=( gimp geany thunderbird nodejs)
 
 user "Install additional dependencies: ${apt_get_additional_software[@]}? [y]es, [n]o ?"
 read -n 1 additional_deps

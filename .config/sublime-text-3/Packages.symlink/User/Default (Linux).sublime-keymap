@@ -1,0 +1,8 @@
+[
+	{ "keys": ["alt+left"], "command": "jump_back" },
+	{ "keys": ["alt+right"], "command": "jump_forward" },
+	{ "keys": ["alt+d"], "command": "goto_definition" },
+	// just to prevent this fucking closing mistake
+    { "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}}
+
+]
