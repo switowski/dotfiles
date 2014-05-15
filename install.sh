@@ -59,7 +59,7 @@ install_dotfiles () {
   backup_all=false
   skip_all=false
 
-  for source in `find $DOTFILES_ROOT -maxdepth 3 -name \*.symlink`
+  find $DOTFILES_ROOT -maxdepth 3 -name \*.symlink | while read source
   do
     if echo "$source" | grep -q ".config/"
     then

@@ -67,10 +67,16 @@ function set_git_branch {
     remote="↕"
   fi
  
+  # This one is not working
   # Get the name of the branch.
-  branch_pattern="^# On branch ([^${IFS}]*)"
+  # branch_pattern="^# On branch ([^${IFS}]*)"
+  # if [[ ${git_status} =~ ${branch_pattern} ]]; then
+  #   branch=${BASH_REMATCH[1]}
+  # fi
+  branch_pattern="On branch"
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
-    branch=${BASH_REMATCH[1]}
+    # branch=${BASH_REMATCH[1]}
+    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
   fi
  
   # Set the final branch string.
