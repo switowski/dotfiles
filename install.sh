@@ -27,18 +27,24 @@ fail () {
 }
 
 setup_gitconfig () {
-  info 'setup .gitconfig'
+  user "Do you want to set up github user name and email ? [y]es or [n]o ?"
+  read -n 1 action
+  case "$action" in
+    y | Y )
+      info '---- INSTALL: Setup .gitconfig'
+      user ' - What is your github author name?'
+      read -e git_authorname
 
-  user ' - What is your github author name?'
-  read -e git_authorname
+      user ' - What is your github author email?'
+      read -e git_authoremail
 
-  user ' - What is your github author email?'
-  read -e git_authoremail
+      sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/.gitconfig.symlink.example > git/.gitconfig.symlink
 
-
-  sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/.gitconfig.symlink.example > git/.gitconfig.symlink
-
-  success '.gitconfig setup successful'
+      success '---- INSTALL: .gitconfig setup successful'
+      ;;
+    * )
+      ;;
+  esac
 }
 
 link_files () {
@@ -47,7 +53,7 @@ link_files () {
 }
 
 install_dotfiles () {
-  info 'installing dotfiles'
+  info '---- INSTALL: Installing dotfiles'
 
   overwrite_all=false
   backup_all=false
@@ -55,8 +61,14 @@ install_dotfiles () {
 
   for source in `find $DOTFILES_ROOT -maxdepth 3 -name \*.symlink`
   do
-    dest="$HOME/`basename \"${source%.*}\"`"
-
+    if echo "$source" | grep -q ".config/"
+    then
+      config_path=`echo $source | grep -o '\.config/.*' | sed -e 's/.symlink//g'`
+      dest="$HOME/$config_path"
+    else
+      # we need to treat .config folders differently
+      dest="$HOME/`basename \"${source%.*}\"`"
+    fi
     if [ -f $dest ] || [ -d $dest ]
     then
 
@@ -111,6 +123,7 @@ install_dotfiles () {
     fi
 
   done
+  info '---- INSTALL: Finished installing dotfiles'
 }
 
 install_dependencies () {
