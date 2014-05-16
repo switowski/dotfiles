@@ -48,7 +48,14 @@ setup_gitconfig () {
 }
 
 link_files () {
+  # doesn't work with spaces in file paths
   ln -s $1 $2
+  success "linked $1 to $2"
+}
+
+link_files_force() {
+  # doesn't work with spaces in file paths
+  ln -sf $1 $2
   success "linked $1 to $2"
 }
 
@@ -59,16 +66,11 @@ install_dotfiles () {
   backup_all=false
   skip_all=false
 
-  find $DOTFILES_ROOT -maxdepth 3 -name \*.symlink | while read source
+# Fuck is, symlink .config manually
+  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
-    if echo "$source" | grep -q ".config/"
-    then
-      config_path=`echo $source | grep -o '\.config/.*' | sed -e 's/.symlink//g'`
-      dest="$HOME/$config_path"
-    else
-      # we need to treat .config folders differently
-      dest="$HOME/`basename \"${source%.*}\"`"
-    fi
+    dest="$HOME/`basename \"${source%.*}\"`"
+
     if [ -f $dest ] || [ -d $dest ]
     then
 
@@ -123,6 +125,38 @@ install_dotfiles () {
     fi
 
   done
+  # Manual stuff
+
+  # Install terminator config
+  user "Install terminator config ? [y]es, [n]o ?"
+  read -n 1 install_terminator_conf
+  case "$install_terminator_conf" in
+    y | Y )
+      link_files_force "$DOTFILES_ROOT/.config/terminator/config.symlinkman" "$HOME/.config/terminator/config"
+      ;;
+    n | N )
+      success "skipped terminator/config"
+      ;;
+    * )
+      ;;
+  esac
+
+  # Install sublime config
+  user "Install sublime configs and packages ? [y]es, [n]o ?"
+  read -n 1 install_sublime_conf
+  case "$install_sublime_conf" in
+    y | Y )
+      ln -sf "$DOTFILES_ROOT/.config/sublime-text-3/Installed Packages.symlinkman" "$HOME/.config/sublime-text-3/Installed Packages"
+      success "linked $DOTFILES_ROOT/.config/sublime-text-3/Installed Packages.symlinkman" "$HOME/.config/sublime-text-3/Installed Packages"
+      ln -sf "$DOTFILES_ROOT/.config/sublime-text-3/Packages.symlinkman" "$HOME/.config/sublime-text-3/Packages"
+      success "$DOTFILES_ROOT/.config/sublime-text-3/Packages.symlinkman" "$HOME/.config/sublime-text-3/Packages"
+      ;;
+    n | N )
+      success "skipped .config/sublime"
+      ;;
+    * )
+      ;;
+  esac
   info '---- INSTALL: Finished installing dotfiles'
 }
 
