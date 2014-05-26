@@ -108,12 +108,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# In case we have venvburrito, uncomment
-# source venvburrito.sh
-# if [ -f /home/switowsk/.venvburrito/startup.sh ]; then
-#     . /home/switowsk/.venvburrito/startup.sh
-# fi
-
-# In case we have pyenv, uncomment
-# export PATH=/home/switowsk/bin:$PATH
-# eval "$(pyenv init -)"
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    . $HOME/.venvburrito/startup.sh
+fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

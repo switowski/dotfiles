@@ -127,7 +127,7 @@ fi
 info "---- INSTALL: Standard packages installed successfully!"
 
 # Add additional software (additional means you don't want it on every machine) HERE
-apt_get_additional_software=( gimp geany thunderbird nodejs)
+apt_get_additional_software=( gimp geany thunderbird nodejs ipython nautilus-dropbox cifs-utils htop)
 
 user "Install additional dependencies: ${apt_get_additional_software[@]}? [y]es, [n]o ?"
 read -n 1 additional_deps

@@ -1,7 +1,7 @@
 {
 	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
 	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
-	"font_size": 10,
+	"font_size": 8,
 	"ignored_packages":
 	[
 		"Vintage"

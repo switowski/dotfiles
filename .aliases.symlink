@@ -49,7 +49,7 @@ alias gd="git diff"
 alias gds="git diff --staged"
 alias gf="git reflog"
 alias gl="git log"
-alias gl="git log --pretty=oneline"
+alias glp="git log --pretty=oneline"
 alias gp="git push"
 alias gpu="git pull"
 alias gs="git status"
@@ -65,7 +65,7 @@ alias miy='make install-yes-i-know'
 alias cfgur='inveniocfg --update-all --reset-all'
 
 #SSH aliases
-alias lx='ssh lxplus.cern.ch'
+alias lx='ssh switowsk@lxplus.cern.ch'
 alias dev='ssh pccis85'
 alias cdstest='ssh pccis98'
 alias prod='ssh pcudssx1502'
@@ -79,7 +79,7 @@ alias prod99='ssh pccis99'
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
 #Sync aliases
-alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
-alias syncfromremote='rsync -avz lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/ /home/switowsk/src/cds-invenio-cern/'
+alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
+alias syncfromremote='rsync -avz switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/ /home/switowsk/src/cds-invenio-cern/'
 #virtualenv aliases
 alias master='workon master'

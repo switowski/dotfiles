@@ -37,6 +37,10 @@ function is_git_repository {
   git branch > /dev/null 2>&1
 }
  
+ parse_git_dirty () {
+  [[ $(git status 2> /dev/null | tail -n1 | cut -c 1-17) != "nothing to commit" ]] && echo "*"
+}
+
 # Determine the branch/state information for this git repository.
 function set_git_branch {
   # Capture the output of the "git status" command.
@@ -73,10 +77,10 @@ function set_git_branch {
   # if [[ ${git_status} =~ ${branch_pattern} ]]; then
   #   branch=${BASH_REMATCH[1]}
   # fi
-  branch_pattern="On branch"
+  branch_pattern="(On branch)|(detached)"
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
     # branch=${BASH_REMATCH[1]}
-    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+    branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/")
   fi
  
   # Set the final branch string.
