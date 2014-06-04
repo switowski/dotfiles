@@ -1,16 +1,12 @@
 {
-	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
-	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
-	"font_size": 8,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"rulers":
-	[
-		78
-	],
+    "rulers": [
+        78
+    ],
+	"translate_tabs_to_spaces": true,
 	"soda_classic_tabs": true,
-	"theme": "Soda Dark 3.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"theme": "Soda Dark 3.sublime-theme"
 }
