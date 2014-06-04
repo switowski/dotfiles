@@ -132,7 +132,7 @@ install_dotfiles () {
   read -n 1 install_terminator_conf
   case "$install_terminator_conf" in
     y | Y )
-      link_files_force "$DOTFILES_ROOT/.config/terminator/config.symlinkman" "$HOME/.config/terminator/config"
+      link_files_force "$HOME/.config/terminator/config" "$DOTFILES_ROOT/.config/terminator/config.symlinkman"
       ;;
     n | N )
       success "skipped terminator/config"
@@ -146,10 +146,10 @@ install_dotfiles () {
   read -n 1 install_sublime_conf
   case "$install_sublime_conf" in
     y | Y )
-      ln -sf "$DOTFILES_ROOT/.config/sublime-text-3/Installed Packages.symlinkman" "$HOME/.config/sublime-text-3/Installed Packages"
-      success "linked $DOTFILES_ROOT/.config/sublime-text-3/Installed Packages.symlinkman" "$HOME/.config/sublime-text-3/Installed Packages"
-      ln -sf "$DOTFILES_ROOT/.config/sublime-text-3/Packages.symlinkman" "$HOME/.config/sublime-text-3/Packages"
-      success "$DOTFILES_ROOT/.config/sublime-text-3/Packages.symlinkman" "$HOME/.config/sublime-text-3/Packages"
+      ln -sf "$HOME/.config/sublime-text-3/Installed Packages" "$DOTFILES_ROOT/.config/sublime-text-3/Installed Packages.symlinkman"
+      success "linked $HOME/.config/sublime-text-3/Installed Packages to $DOTFILES_ROOT/.config/sublime-text-3/Installed Packages.symlinkman"
+      ln -sf "$HOME/.config/sublime-text-3/Packages" "$DOTFILES_ROOT/.config/sublime-text-3/Packages.symlinkman"
+      success "linked $HOME/.config/sublime-text-3/Packages to $DOTFILES_ROOT/.config/sublime-text-3/Packages.symlinkman"
       ;;
     n | N )
       success "skipped .config/sublime"
