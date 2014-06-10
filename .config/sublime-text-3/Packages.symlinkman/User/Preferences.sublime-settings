@@ -3,10 +3,11 @@
 	[
 		"Vintage"
 	],
-    "rulers": [
-        78
-    ],
-	"translate_tabs_to_spaces": true,
+	"rulers":
+	[
+		78
+	],
 	"soda_classic_tabs": true,
-	"theme": "Soda Dark 3.sublime-theme"
+	"theme": "Soda Dark 3.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
