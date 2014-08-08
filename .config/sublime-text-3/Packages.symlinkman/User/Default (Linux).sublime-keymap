@@ -1,7 +1,10 @@
 [
 	{ "keys": ["alt+left"], "command": "jump_back" },
 	{ "keys": ["alt+right"], "command": "jump_forward" },
-	{ "keys": ["alt+d"], "command": "goto_definition" },
+    { "keys": ["alt+d"], "command": "goto_definition" },
+    { "keys": ["alt+u"], "command": "swap_case" },
+    { "keys": ["alt+t"], "command": "title_case" },
+	{ "keys": ["alt+l"], "command": "lower_case" },
 	// just to prevent this fucking closing mistake
 	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
 	{ "keys": ["ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"}}
