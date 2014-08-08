@@ -14,7 +14,7 @@ set t_Co=256
 colorscheme molokai
 
 " Commit message - max 72 chars
-au FileType gitcommit set tw=7
+au FileType gitcommit set tw=72
 
 " Tab width for python
 " The width of tab is set to 4
