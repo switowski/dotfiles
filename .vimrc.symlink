@@ -1,16 +1,45 @@
+" =============== Vundle ===============
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+
+" Colorscheme
+set t_Co=256
+colorscheme molokai
+
 " Commit message - max 72 chars
-au FileType gitcommit set tw=72
+au FileType gitcommit set tw=7
 
 " Tab width for python
-
 " The width of tab is set to 4
-set tabstop=4
+"set tabstop=4
 " Indents will have a width of 4
-set shiftwidth=4
+"set shiftwidth=4
 " always uses spaces instead of tab characters
-set expandtab
+"set expandtab
+
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+" Remove asterisk from automatic word wrapping in commit messages
+set comments=fb:*
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+command W w !sudo tee % > /dev/null
 
 " Spell checking
-:set spell spelllang=en_us
-:hi clear SpellBad
-:hi SpellBad cterm=underline ctermfg=red
+set spell spelllang=en_us
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
+
+" Highlight all search results
+set hlsearch
