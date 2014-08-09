@@ -31,3 +31,7 @@ List of Sublime packages that needs to be installed by hand:
 * Sass
 * ERB Snippets
 * SublimeCodeIntel
+
+##TODO:##
+* Install Vundle with vim
+* Add some validators that won't allow to config terminator/sublime if they are not installed (otherwise, the symlinks break)

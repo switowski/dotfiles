@@ -4,6 +4,31 @@
 
 DOTFILES_ROOT="`pwd`"
 
+#Get the package installer
+#TODO make this better - put it in a function or something
+apt=`command -v apt-get`
+yum=`command -v yum`
+if [ -n "$apt" ]; then
+    INSTALLER='apt-get -y install'
+elif [ -n "$yum" ]; then
+    INSTALLER='yum -y install'
+else
+    echo "Err: no path to apt-get or yum" >&2;
+    exit 1;
+fi
+
+#Also we need to find the default downloader
+wget=`command -v wget`
+curl=`command -v curl`
+if [ -n "$wget" ]; then
+    DOWNLOADER='wget --quiet -O'
+elif [ -n "$curl" ]; then
+    DOWNLOADER='curl -s -L -o'
+else
+    echo "Err: no tool to download" >&2;
+    exit 1;
+fi
+
 set -e
 
 echo ''
@@ -125,27 +150,43 @@ function install_bashfiles () {
   done
 }
 
+function install_vundle () {
+  # This function will install Vundle for vim
+  if [[ ! -d ~/.vim/bundle/Vundle.vim ]]
+  then
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  fi
+  # TODO add a message that directory exists
+  # Update plugins
+  vim +PluginInstall +qall
+}
+
 function install_fasd () {
-  wget --quiet -O /tmp/fasd_master.zip https://github.com/clvv/fasd/archive/master.zip
-  unzip -qq /tmp/fasd_master.zip
-  cd /tmp/fasd_master/
-  sudo make install
-  cd DOTFILES_ROOT
+  $DOWNLOADER /tmp/fasd_master.zip https://github.com/clvv/fasd/archive/master.zip
+  unzip -qq -o -d /tmp/ /tmp/fasd_master.zip
+  cd /tmp/fasd-master/
+  sudo make install -s
+  cd $DOTFILES_ROOT
   success "Installed FASD"
 }
 
 function setup_terminator () {
   # Install terminator config
-  link_files_force "$HOME/.config/terminator/config" "$DOTFILES_ROOT/.config/terminator/config.symlinkman"
+  # Make dir if doesn't exists
+  mkdir -p "$HOME/.config/terminator/config"
+  link_files_force "$DOTFILES_ROOT/.config/terminator/config.symlinkman" "$HOME/.config/terminator/config"
   success "Linked $HOME/.config/terminator/config to $DOTFILES_ROOT/.config/terminator/config.symlinkman"
 }
 
 function setup_sublime () {
   # Setup some sublime preferences
-  for file in $DOTFILES_ROOT/.config/sublime-text-3/Packages/User/*; do
-    filebasename = $basename( "$f")
-    link_files_force "$HOME/.config/sublime-text-3/Packages/User/$filebasename" $file
-    success "Linked $HOME/.config/sublime-text-3/Packages/User/$filebasename" $file
+  # Make dir if doesn't exists
+  mkdir -p "$HOME/.config/sublime-text-3/Packages/User/"
+  for file in $DOTFILES_ROOT/.config/sublime-text-3/Packages/User/*
+	do
+	# link_files_force won't work with spaces, this is a workaround
+    ln -sf "$file" "$HOME/.config/sublime-text-3/Packages/User/`basename "$file"`"
+    success "Linked $HOME/.config/sublime-text-3/Packages/User/`basename "$file"` to $file"
   done
   success "Remember to install your favorite sublime plugins listed in README file"
 }
@@ -165,27 +206,32 @@ function setup_gitconfig () {
 
 function install_prezto () {
   # This function will install prezto - zsh framework: https://github.com/sorin-ionescu/prezto
-  zsh
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-  setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    link_files_force "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  fi
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*
+	do
+	echo "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)"
+	echo "$rcfile"
+    link_files_force "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
     # now, we want to add our own config to prezto files. We can do this by appending our configuration to the end of each file
-    if [ -f "$DOTFILES_ROOT/.zsh.conf/${rcfile:t}" ]
+    if [ -f "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)" ]
     then
-      cat "$DOTFILES_ROOT/.zsh.conf/${rcfile:t}" >> "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+	  echo "copying additional config"
+      cat "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)" >> "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
     fi
   done
-  chsh -s /bin/zsh # just in case it hasn't been changed before
+  chsh -s `which zsh` # just in case it hasn't been changed before
   # Add my awesome theme
   cp "$DOTFILES_ROOT/.zsh.conf/prompt_awesome_setup" "${ZDOTDIR:-$HOME}"/.zprezto/modules/prompt/functions/
 
 }
 
 function install_program () {
-  # Install one program using apt-get
+  # Install one program using default system installer (so far apt-get or yum)
+
   info "Installing $1"
-  sudo apt-get install -y $1 & wait
+  sudo $INSTALLER $1 & wait
 }
 
 function install_packages () {
@@ -226,13 +272,13 @@ function install_programs () {
 
   # Add software HERE
   apt_get_software=( vim chromium-browser firefox curl gnome-do colordiff )
-  confirm "Install programs" "install_packages apt_get_software[@]"
-  install_packages apt_get_software[@]
+  confirm "Install core software: ${apt_get_software[*]}" "install_packages apt_get_software[@]"
 
   # Add additional software (additional means you don't want it on every machine) HERE
   # This list can be modified depending on OS and other preferences
   apt_get_additional_software=( terminator imagemagick gimp geany thunderbird nodejs ipython nautilus-dropbox cifs-utils htop )
-  confirm "Install additional programs" "install_packages apt_get_additional_software[@]"
+  confirm "Install additional software: ${apt_get_additional_software[*]}" "install_packages apt_get_additional_software[@]"
+
 }
 
 function confirm () {
@@ -242,6 +288,7 @@ function confirm () {
   # $2 name of functions that will be called if user choose "yes"
   info "---- INSTALL: Do you want to: $1 ? [y]es/[n]o ?"
   read -n 1 call_it
+  printf "\n"
   case "$call_it" in
     y | Y )
       $2
@@ -293,6 +340,12 @@ function install () {
  # Install FASD - something better that "z" script
   info "---- INSTALL: 7. Install FASD"
   confirm "Install FASD" install_fasd
+
+  info "---- INSTALL: 8. Install Vundle for vim if vim is installed"
+  # TODO run it only if vim is installed (and maybe dependind on the content of the .vimrc)
+  confirm "Install Vundle ?" install_vundle
+
+  info "---- INSTALL: Finished !"
 
 }
 
