@@ -35,3 +35,6 @@ List of Sublime packages that needs to be installed by hand:
 ##TODO:##
 * Install Vundle with vim
 * Add some validators that won't allow to config terminator/sublime if they are not installed (otherwise, the symlinks break)
+* Read about antigen (https://github.com/zsh-users/antigen) for zshell plugins management
+* Automatic firefox plugins installation
+* Export/Import Thunderbird filters: http://askubuntu.com/questions/184288/how-to-export-thunderbird-mail-filters
