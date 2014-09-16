@@ -276,7 +276,8 @@ function install_programs () {
 
   # Add additional software (additional means you don't want it on every machine) HERE
   # This list can be modified depending on OS and other preferences
-  apt_get_additional_software=( terminator imagemagick gimp geany thunderbird nodejs ipython nautilus-dropbox cifs-utils htop )
+  apt_get_additional_software=( terminator imagemagick gimp geany thunderbird nodejs ipython nautilus-dropbox cifs-utils htop glipper )
+  # Glipper - it's a copy/paste manager - allows to copy and paste multiple stuff and easily change what is in the clipboard
   confirm "Install additional software: ${apt_get_additional_software[*]}" "install_packages apt_get_additional_software[@]"
 
 }
