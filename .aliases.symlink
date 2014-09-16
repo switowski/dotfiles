@@ -92,8 +92,10 @@ alias prod5='ssh cds-wn-05'
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
 alias windowsr800x600='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
 alias windowsr1280x1024='rdesktop  -a 16 -u switowsk -d CERN -g 1280x1024 cernts.cern.ch'
+
 #Sync aliases
 alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
 alias syncfromremote='rsync -avz switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/ /home/switowsk/src/cds-invenio-cern/'
+
 #virtualenv aliases
 alias master='workon master'

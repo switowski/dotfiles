@@ -12,8 +12,10 @@
 [profiles]
   [[default]]
     scrollback_lines = 10000
+    background_color = "#300a24"
     background_image = None
     scrollback_infinite = True
+    foreground_color = "#ffffff"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -22,4 +24,66 @@
     [[[window0]]]
       type = Window
       parent = ""
+  [[prod]]
+    [[[child0]]]
+      position = 1360:25
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 1005
+    [[[child1]]]
+      position = 873
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 502
+      type = VPaned
+      order = 0
+      parent = child1
+    [[[child5]]]
+      position = 366
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[child7]]]
+      position = 320
+      type = VPaned
+      order = 1
+      parent = child5
+    [[[terminal3]]]
+      profile = default
+      group = All
+      parent = child2
+      command = prod2
+      type = Terminal
+      order = 0
+    [[[terminal4]]]
+      profile = default
+      group = All
+      parent = child2
+      command = prod1
+      type = Terminal
+      order = 1
+    [[[terminal6]]]
+      profile = default
+      group = All
+      parent = child5
+      command = prod3
+      type = Terminal
+      order = 0
+    [[[terminal9]]]
+      profile = default
+      group = All
+      parent = child7
+      command = prod5
+      type = Terminal
+      order = 1
+    [[[terminal8]]]
+      profile = default
+      group = All
+      parent = child7
+      command = prod4
+      type = Terminal
+      order = 0
 [plugins]
