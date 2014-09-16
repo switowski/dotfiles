@@ -8,10 +8,12 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 
 " Colorscheme
 set t_Co=256
-colorscheme molokai
+set background=dark " Setting dark mode
+colorscheme gruvbox
 
 " Commit message - max 72 chars
 au FileType gitcommit set tw=72
