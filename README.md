@@ -29,7 +29,7 @@ List of Sublime packages that needs to be installed by hand:
 
 **Rails Development**
 * Sass
-* ERB Snippets
+* ERB Snippets or Ruby Slim (depending on templating engine)
 * SublimeCodeIntel
 
 ##TODO:##
