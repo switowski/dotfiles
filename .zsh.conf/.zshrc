@@ -10,3 +10,7 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 
 # Enable fasd
 eval "$(fasd --init auto)"
+
+# Source rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
