@@ -1,14 +1,18 @@
 " =============== Vundle ===============
 filetype off                  " required
 
+let mapleader = ","
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 " let Vundle manage Vundle, required
+" To install plugins :PluginInstall
 Plugin 'gmarik/vundle'
-Plugin 'tomasr/molokai'
+"Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+Plugin 'ervandew/supertab'
 
 " Colorscheme
 set t_Co=256
@@ -45,6 +49,9 @@ command! -bang Q q<bang>
 set spell spelllang=en_us
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
+set nospell
+
+nmap <leader>s :set spell!<CR>
 
 " Highlight all search results
 set hlsearch
