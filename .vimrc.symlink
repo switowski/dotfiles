@@ -1,6 +1,9 @@
 " =============== Vundle ===============
 filetype off                  " required
 
+" Map leader key
+:let mapleader=","
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -9,6 +12,10 @@ Plugin 'gmarik/vundle'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-sleuth'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 
 " Colorscheme
 set t_Co=256
@@ -45,6 +52,18 @@ command! -bang Q q<bang>
 set spell spelllang=en_us
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
+"I want to start vim with spell-check disabled
+set nospell
 
 " Highlight all search results
 set hlsearch
+
+" Kepp last 10 lines visible when scrolling
+set scrolloff=10
+
+" KEYBOARD SHORTCUTS
+" Pressing ,s will toggle and untoggle spell checking
+map <leader>s :setlocal spell!<cr>
+
+" Activate vim-airline
+set laststatus=2

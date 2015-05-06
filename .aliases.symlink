@@ -1,5 +1,52 @@
 # Temporary aliases, remember to remove later
-alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/EPublishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
+alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
+
+# Functions, I might want to move them somewhere
+#   extract:  Extract most know archives with one command
+#   ---------------------------------------------------------
+extract () {
+if [ -f $1 ] ; then
+  case $1 in
+    *.tar.bz2)   tar xjf $1     ;;
+    *.tar.gz)    tar xzf $1     ;;
+    *.bz2)       bunzip2 $1     ;;
+    *.rar)       unrar e $1     ;;
+    *.gz)        gunzip $1      ;;
+    *.tar)       tar xf $1      ;;
+    *.tbz2)      tar xjf $1     ;;
+    *.tgz)       tar xzf $1     ;;
+    *.zip)       unzip $1       ;;
+    *.Z)         uncompress $1  ;;
+    *.7z)        7z x $1        ;;
+    *)     echo "'$1' cannot be extracted via extract()" ;;
+     esac
+ else
+     echo "'$1' is not a valid file"
+ fi
+}
+
+#   findPid: find out the pid of a specified process
+#   -----------------------------------------------------
+#       Note that the command name can be specified via a regex
+#       E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
+#       Without the 'sudo' it will only find processes of the current user
+#   -----------------------------------------------------
+findPid () { lsof -t -c "$@" ; }
+
+#   killport: Kill all proccess on the spicified port:
+#   ------------------------------------------------------------
+function killport(){
+	[ $# -ne 1 ] && echo "You should choose a port" && return 1
+	kill -9 $(lsof -t -i :"$1")
+}
+
+
+#   ---------------------------
+#   5.  NETWORKING
+#   ---------------------------
+
+alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+
 
 # get rid of error when doing apt-get
 alias apt-get='sudo apt-get'
@@ -37,6 +84,7 @@ alias l="ls -lF ${colorflag}"
 # Diff side by side for a nicer diff
 alias diffs="diff --side-by-side"
 alias colordiffs="colordiff --side-by-side"
+alias grep='grep --color=auto' # Automatic colors in grep output
 
 # GIT aliases
 # Undo a `git push`
@@ -87,6 +135,7 @@ alias prod2='ssh cds-wn-02'
 alias prod3='ssh cds-wn-03'
 alias prod4='ssh cds-wn-04'
 alias prod5='ssh cds-wn-05'
+alias proddb='ssh cds-dbmaster-01'
 
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
