@@ -13,10 +13,19 @@ Plugin 'gmarik/vundle'
 "Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+" allows you to use <Tab> for all your insert completion needs:wq
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-sleuth'
+" Fuzzy file, buffer, mru, tag, etc. finder
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+" Syntax checking hacks
+Plugin 'scrooloose/syntastic'
+" A tree explorer
+Plugin 'scrooloose/nerdtree'
+" All about surroundings: parentheses, brackets, quotes, XML tags
+Plugin 'tpope/vim-surround'
+
 
 " Colorscheme
 set t_Co=256
