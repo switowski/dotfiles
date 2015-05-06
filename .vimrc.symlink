@@ -2,14 +2,15 @@
 filetype off                  " required
 
 " Map leader key
-:let mapleader=","
+let mapleader = ","
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 " let Vundle manage Vundle, required
+" To install plugins :PluginInstall
 Plugin 'gmarik/vundle'
-Plugin 'tomasr/molokai'
+"Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'ervandew/supertab'

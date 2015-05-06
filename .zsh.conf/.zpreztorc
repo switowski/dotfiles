@@ -15,6 +15,7 @@
    'git' \
    'python' \
    'rsync' \
+   'ruby' \
    'tmux' \
    'prompt'
 
