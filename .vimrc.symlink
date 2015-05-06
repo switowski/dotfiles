@@ -74,6 +74,8 @@ set scrolloff=10
 " KEYBOARD SHORTCUTS
 " Pressing ,s will toggle and untoggle spell checking
 map <leader>s :setlocal spell!<cr>
+" Open NERDTree like in sublime: ctrl+k, ctrl+b
+map <silent> <C-k> <C-b> :NERDTreeToggle<CR>
 
 " Activate vim-airline
 set laststatus=2
