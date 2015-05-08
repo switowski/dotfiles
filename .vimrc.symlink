@@ -1,8 +1,30 @@
-" =============== Vundle ===============
-filetype off                  " required
+" =============== General ===============
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible      " We're running Vim, not Vi!
 
 " Map leader key
 let mapleader = ","
+
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+
+set cursorline                  "Line to indicate the cursor location
+set mouse=a                     "Allow mouse in all modes
+set ttymouse=xterm2
+set history=1000                "Store lots of :cmdline history
+set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+" =============== Vundle ===============
+" Don't put it at the end because other parts of the config needs plugins
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -26,56 +48,130 @@ Plugin 'scrooloose/nerdtree'
 " All about surroundings: parentheses, brackets, quotes, XML tags
 Plugin 'tpope/vim-surround'
 
+"================= Autocompletion ======================
+autocmd BufEnter * :syntax sync fromstart
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow"
+" Remap code completion to Ctrl+Tab (gui and termial)
+inoremap <Nul> <C-x><C-o>
+inoremap <C-Tab> <C-x><C-o>
 
-" Colorscheme
+
+"================= Colorscheme ======================
 set t_Co=256
 set background=dark " Setting dark mode
 colorscheme gruvbox
 
-" Commit message - max 72 chars
-au FileType gitcommit set tw=72
+" CERN settings - enable it on lxplus
+"let g:solarized_termcolors=256
+"syntax enable
+"set background=dark
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+"colorscheme solarized
+"colorscheme ron " Cause I can't configure solarized properly
 
-" Tab width for python
-" The width of tab is set to 4
-"set tabstop=4
-" Indents will have a width of 4
-"set shiftwidth=4
-" always uses spaces instead of tab characters
-"set expandtab
 
-set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
-
-" Remove asterisk from automatic word wrapping in commit messages
-set comments=fb:*
-
+" ================ Commands ========================
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W w !sudo tee % > /dev/null
-
 " Treat :Q as :q - common mistake
 command! -bang Q q<bang>
 
-" Spell checking
+
+"================= Commit messages ================
+" Commit message - max 72 chars
+au FileType gitcommit set tw=72
+" Remove asterisk from automatic word wrapping in commit messages
+set comments=fb:*
+
+" ================ Folds ============================
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "don't fold by default
+
+
+" ================ Indentation ======================
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+"set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
+
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+if version >= 703
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+
+" ================ Spell checking ========================
 set spell spelllang=en_us
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 "I want to start vim with spell-check disabled
 set nospell
 
+
+" ================ Searching ========================
 " Highlight all search results
 set hlsearch
 
-" Kepp last 10 lines visible when scrolling
-set scrolloff=10
 
-" KEYBOARD SHORTCUTS
+" ================ Scrolling ========================
+" Keep last 10 lines visible when scrolling
+set scrolloff=10
+set sidescrolloff=15
+set sidescroll=1
+
+set number                      "Display line numbers
+set relativenumber              "Line number relative to cursor position
+
+
+" ================ Shortcuts ========================
 " Pressing ,s will toggle and untoggle spell checking
 map <leader>s :setlocal spell!<cr>
 " Open NERDTree like in sublime: ctrl+k, ctrl+b
 map <silent> <C-k> <C-b> :NERDTreeToggle<CR>
+" Press F5 to list open buffers and then seect buffer number to switch
+nnoremap <F5> :buffers<CR>:buffer<Space>
+" Toogle relative/nonrelative line numbers
+nnoremap <leader>l :set norelativenumber!<CR>
 
+
+" ================ Vim Airline ========================
 " Activate vim-airline
 set laststatus=2
+
+
+" ================ Virtualenv ========================
+" Add the virtualenv's site-packages to vim path
+if has('python')
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+endif
