@@ -37,9 +37,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 " allows you to use <Tab> for all your insert completion needs:wq
 Plugin 'ervandew/supertab'
+" Adjusts the shiftwidth and expandtab based on current file
 Plugin 'tpope/vim-sleuth'
 " Fuzzy file, buffer, mru, tag, etc. finder
 Plugin 'kien/ctrlp.vim'
+" Nice bottom bar
 Plugin 'bling/vim-airline'
 " Syntax checking hacks
 Plugin 'scrooloose/syntastic'
@@ -150,11 +152,16 @@ set relativenumber              "Line number relative to cursor position
 map <leader>s :setlocal spell!<cr>
 " Open NERDTree like in sublime: ctrl+k, ctrl+b
 map <silent> <C-k> <C-b> :NERDTreeToggle<CR>
-" Press F5 to list open buffers and then seect buffer number to switch
-nnoremap <F5> :buffers<CR>:buffer<Space>
+" List open buffers and then select buffer number to switch
+nnoremap <leader>b :buffers<CR>:buffer<Space>
 " Toogle relative/nonrelative line numbers
 nnoremap <leader>l :set norelativenumber!<CR>
-
+" Press  F2 to toogle paste mode
+set pastetoggle=<F2>
+" Toogle line numbers
+nnoremap <leader>n :set invnumber<CR>
+" Press // when selected some text in visual mode to find next occurence of this text
+vnoremap // y/<C-R>"<CR>
 
 " ================ Vim Airline ========================
 " Activate vim-airline

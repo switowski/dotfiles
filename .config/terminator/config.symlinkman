@@ -1,21 +1,26 @@
 [global_config]
   suppress_multiple_term_dialog = True
 [keybindings]
-  go_up = <Shift>Up
+  switch_to_tab_6 = <Primary>6
   broadcast_group = <Ctrl><Shift>g
-  next_tab = <Alt>Right
-  prev_tab = <Alt>Left
+  next_tab = <Primary>Page_Up
+  prev_tab = <Primary>Page_Down
   broadcast_all = <Ctrl><Shift>a
-  go_down = <Shift>Down
-  go_right = <Shift>Right
-  go_left = <Shift>Left
+  switch_to_tab_7 = <Primary>7
+  switch_to_tab_4 = <Primary>4
+  switch_to_tab_5 = <Primary>5
+  switch_to_tab_2 = <Primary>2
+  switch_to_tab_3 = <Primary>3
+  switch_to_tab_1 = <Primary>1
+  switch_to_tab_8 = <Primary>8
+  switch_to_tab_9 = <Primary>9
 [profiles]
   [[default]]
     scrollback_lines = 10000
-    background_color = "#300a24"
+    background_color = "#002b36"
     background_image = None
     scrollback_infinite = True
-    foreground_color = "#ffffff"
+    foreground_color = "#eee8d5"
 [layouts]
   [[default]]
     [[[child1]]]
