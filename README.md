@@ -34,6 +34,7 @@ List of Sublime packages that needs to be installed by hand:
 
 ##Manual tweaks: ##
 * Map Caps Lock to Esc (http://berk.es/2012/06/21/map-capslock-to-escape-in-ubuntu-linux/)
+* Install AutoKey - a text expander (http://losingit.me.uk/2008/12/26/autokey-nifty-text-expander-for-linux)
 
 ##TODO:##
 * Install Vundle with vim

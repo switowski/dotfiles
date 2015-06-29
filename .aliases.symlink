@@ -148,3 +148,6 @@ alias syncfromremote='rsync -avz switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/swi
 
 #virtualenv aliases
 alias master='workon master'
+
+# Faster IPython
+alias i='ipython'

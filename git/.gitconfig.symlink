@@ -32,3 +32,6 @@
 
 [credential]
     helper = cache --timeout=7200
+
+[push]
+	default = current # That way we don't need to specify where to push
