@@ -46,7 +46,7 @@ function killport(){
 #   ---------------------------
 
 alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
-
+alias server_here='python -m SimpleHTTPServer 7777' # This will start a server that lists files in the current directory
 
 # get rid of error when doing apt-get
 alias apt-get='sudo apt-get'
