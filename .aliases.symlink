@@ -99,3 +99,7 @@ alias syncfromremote='rsync -avz switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/swi
 
 #virtualenv aliases
 alias master='workon master'
+
+# rails aliases
+alias rs="rails server"
+alias rc="rails console"
