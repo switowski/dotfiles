@@ -1,6 +1,6 @@
 [user]
     name = Sebastian Witowski
-    email = sebastian.witowski@cern.ch
+    email = witowski.sebastian@gmail.com
 
 [alias]
 	amend = commit --amend
@@ -21,6 +21,17 @@
 [color]
 	ui = auto
 
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+
 [color "status"]
     added = yellow
     changed = green
@@ -31,7 +42,6 @@
 	excludesfile = ~/.gitignore
 
 [credential]
-    helper = cache --timeout=7200
-
+    helper = cache --timeout=21600 # 6 hours
 [push]
-	default = current # That way we don't need to specify where to push
+	default = current
