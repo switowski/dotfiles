@@ -151,3 +151,7 @@ alias master='workon master'
 
 # Faster IPython
 alias i='ipython'
+
+# Rails aliases
+alias rs="rails server"
+alias rc="rails console"
