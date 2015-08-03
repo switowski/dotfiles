@@ -60,35 +60,35 @@
       profile = default
       group = All
       parent = child2
-      command = prod2
+      command = ssh cds-wn-02
       type = Terminal
       order = 0
     [[[terminal4]]]
       profile = default
       group = All
       parent = child2
-      command = prod1
+      command = ssh cds-wn-01
       type = Terminal
       order = 1
     [[[terminal6]]]
       profile = default
       group = All
       parent = child5
-      command = prod3
+      command = ssh cds-wn-03
       type = Terminal
       order = 0
     [[[terminal9]]]
       profile = default
       group = All
       parent = child7
-      command = prod5
+      command = ssh cds-wn-05
       type = Terminal
       order = 1
     [[[terminal8]]]
       profile = default
       group = All
       parent = child7
-      command = prod4
+      command = ssh cds-wn-04
       type = Terminal
       order = 0
 [plugins]
