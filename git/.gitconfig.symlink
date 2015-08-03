@@ -3,23 +3,23 @@
     email = witowski.sebastian@gmail.com
 
 [alias]
-	amend = commit --amend
-	br = branch
-	ci = commit
-	co = checkout
+    amend = commit --amend
+    br = branch
+    ci = commit
+    co = checkout
     cp = cherry-pick
-	d = diff
-	ds = diff --staged
-	l = log
+    d = diff
+    ds = diff --staged
+    l = log
     loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-	lp = log --pretty=oneline
-	sa = stash apply
-	sh = show
-	ss = stash save
-	st = status
+    lp = log --pretty=oneline
+    sa = stash apply
+    sh = show
+    ss = stash save
+    st = status
 
 [color]
-	ui = auto
+    ui = auto
 
 [color "branch"]
     current = yellow reverse
@@ -38,10 +38,10 @@
     untracked = cyan
 
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
+    editor = vim
+    excludesfile = ~/.gitignore
 
 [credential]
     helper = cache --timeout=21600 # 6 hours
 [push]
-	default = current
+    default = current
