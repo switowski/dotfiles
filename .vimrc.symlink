@@ -4,7 +4,7 @@
 set nocompatible      " We're running Vim, not Vi!
 
 " Map leader key
-let mapleader = ","
+let mapleader = "\<Space>"
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -49,6 +49,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 " All about surroundings: parentheses, brackets, quotes, XML tags
 Plugin 'tpope/vim-surround'
+
+" Git gutter for vim
+Plugin 'airblade/vim-gitgutter'
+
+
+"================= Ctrlp settings ======================
+let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 
 "================= Autocompletion ======================
 autocmd BufEnter * :syntax sync fromstart

@@ -74,6 +74,9 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
+# Map rm to trash so files end up in trash can
+alias rm='trash'
+
 # Shortcuts
 alias g="git"
 alias v="vim"
@@ -115,12 +118,13 @@ alias gst="git status"
 alias mi='make install'
 alias miy='make install-yes-i-know'
 alias cfgur='inveniocfg --update-all --reset-all'
+alias im='inveniomanage'
 
 #SSH aliases
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias dev='ssh pccis85'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
-alias cdstest='ssh cdstest'
+alias cdstest='ssh cds-test-wn-01'
 alias oldprod='ssh pcudssx1502'
 alias oldprod02='ssh pcudssx1502'
 alias oldprod03='ssh pcudssx1503'
@@ -136,6 +140,7 @@ alias prod3='ssh cds-wn-03'
 alias prod4='ssh cds-wn-04'
 alias prod5='ssh cds-wn-05'
 alias proddb='ssh cds-dbmaster-01'
+alias builder='ssh root@cds-builder-test-01.cern.ch'
 
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
