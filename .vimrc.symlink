@@ -44,6 +44,7 @@ Plugin 'sjl/gundo.vim'
 
 
 " =============== Plugins settings =================== {{{
+
 " ==== Ctrlp settings ====
 let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 " ==== Vim Airline ====
@@ -187,7 +188,7 @@ endif
 " }}}
 
 
-" ================ Spell checking ========================
+" ================ Spell checking ======================== {{{
 set spell spelllang=en_us
 hi clear SpellBad
 "I want to start vim with spell-check disabled
@@ -195,6 +196,8 @@ hi SpellBad cterm=underline ctermfg=red
 set nospell
 " Fix spelling with <leader>f
 nnoremap <leader>f 1z=
+" }}}
+
 
 " =============== Custom leader =============== {{{
 let mapleader = "\<Space>"
@@ -224,6 +227,7 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 
 " }}}
+
 
 " ================ Virtualenv ======================== {{{
 " Add the virtualenv's site-packages to vim path
