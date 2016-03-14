@@ -4,6 +4,7 @@
 
 [alias]
     amend = commit --amend
+    amendf = commit --amend --no-edit
     br = branch
     ci = commit
     co = checkout

@@ -40,6 +40,16 @@ function killport(){
 	kill -9 $(lsof -t -i :"$1")
 }
 
+#  mpr: Merge GitHub pull request on top of the `master` branch
+#   -----------------------------------------------------
+function  mpr(){
+  if [[ $1 =~ "^[0-9]+$" ]] ; then
+    git fetch upstream refs/pull/$1/head:pr/$1 && git checkout master && git merge --ff-only pr/$1 && git branch -D pr/$1 && echo 'Done !';
+  else
+    echo "You need to specify PR number !"
+  fi
+}
+
 
 #   ---------------------------
 #   5.  NETWORKING
@@ -103,10 +113,13 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gf="git reflog"
+alias gffs="git add --all && git commit --amend --no-edit"
 alias gl="git log"
 alias glp="git log --pretty=oneline"
 alias gp="git push"
+alias gps="git push"
 alias gpl="git pull"
+alias gpf="git push --force"
 alias gs="git status"
 alias gsa="git stash apply"
 alias gsh="git show"
@@ -132,7 +145,8 @@ alias oldprod05='ssh pcudssx1505'
 alias oldprod07='ssh pcudssx1507'
 alias oldprod97='ssh pccis97'
 alias oldprod99='ssh pccis99'
-alias loadbalancer='ssh pcudssx1504'
+#alias loadbalancer='ssh pcudssx1504'
+alias loadbalancer='ssh cds-lb-01'
 alias prod='ssh cds-wn-01'
 alias prod1='ssh cds-wn-01'
 alias prod2='ssh cds-wn-02'
@@ -144,8 +158,7 @@ alias builder='ssh root@cds-builder-test-01.cern.ch'
 
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
-alias windowsr800x600='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
-alias windowsr1280x1024='rdesktop  -a 16 -u switowsk -d CERN -g 1280x1024 cernts.cern.ch'
+alias windowsrbig='rdesktop  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch'
 
 #Sync aliases
 alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
@@ -160,3 +173,7 @@ alias i='ipython'
 # Rails aliases
 alias rs="rails server"
 alias rc="rails console"
+alias bx="bundle exec"
+
+# Miscellaneous
+alias gpw="workon gpw && cd ./workspace/gpw && ./gpw.py"

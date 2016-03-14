@@ -11,6 +11,7 @@
   switch_to_tab_5 = <Primary>5
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3
+  broadcast_off = <Primary><Shift>d
   switch_to_tab_1 = <Primary>1
   switch_to_tab_8 = <Primary>8
   switch_to_tab_9 = <Primary>9
