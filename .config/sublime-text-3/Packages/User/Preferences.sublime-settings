@@ -1,1 +1,44 @@
-/home/switowsk/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+{
+	"added_words":
+	[
+		"clickable"
+	],
+	"always_show_minimap_viewport": true,
+	"binary_file_patterns":
+	[
+		"node_modules/*",
+		"*.svg"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"draw_white_space": "all",
+	"font_size": 10,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"index_exclude_patterns":
+	[
+		"/home/seba/workspace/mk/node_modules*",
+		"*.log"
+	],
+	"index_files": true,
+	"rulers":
+	[
+		78
+	],
+	"scroll_past_end": true,
+	"shift_tab_unindent": true,
+	"tab_size": 4,
+	"theme": "Cobalt2.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}
