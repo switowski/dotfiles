@@ -36,15 +36,22 @@ findPid () { lsof -t -c "$@" ; }
 #   killport: Kill all proccess on the spicified port:
 #   ------------------------------------------------------------
 function killport(){
-	[ $# -ne 1 ] && echo "You should choose a port" && return 1
-	kill -9 $(lsof -t -i :"$1")
+  [ $# -ne 1 ] && echo "You should choose a port" && return 1
+  sudo kill -9 $(sudo lsof -t -i :"$1")
 }
 
 #  mpr: Merge GitHub pull request on top of the `master` branch
 #   -----------------------------------------------------
-function  mpr(){
+function mpr() {
+  if [[ -z $2 ]] ; then
+    branch='master'
+    echo 'Rebasing inside default branch master, if you want to use different branch, specify branch name as second parameter'
+  else
+    branch=$2
+    echo 'Rebasing inside branch $2'
+  fi
   if [[ $1 =~ "^[0-9]+$" ]] ; then
-    git fetch upstream refs/pull/$1/head:pr/$1 && git checkout master && git merge --ff-only pr/$1 && git branch -D pr/$1 && echo 'Done !';
+    git fetch upstream refs/pull/$1/head:pr/$1 && git checkout $branch && git merge --ff-only pr/$1 && git branch -D pr/$1 && echo 'Done !';
   else
     echo "You need to specify PR number !"
   fi
@@ -120,6 +127,7 @@ alias gp="git push"
 alias gps="git push"
 alias gpl="git pull"
 alias gpf="git push --force"
+alias gpr="git pull --rebase"
 alias gs="git status"
 alias gsa="git stash apply"
 alias gsh="git show"
@@ -158,7 +166,9 @@ alias builder='ssh root@cds-builder-test-01.cern.ch'
 
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
+alias windowsrf='xfreerdp  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
 alias windowsrbig='rdesktop  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch'
+alias windowsrbigf='xfreerdp  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch'
 
 #Sync aliases
 alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'

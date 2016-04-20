@@ -10,6 +10,7 @@
 		"*.svg"
 	],
 	"bold_folder_labels": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"draw_white_space": "all",
 	"font_size": 10,

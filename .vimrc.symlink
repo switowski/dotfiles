@@ -40,6 +40,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 " Visual undo tree
 Plugin 'sjl/gundo.vim'
+" Puppet linter
+Plugin 'rodjek/vim-puppet'
 " }}}
 
 
