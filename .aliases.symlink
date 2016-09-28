@@ -65,6 +65,10 @@ function mpr() {
 alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
 alias server_here='python -m SimpleHTTPServer 7777' # This will start a server that lists files in the current directory
 
+#   ---------------------------
+#   6. Miscellaneous
+#   ---------------------------
+
 # get rid of error when doing apt-get
 alias apt-get='sudo apt-get'
 
@@ -145,7 +149,7 @@ alias im='inveniomanage'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias dev='ssh pccis85'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
-alias cdstest='ssh cds-test-wn-01'
+alias cdstest='ssh cds-test-wn-02' # Don't use cds-test-wn-01 ! it's broken! cds-test-wn-02 is 'less broken' :P
 alias oldprod='ssh pcudssx1502'
 alias oldprod02='ssh pcudssx1502'
 alias oldprod03='ssh pcudssx1503'
@@ -161,7 +165,7 @@ alias prod2='ssh cds-wn-02'
 alias prod3='ssh cds-wn-03'
 alias prod4='ssh cds-wn-04'
 alias prod5='ssh cds-wn-05'
-alias proddb='ssh cds-dbmaster-01'
+alias dbmaster='ssh cds-dbmaster-01'
 alias builder='ssh root@cds-builder-test-01.cern.ch'
 
 #Windows terminal
@@ -187,3 +191,6 @@ alias bx="bundle exec"
 
 # Miscellaneous
 alias gpw="workon gpw && cd ./workspace/gpw && ./gpw.py"
+
+# Elasticsearch aliases
+alias es-delete-indexes="curl -XDELETE 'http://localhost:9200/_all'"
