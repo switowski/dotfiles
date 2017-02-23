@@ -1,95 +1,100 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
 [keybindings]
-  switch_to_tab_6 = <Primary>6
+  broadcast_all = <Ctrl><Shift>a
   broadcast_group = <Ctrl><Shift>g
+  broadcast_off = <Primary><Shift>d
+  go_down = <Shift>Down
+  go_left = <Shift>Left
+  go_right = <Shift>Right
+  go_up = <Shift>Up
   next_tab = <Primary>Page_Up
   prev_tab = <Primary>Page_Down
-  broadcast_all = <Ctrl><Shift>a
-  switch_to_tab_7 = <Primary>7
-  switch_to_tab_4 = <Primary>4
-  switch_to_tab_5 = <Primary>5
+  switch_to_tab_1 = <Primary>1
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3
-  broadcast_off = <Primary><Shift>d
-  switch_to_tab_1 = <Primary>1
+  switch_to_tab_4 = <Primary>4
+  switch_to_tab_5 = <Primary>5
+  switch_to_tab_6 = <Primary>6
+  switch_to_tab_7 = <Primary>7
   switch_to_tab_8 = <Primary>8
   switch_to_tab_9 = <Primary>9
-[profiles]
-  [[default]]
-    scrollback_lines = 10000
-    background_color = "#002b36"
-    background_image = None
-    scrollback_infinite = True
-    foreground_color = "#eee8d5"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
   [[prod]]
     [[[child0]]]
-      position = 1360:25
-      type = Window
       order = 0
       parent = ""
+      position = 1360:25
       size = 1920, 1005
+      type = Window
     [[[child1]]]
-      position = 873
-      type = HPaned
       order = 0
       parent = child0
+      position = 873
+      type = HPaned
     [[[child2]]]
+      order = 0
+      parent = child1
       position = 502
       type = VPaned
-      order = 0
-      parent = child1
     [[[child5]]]
+      order = 1
+      parent = child1
       position = 366
       type = VPaned
-      order = 1
-      parent = child1
     [[[child7]]]
+      order = 1
+      parent = child5
       position = 320
       type = VPaned
-      order = 1
-      parent = child5
     [[[terminal3]]]
-      profile = default
-      group = All
-      parent = child2
       command = ssh cds-wn-02
-      type = Terminal
-      order = 0
-    [[[terminal4]]]
-      profile = default
       group = All
+      order = 0
       parent = child2
+      profile = default
+      type = Terminal
+    [[[terminal4]]]
       command = ssh cds-wn-01
-      type = Terminal
+      group = All
       order = 1
+      parent = child2
+      profile = default
+      type = Terminal
     [[[terminal6]]]
-      profile = default
-      group = All
-      parent = child5
       command = ssh cds-wn-03
-      type = Terminal
-      order = 0
-    [[[terminal9]]]
-      profile = default
       group = All
-      parent = child7
-      command = ssh cds-wn-05
+      order = 0
+      parent = child5
+      profile = default
       type = Terminal
-      order = 1
     [[[terminal8]]]
-      profile = default
-      group = All
-      parent = child7
       command = ssh cds-wn-04
-      type = Terminal
+      group = All
       order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+    [[[terminal9]]]
+      command = ssh cds-wn-05
+      group = All
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_image = None
+    foreground_color = "#eee8d5"
+    scrollback_infinite = True
+    scrollback_lines = 10000

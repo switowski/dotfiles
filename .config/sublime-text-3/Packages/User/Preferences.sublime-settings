@@ -6,12 +6,13 @@
 	"always_show_minimap_viewport": true,
 	"binary_file_patterns":
 	[
-		"node_modules/*",
-		"*.svg"
+		"*.svg",
+		"__pycache__/**",
+		"node_modules/*"
 	],
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"draw_white_space": "all",
 	"font_size": 10,
 	"highlight_line": true,
@@ -19,6 +20,10 @@
 	[
 		"Markdown",
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"transcoding"
 	],
 	"indent_guide_options":
 	[
@@ -40,6 +45,6 @@
 	"tab_size": 4,
 	"theme": "Cobalt2.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": false,
 	"word_wrap": true
 }

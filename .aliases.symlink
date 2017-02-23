@@ -138,12 +138,32 @@ alias gsh="git show"
 alias gss="git stash save"
 alias gst="git status"
 
-# Work related aliases, might want to uncomment them
-# Make install aliases
-alias mi='make install'
-alias miy='make install-yes-i-know'
-alias cfgur='inveniocfg --update-all --reset-all'
-alias im='inveniomanage'
+# Faster IPython
+alias i='ipython'
+
+# Rails aliases
+alias rs="rails server"
+alias rc="rails console"
+alias bx="bundle exec"
+
+# Miscellaneous
+alias gpw="workon gpw && cd ./workspace/gpw && ./gpw.py"
+
+# Elasticsearch aliases
+alias es-delete-indexes="curl -XDELETE 'http://localhost:9200/_all'"
+
+
+#   ---------------------------
+#   Work related aliases
+#   ---------------------------
+
+# CDS 3 commands
+alias cds3install='pip install -e .[all] && python -O -m compileall . && cds npm && cdvirtualenv var/instance/static && npm install && cds collect -v && cds assets build'
+alias cds3dbrecreate='yes | cds db destroy && cds db init && cds db create && cds users create test@test.ch -a'
+alias cds3indexrecreate="curl -XDELETE 'http://localhost:9200/_all' && cds index init"
+
+alias cds3celerystart='celery -A cds.celery worker -l info'
+alias cds3flowerstart='celery -A cds.celery worker -l info'
 
 #SSH aliases
 alias lx='ssh switowsk@lxplus.cern.ch'
@@ -180,17 +200,3 @@ alias syncfromremote='rsync -avz switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/swi
 
 #virtualenv aliases
 alias master='workon master'
-
-# Faster IPython
-alias i='ipython'
-
-# Rails aliases
-alias rs="rails server"
-alias rc="rails console"
-alias bx="bundle exec"
-
-# Miscellaneous
-alias gpw="workon gpw && cd ./workspace/gpw && ./gpw.py"
-
-# Elasticsearch aliases
-alias es-delete-indexes="curl -XDELETE 'http://localhost:9200/_all'"
