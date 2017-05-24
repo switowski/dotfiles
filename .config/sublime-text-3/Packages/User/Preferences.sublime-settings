@@ -7,7 +7,12 @@
 	"binary_file_patterns":
 	[
 		"*.svg",
+		".cache/**",
+		".eggs/**",
+		"/home/switowsk/workspace/mk/tmp/**",
+		"CDS.egg-info/**",
 		"__pycache__/**",
+		"cds_dojson.egg-info/**",
 		"node_modules/*"
 	],
 	"bold_folder_labels": true,
@@ -30,6 +35,7 @@
 		"draw_normal",
 		"draw_active"
 	],
+	"indent_to_bracket": true,
 	"index_exclude_patterns":
 	[
 		"/home/seba/workspace/mk/node_modules*",

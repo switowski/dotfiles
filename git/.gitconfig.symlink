@@ -18,7 +18,9 @@
     sh = show
     ss = stash save
     st = status
-
+    # Squash last N commits together
+    # Usage: git squash N
+    squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
 [color]
     ui = auto
 
