@@ -4,7 +4,7 @@
 set nocompatible      " We're running Vim, not Vi!
 
 " Map leader key
-let mapleader = ","
+let mapleader = "\<Space>"
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection

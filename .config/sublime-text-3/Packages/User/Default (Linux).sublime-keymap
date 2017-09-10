@@ -7,6 +7,11 @@
 	{ "keys": ["alt+l"], "command": "lower_case" },
 	// just to prevent this fucking closing mistake
 	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
-	{ "keys": ["ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"}}
-
+	{ "keys": ["ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+    // Origami settings
+    { "keys": ["ctrl+q", "ctrl+d"], "command": "destroy_pane", "args": {"direction": "self"} },
+    { "keys": ["ctrl+q", "up"], "command": "travel_to_pane", "args": {"direction": "up"} },
+    { "keys": ["ctrl+q", "right"], "command": "travel_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+q", "down"], "command": "travel_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+q", "left"], "command": "travel_to_pane", "args": {"direction": "left"} },
 ]

@@ -1,18 +1,39 @@
 {
+	"binary_file_patterns":
+	[
+		"tmp/*",
+		"dist/*",
+		"node_modules/*",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.svg"
+	],
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"font_size": 10,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage",
-		"SublimeCodeIntel",
-		"Vintageous",
-		"Markdown"
+		"Vintageous"
 	],
 	"rulers":
 	[
 		78
 	],
 	"soda_classic_tabs": true,
+	"tab_size": 2,
 	"theme": "Soda Dark 3.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

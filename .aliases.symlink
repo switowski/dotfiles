@@ -103,6 +103,7 @@ alias gf="git reflog"
 alias gl="git log"
 alias glp="git log --pretty=oneline"
 alias gp="git push"
+alias gps="git push"
 alias gpl="git pull"
 alias gs="git status"
 alias gsa="git stash apply"
@@ -136,11 +137,16 @@ alias prod3='ssh cds-wn-03'
 alias prod4='ssh cds-wn-04'
 alias prod5='ssh cds-wn-05'
 alias proddb='ssh cds-dbmaster-01'
+alias cloudatcost='ssh root@64.137.164.14'
+alias deploystack-wn='ssh switowski@192.241.246.172'
+# Thanks to the configuration in .ssh/config that specifies the key and IP, we can simplify the ssh command
+alias aws='ssh aws-deploystack'
 
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'
 alias windowsr800x600='rdesktop  -a 16 -u switowsk -d CERN -g 800x600 cernts.cern.ch'
 alias windowsr1280x1024='rdesktop  -a 16 -u switowsk -d CERN -g 1280x1024 cernts.cern.ch'
+alias windowsrbig='rdesktop  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch'
 
 #Sync aliases
 alias syncfromlocal='rsync -avz /home/switowsk/src/cds-invenio-cern/ switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/switowsk/private/cds-invenio-cern/'
@@ -154,4 +160,11 @@ alias i='ipython'
 
 # Rails aliases
 alias rs="rails server"
+alias rsp="bundle exec puma"
 alias rc="rails console"
+
+# Node aliases
+alias npm-exec='PATH=$(npm bin):$PATH'
+
+# Haskell
+alias ghci='stack ghci'

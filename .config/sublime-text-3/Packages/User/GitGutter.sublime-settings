@@ -1,3 +1,4 @@
 {
-	"non_blocking": true
+	"non_blocking": true,
+    "protected_regions" : ["SublimeLinter", "BracketHighlighter"]
 }

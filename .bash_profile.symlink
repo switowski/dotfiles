@@ -7,5 +7,4 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
         unset file
 
 # init z https://github.com/rupa/z
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="$HOME/.rbenv/bin:$PATH"
