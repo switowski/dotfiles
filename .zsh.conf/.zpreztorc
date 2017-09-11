@@ -23,18 +23,20 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
+# spectrum requires directory!
+# completion requires utility!
  zstyle ':prezto:load' pmodule \
    'environment' \
    'archive' \
    'terminal' \
    'editor' \
    'history' \
+   'syntax-highlighting' \
    'history-substring-search' \
    'directory' \
    'spectrum' \
    'utility' \
    'completion' \
-   'syntax-highlighting' \
    'fasd' \
    'git' \
    'prompt'
