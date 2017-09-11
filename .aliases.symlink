@@ -57,6 +57,13 @@ function mpr() {
   fi
 }
 
+# Update all invenio modules in the src folder
+function update-invenio-modules() {
+  for repo in ~/src/invenio*
+  do
+    cd $repo && git checkout master && git pull && cd ..
+  done
+}
 
 #   ---------------------------
 #   5.  NETWORKING
@@ -84,11 +91,9 @@ alias -- -="cd -"
 alias cd..='cd ..'
 
 # List directory contents
-alias sl=ls
 alias ls='ls -G --color' # Compact view, show colors
 alias la='ls -AF' # Compact view, show hidden
 alias ll='ls -al'
-alias l='ls -a'
 
 # Important one ! Parenting changing perms on / #
 alias chown='chown --preserve-root'
@@ -101,9 +106,6 @@ alias rm='trash'
 # Shortcuts
 alias g="git"
 alias v="vim"
-
-# List all files colorized in long format
-alias l="ls -lF ${colorflag}"
 
 # Diff side by side for a nicer diff
 alias diffs="diff --side-by-side"
@@ -128,6 +130,7 @@ alias gps="git push"
 alias gpl="git pull"
 alias gpf="git push --force"
 alias gpr="git pull --rebase"
+alias grm="git reset --hard upstream/master"
 alias gs="git status"
 alias gsa="git stash apply"
 alias gsh="git show"
@@ -159,7 +162,29 @@ alias di="curl -XDELETE 'http://localhost:9200/_all'"
 #   ---------------------------
 
 # CDS 3 commands
-alias cds3install='pip install -r requirements.developer.txt &  pip install -e .[all] && python -O -m compileall . && cds npm && cdvirtualenv var/instance/static && npm install && cds collect -v && cds assets build && cd -'
+#alias cds3install='pip install -r requirements.developer.txt &&  pip install -e .[all] && python -O -m compileall . && cds npm && cdvirtualenv var/instance/static && npm install && cds collect -v && cds assets build && cd -'
+# Change alias into a function as it gets more complicated
+function cds3install() {
+  cur_dir=$(pwd)
+  pip install -r requirements.developer.txt
+  pip install -e .[all]
+  python -O -m compileall .
+  cds npm
+
+  cdvirtualenv var/instance/static
+  npm install
+  cds collect -v 
+  cds assets build
+
+  cdvirtualenv var/instance
+  # Allow overwriting existing files
+  set -o noclobber
+  # Set some settings in case we forget to export them in env
+  echo "SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://cds:cds@localhost/cds'" >| cds.cfg
+  set +o noclobber
+  cd "$cur_dir"
+}
+
 alias cds3dbrecreate='yes | cds db destroy && cds db init && cds db create && cds users create test@test.ch -a'
 alias cds3indexrecreate="curl -XDELETE 'http://localhost:9200/_all' && cds index init"
 alias cds3locationcreate="cds files location default /eos/workspace/c/cds/avworkflow/sorenson_input --default"
@@ -169,6 +194,7 @@ alias cds3celerystart='celery -A cds.celery worker -l info'
 alias cds3flowerstart='celery -A cds.celery worker -l info'
 
 #SSH aliases
+alias deploystackaws='ssh -i "/home/switowsk/.ssh/private/DeployStackProd.pem" ubuntu@ec2-13-58-113-162.us-east-2.compute.amazonaws.com'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias dev='ssh pccis85'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
