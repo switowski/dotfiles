@@ -1,1 +1,1 @@
-/home/switowsk/.zlogout
+# Empty on purpose
