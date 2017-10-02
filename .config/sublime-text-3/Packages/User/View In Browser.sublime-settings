@@ -1,0 +1,13 @@
+{
+    "posix": {
+        "linux": {
+            "chromium": "chromium-browser"
+        },
+        "linux2": {
+            "chromium": "chromium-browser"
+        },
+    },
+
+    "browser": "chromium",
+    "selectedBrowser": "chromium"
+}

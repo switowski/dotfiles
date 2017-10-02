@@ -1,0 +1,45 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"ANSIescape",
+		"Better CoffeeScript",
+		"Dockerfile Syntax Highlighting",
+		"Emmet",
+		"ERB Snippets",
+		"Expand Selection to Quotes",
+		"FileDiffs",
+		"Git",
+		"GitGutter",
+		"HTML Boilerplate",
+		"Jinja2",
+		"JSHint",
+		"JSHint Gutter",
+		"JSONComma",
+		"LESS",
+		"MarkdownEditing",
+		"MoveTab",
+		"Origami",
+		"Package Control",
+		"ProjectManager",
+		"Pug",
+		"Puppet",
+		"Python 3",
+		"RuboCop",
+		"Ruby Slim",
+		"SCSS",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"Theme - Cobalt2",
+		"TrailingSpaces",
+		"View In Browser",
+		"Zeal"
+	]
+}

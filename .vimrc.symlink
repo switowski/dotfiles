@@ -134,7 +134,9 @@ set autoread                    "Reload files changed outside vim
 set scrolloff=10
 set sidescrolloff=15
 set sidescroll=1
-set relativenumber              "Line number relative to cursor position
+" Disabled relative numbers - apparently they make Vim slow and I don't use it
+" anyway
+" set relativenumber              "Line number relative to cursor position
 " }}}
 
 

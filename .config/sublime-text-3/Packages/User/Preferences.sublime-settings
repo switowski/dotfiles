@@ -4,6 +4,7 @@
 		"clickable"
 	],
 	"always_show_minimap_viewport": true,
+	"auto_find_in_selection": true,
 	"binary_file_patterns":
 	[
 		"*.svg",
@@ -19,8 +20,10 @@
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
 	"font_size": 10,
 	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Markdown",
@@ -41,16 +44,16 @@
 		"/home/seba/workspace/mk/node_modules*",
 		"*.log"
 	],
-	"index_files": true,
+	"remember_full_screen": true,
 	"rulers":
 	[
 		78
 	],
-	"scroll_past_end": true,
 	"shift_tab_unindent": true,
+	"show_encoding": true,
 	"tab_size": 4,
-	"theme": "Cobalt2.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": false,
+	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }

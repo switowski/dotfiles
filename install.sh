@@ -154,7 +154,7 @@ function install_vundle () {
   # This function will install Vundle for vim
   if [[ ! -d ~/.vim/bundle/Vundle.vim ]]
   then
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   fi
   # TODO add a message that directory exists
   # Update plugins
@@ -179,16 +179,17 @@ function setup_terminator () {
 }
 
 function setup_sublime () {
-  # Setup some sublime preferences
-  # Make dir if doesn't exists
-  mkdir -p "$HOME/.config/sublime-text-3/Packages/User/"
-  for file in $DOTFILES_ROOT/.config/sublime-text-3/Packages/User/*
-	do
-	# link_files_force won't work with spaces, this is a workaround
-    ln -sf "$file" "$HOME/.config/sublime-text-3/Packages/User/`basename "$file"`"
-    success "Linked $HOME/.config/sublime-text-3/Packages/User/`basename "$file"` to $file"
-  done
-  success "Remember to install your favorite sublime plugins listed in README file"
+  # Symlink sublime User preferences to those from dotfiles
+  rm -rf "$HOME/.config/sublime-text-3/Packages/User"
+  ln -sf $DOTFILES_ROOT/.config/sublime-text-3/Packages/User "$HOME/.config/sublime-text-3/Packages/User"
+  success "Linked $HOME/.config/sublime-text-3/Packages/User to $DOTFILES_ROOT/.config/sublime-text-3/Packages/User"
+}
+
+function install_fonts () {
+  # Copy fonts to proper folder
+  mkdir -p $HOME/.local/share/fonts
+  cp -R $DOTFILES_ROOT/fonts/* $HOME/.local/share/fonts
+  success "Copied $DOTFILES_ROOT/fonts/* to $HOME/.local/share/fonts"
 }
 
 function setup_gitconfig () {
@@ -207,17 +208,17 @@ function setup_gitconfig () {
 function install_prezto () {
   # This function will install prezto - zsh framework: https://github.com/sorin-ionescu/prezto
   if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
   fi
   for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/z*
-	do
-	echo "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)"
-	echo "$rcfile"
+  do
+  echo "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)"
+  echo "$rcfile"
     link_files_force "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
     # now, we want to add our own config to prezto files. We can do this by appending our configuration to the end of each file
     if [ -f "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)" ]
     then
-	  echo "copying additional config"
+    echo "copying additional config"
       cat "$DOTFILES_ROOT/.zsh.conf/.$(basename $rcfile)" >> "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
     fi
   done
@@ -267,16 +268,34 @@ function install_packages () {
   done
 }
 
+function install_sublime () {
+  # Install sublime - requires adding GPG key - it will work automatically only if apt-get is available
+  # TODO: make it work on other systems
+  if [ $INSTALLER = 'apt-get -y install' ]
+  then
+    $DOWNLOADER -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    sudo apt-get update
+    sudo $INSTALLER sublime-text
+    success "Installed Sublime!"
+  else
+    info "Not apt-get! Follow instructions on https://www.sublimetext.com/docs/3/linux_repositories.html to install sublime."
+  fi
+}
+
+
 function install_programs () {
   # Installs programs from a list
 
   # Add software HERE
-  apt_get_software=( vim chromium-browser firefox curl gnome-do colordiff )
+  apt_get_software=( vim chromium-browser firefox curl colordiff )
   confirm "Install core software: ${apt_get_software[*]}" "install_packages apt_get_software[@]"
+
+  confirm "Install sublime text editor?" "install_sublime"
 
   # Add additional software (additional means you don't want it on every machine) HERE
   # This list can be modified depending on OS and other preferences
-  apt_get_additional_software=( terminator imagemagick gimp geany thunderbird nodejs ipython nautilus-dropbox cifs-utils htop glipper )
+  apt_get_additional_software=( terminator imagemagick gimp geany thunderbird nodejs ipython nautilus-dropbox cifs-utils htop glipper gnome-do )
   # Glipper - it's a copy/paste manager - allows to copy and paste multiple stuff and easily change what is in the clipboard
   confirm "Install additional software: ${apt_get_additional_software[*]}" "install_packages apt_get_additional_software[@]"
 
@@ -345,6 +364,10 @@ function install () {
   info "---- INSTALL: 8. Install Vundle for vim if vim is installed"
   # TODO run it only if vim is installed (and maybe dependind on the content of the .vimrc)
   confirm "Install Vundle ?" install_vundle
+
+ # Install custom fonts
+  info "---- INSTALL: 9. Install custom fonts"
+  confirm "Install custom fonts" install_fonts
 
   info "---- INSTALL: Finished !"
 
