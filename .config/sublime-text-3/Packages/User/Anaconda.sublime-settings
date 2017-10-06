@@ -1,5 +1,9 @@
 {
     /*
+        Set to false to disable Anaconda linting entirely.
+    */
+    "anaconda_linting": false,  // I will use SublimeLinter for linting
+    /*
 
         If anaconda_gutter_marks is true, this determines what theme is used.
         Theme 'basic' only adds dots and circles to gutter.
@@ -17,7 +21,7 @@
 
         Use this at your own risk.
     */
-    "auto_formatting": true,
+    // "auto_formatting": true,  // Disabled - probably makes sublime slow
     /*
         If complete_parameters is true, anaconda will add function and class
         parameters to its completions.
@@ -25,8 +29,8 @@
         If complete_all_parameters is true, it will add all the possible
         parameters, if it's false, it will add only required parameters
     */
-    "complete_parameters": true,
-    "complete_all_parameters": false,
+    // "complete_parameters": true,  // Disabled - probably makes sublime slow
+    // "complete_all_parameters": false,
     // "display_signatures": false,  -- I don't know why I was disabling it
     /*
         A list of pep8 error numbers to ignore.

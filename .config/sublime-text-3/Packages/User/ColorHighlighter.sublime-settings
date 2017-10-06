@@ -1,0 +1,68 @@
+{
+	"search_colors_in":
+	{
+		"all_content":
+		{
+			"color_highlighters":
+			{
+				"color_scheme":
+				{
+					"enabled": true,
+					"highlight_style": "filled"
+				},
+				"gutter_icons":
+				{
+					"enabled": true,
+					"icon_style": "circle"
+				},
+				"phantoms":
+				{
+					"enabled": false
+				}
+			},
+			"enabled": true
+		},
+		"hover":
+		{
+			"color_highlighters":
+			{
+				"color_scheme":
+				{
+					"enabled": false,
+					"highlight_style": "filled"
+				},
+				"gutter_icons":
+				{
+					"enabled": false,
+					"icon_style": "circle"
+				},
+				"phantoms":
+				{
+					"enabled": false
+				}
+			},
+			"enabled": true
+		},
+		"selection":
+		{
+			"color_highlighters":
+			{
+				"color_scheme":
+				{
+					"enabled": false,
+					"highlight_style": "filled"
+				},
+				"gutter_icons":
+				{
+					"enabled": false,
+					"icon_style": "circle"
+				},
+				"phantoms":
+				{
+					"enabled": true
+				}
+			},
+			"enabled": true
+		}
+	}
+}

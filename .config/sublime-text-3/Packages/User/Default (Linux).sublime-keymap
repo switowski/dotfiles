@@ -2,12 +2,15 @@
     { "keys": ["alt+left"], "command": "jump_back" },
     { "keys": ["alt+right"], "command": "jump_forward" },
     { "keys": ["alt+d"], "command": "goto_definition" },
-    // just to prevent this fucking closing mistake
+    // Just to prevent this fucking closing mistake
     { "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
     // Unbind ctrl+q, we will use it as command key in sublime origami
     { "keys": ["ctrl+q"], "command": "unbound" },
     // Change text to title case
     { "keys": ["ctrl+k", "ctrl+t"], "command": "title_case" },
+    // Expand selection to quotes (comes from "expand selection to quotes package")
+    // Ihis is a default setting, I'm just putting it here so I remember it exists.
+    // { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes"
 
         // Origami settings
     { "keys": ["ctrl+q", "up"], "command": "travel_to_pane", "args": {"direction": "up"} },
