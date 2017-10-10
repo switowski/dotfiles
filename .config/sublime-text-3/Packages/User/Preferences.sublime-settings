@@ -27,8 +27,6 @@
 	"ignored_packages":
 	[
 		"Markdown",
-		// "SublimeLinter-pep8",
-		// "SublimeLinter-pydocstyle",
 		"Vintage"
 	],
 	"ignored_words":

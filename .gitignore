@@ -10,3 +10,4 @@ Package\ Control.ca-certs/
 # Ignore Projects and workspaces, as they should be specific to a given machine
 *.sublime-project
 *.sublime-workspace
+.config/sublime-text-3/Packages/User/Projects/recent.json

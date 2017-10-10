@@ -11,6 +11,8 @@
     // Expand selection to quotes (comes from "expand selection to quotes package")
     // Ihis is a default setting, I'm just putting it here so I remember it exists.
     // { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes"
+    // Toggle minimap
+    { "keys": ["f8"], "command": "toggle_minimap" },
 
         // Origami settings
     { "keys": ["ctrl+q", "up"], "command": "travel_to_pane", "args": {"direction": "up"} },
