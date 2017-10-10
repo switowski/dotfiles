@@ -1,0 +1,31 @@
+{
+    "usageCount": 0, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "Closing ticket", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [
+            ",closing"
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "modes": [
+        1
+    ], 
+    "showInTrayMenu": false, 
+    "matchCase": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "phrase", 
+    "sendMode": "kb"
+}

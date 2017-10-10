@@ -175,7 +175,16 @@ function setup_terminator () {
   # Make dir if doesn't exists
   mkdir -p "$HOME/.config/terminator/config"
   link_files_force "$DOTFILES_ROOT/.config/terminator/config.symlinkman" "$HOME/.config/terminator/config"
-  success "Linked $HOME/.config/terminator/config to $DOTFILES_ROOT/.config/terminator/config.symlinkman"
+  #success "Linked $HOME/.config/terminator/config to $DOTFILES_ROOT/.config/terminator/config.symlinkman"
+}
+
+
+function setup_autokey () {
+  # Create symlinks for my public autokey scripts
+  # Make dir if doesn't exists
+  mkdir -p "$HOME/.config/autokey/data"
+  link_files_force "$DOTFILES_ROOT/.config/autokey/autokey.json.symlink" "$HOME/.config/autokey/autokey.json"
+  link_files_force "$DOTFILES_ROOT/.config/autokey/data/Public" "$HOME/.config/autokey/data/"
 }
 
 function setup_sublime () {
@@ -288,7 +297,7 @@ function install_programs () {
   # Installs programs from a list
 
   # Add software HERE
-  apt_get_software=( vim chromium-browser firefox curl colordiff )
+  apt_get_software=( vim chromium-browser firefox curl colordiff autokey-gtk)
   confirm "Install core software: ${apt_get_software[*]}" "install_packages apt_get_software[@]"
 
   confirm "Install sublime text editor?" "install_sublime"
@@ -368,6 +377,10 @@ function install () {
  # Install custom fonts
   info "---- INSTALL: 9. Install custom fonts"
   confirm "Install custom fonts" install_fonts
+
+ # Setup autokey
+  info "---- INSTALL: 10. Setup autokey"
+  confirm "Setup autokey" setup_autokey
 
   info "---- INSTALL: Finished !"
 
