@@ -168,3 +168,13 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 
 # Haskell
 alias ghci='stack ghci'
+
+# i3 aliases
+alias con='nano $HOME/.i3/config'
+alias comp='nano $HOME/.config/compton.conf'
+alias fixit='sudo rm -f /var/lib/pacman/db.lck'
+alias inst='sudo pacman -S'
+alias mirrors='sudo pacman-mirrors -g'
+alias printer='system-config-printer'
+alias update='yaourt -Syua'
+

@@ -8,10 +8,13 @@ DOTFILES_ROOT="`pwd`"
 #TODO make this better - put it in a function or something
 apt=`command -v apt-get`
 yum=`command -v yum`
+pacman=`command -v pacman`
 if [ -n "$apt" ]; then
     INSTALLER='apt-get -y install'
 elif [ -n "$yum" ]; then
     INSTALLER='yum -y install'
+elif [ -n "$pacman" ]; then
+    INSTALLER='pacman -S'
 else
     echo "Err: no path to apt-get or yum" >&2;
     exit 1;
