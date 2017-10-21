@@ -1,4 +1,10 @@
 {
+	"added_words":
+	[
+		"clickable"
+	],
+	"always_show_minimap_viewport": true,
+	"auto_find_in_selection": true,
 	"binary_file_patterns":
 	[
 		"tmp/*",
@@ -17,23 +23,54 @@
 		"*.swf",
 		"*.jar",
 		"*.zip",
-		"*.svg"
+		"*.svg",
+		".cache/**",
+		".eggs/**",
+		"/home/switowsk/workspace/mk/tmp/**",
+		"CDS.egg-info/**",
+		"__pycache__/**",
+		"cds_dojson.egg-info/**",
+		"node_modules/*"
 	],
+	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/brogrammer (SL).tmTheme",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
 	"font_size": 10,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Markdown",
 		"Vintage",
 		"Vintageous"
 	],
+	"ignored_words":
+	[
+		"transcoding"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"indent_to_bracket": true,
+	"index_exclude_patterns":
+	[
+		"/home/seba/workspace/mk/node_modules*",
+		"*.log"
+	],
+	"remember_full_screen": true,
 	"rulers":
 	[
 		78
 	],
-	"soda_classic_tabs": true,
-	"tab_size": 2,
-	"theme": "Soda Dark 3.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"shift_tab_unindent": true,
+	"show_encoding": true,
+	"tab_size": 4,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
 }

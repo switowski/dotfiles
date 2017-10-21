@@ -4,6 +4,7 @@
 
 [alias]
     amend = commit --amend
+    amendf = commit --amend --no-edit
     br = branch
     ci = commit
     co = checkout
@@ -17,7 +18,12 @@
     sh = show
     ss = stash save
     st = status
-
+    # Squash last N commits together
+    # Usage: git squash N
+    squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+    # Ignore repeated git command, like in: '$ git git git status'
+    # source http://caiustheory.com/git-git-git-git-git/
+    git = !exec git
 [color]
     ui = auto
 

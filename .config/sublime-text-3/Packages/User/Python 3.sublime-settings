@@ -1,0 +1,13 @@
+{
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".",
+			"selector": "source.python - string - constant.numeric"
+		}
+	],
+	"extensions":
+	[
+		"py"
+	]
+}

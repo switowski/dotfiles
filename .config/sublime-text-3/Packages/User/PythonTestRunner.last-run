@@ -1,0 +1,3 @@
+{
+	"last_test_run": "source ~/.virtualenvs/cdslabsp351/bin/activate;py.test ~/src/cds_labs/tests/unit/;deactivate"
+}

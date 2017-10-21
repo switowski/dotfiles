@@ -1,0 +1,31 @@
+{
+    "usageCount": 6, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "Best regards, Sebastian", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [
+            ",brs"
+        ], 
+        "immediate": true, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "modes": [
+        1
+    ], 
+    "showInTrayMenu": false, 
+    "matchCase": false, 
+    "filter": {
+        "regex": null, 
+        "isRecursive": false
+    }, 
+    "type": "phrase", 
+    "sendMode": "kb"
+}
