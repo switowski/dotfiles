@@ -1,7 +1,9 @@
 {
 	"added_words":
 	[
-		"clickable"
+		"clickable",
+		"indices",
+		"Invenio"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_find_in_selection": true,

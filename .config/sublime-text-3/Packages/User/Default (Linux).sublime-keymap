@@ -16,7 +16,7 @@
 
     // Expand selection to quotes (comes from "expand selection to quotes package")
     // This is a default setting, I'm just putting it here so I remember it exists.
-    // { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes"
+    { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" },
     // Toggle minimap
     { "keys": ["f8"], "command": "toggle_minimap" },
 

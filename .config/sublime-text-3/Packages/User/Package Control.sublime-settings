@@ -17,6 +17,7 @@
 		"FileDiffs",
 		"Git",
 		"GitGutter",
+		"isort",
 		"Jinja2",
 		"JSONComma",
 		"Markdown Preview",

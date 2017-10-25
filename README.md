@@ -27,3 +27,5 @@ chmod +x install.sh
 * Add some validators that won't allow to config terminator/sublime if they are not installed (otherwise, the symlinks break)
 * Export/Import Thunderbird filters: http://askubuntu.com/questions/184288/how-to-export-thunderbird-mail-filters
 * Add various linters for sublime
+* Install pyenv, virtualenv
+    + Add https://github.com/concordusapps/pyenv-implict plugin for pyenv (so python2 command will work when Python
