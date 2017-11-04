@@ -176,7 +176,7 @@ function install_fasd () {
 function setup_terminator () {
   # Install terminator config
   # Make dir if doesn't exists
-  mkdir -p "$HOME/.config/terminator/config"
+  mkdir -p "$HOME/.config/terminator"
   link_files_force "$DOTFILES_ROOT/.config/terminator/config.symlinkman" "$HOME/.config/terminator/config"
   #success "Linked $HOME/.config/terminator/config to $DOTFILES_ROOT/.config/terminator/config.symlinkman"
 }

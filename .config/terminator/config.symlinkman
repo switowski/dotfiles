@@ -93,8 +93,8 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#002b36"
-    background_image = None
-    foreground_color = "#eee8d5"
+    background_color = "#282828"
+    cursor_color = "#eee8d5"
+    foreground_color = "#ebdbb2"
     scrollback_infinite = True
     scrollback_lines = 10000
