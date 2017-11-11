@@ -11,6 +11,8 @@
   go_up = <Shift>Up
   next_tab = <Primary>Page_Up
   prev_tab = <Primary>Page_Down
+  rotate_ccw = <Shift><Alt>r
+  rotate_cw = <Alt>r
   switch_to_tab_1 = <Primary>1
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3

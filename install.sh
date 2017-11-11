@@ -181,6 +181,14 @@ function setup_terminator () {
   #success "Linked $HOME/.config/terminator/config to $DOTFILES_ROOT/.config/terminator/config.symlinkman"
 }
 
+function setup_i3 () {
+  # Setup i3 config
+  # Make dir if doesn't exists
+  mkdir -p "$HOME/.i3"
+  link_files_force "$DOTFILES_ROOT/.config/.i3/config.symlinkman" "$HOME/.i3/config"
+}
+
+
 
 function setup_autokey () {
   # Create symlinks for my public autokey scripts
@@ -384,6 +392,10 @@ function install () {
  # Setup autokey
   info "---- INSTALL: 10. Setup autokey"
   confirm "Setup autokey" setup_autokey
+
+ # Setup i3
+  info "---- INSTALL: 11. Setup i3"
+  confirm "Setup i3" setup_i3
 
   info "---- INSTALL: Finished !"
 
