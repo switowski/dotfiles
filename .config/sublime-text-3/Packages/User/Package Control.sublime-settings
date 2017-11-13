@@ -29,7 +29,6 @@
 		"Pug",
 		"Puppet",
 		"Python 3",
-		"RuboCop",
 		"Ruby Slim",
 		"SCSS",
 		"SideBarEnhancements",
@@ -39,6 +38,8 @@
 		"SublimeLinter-json",
 		"SublimeLinter-pep8",
 		"SublimeLinter-pydocstyle",
+		"SublimeLinter-pyflakes",
+		"SublimeLinter-rubocop",
 		"TrailingSpaces",
 		"View In Browser",
 		"Zeal"

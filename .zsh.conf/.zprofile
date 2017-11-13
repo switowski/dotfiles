@@ -11,3 +11,7 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Add ~/.rbenv/bin to your $PATH for access to the rbenv command-line utility
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

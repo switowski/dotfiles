@@ -44,10 +44,6 @@ export NVM_DIR="/home/switowsk/.nvm"
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# Add ~/.rbenv/bin to your $PATH for access to the rbenv command-line utility
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/src

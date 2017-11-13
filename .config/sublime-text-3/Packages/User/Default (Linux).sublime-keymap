@@ -1,13 +1,15 @@
 [
-    { "keys": ["alt+left"], "command": "jump_back" },
-    { "keys": ["alt+right"], "command": "jump_forward" },
-    { "keys": ["alt+d"], "command": "goto_definition" },
     // Just to prevent closing sublime by mistake
     { "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
-    // Unbind ctrl+q, we will use it as command key in sublime origami
-    { "keys": ["ctrl+q"], "command": "unbound" },
-    // TODO: Check if using ctrl+q for word wrap still allows to use it for Origami
+    { "keys": ["alt+left"], "command": "jump_back" },
+
+    { "keys": ["alt+right"], "command": "jump_forward" },
+    { "keys": ["alt+d"], "command": "goto_definition" },
+
 	{ "keys": ["ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+    { "keys": ["f8"], "command": "toggle_minimap" },
+    { "keys": ["ctrl+shift+r"], "command": "reveal_in_side_bar" },
+    { "keys": ["ctrl+shift+c"], "command": "copy_path" },
 
     // Change text
     { "keys": ["ctrl+k", "ctrl+t"], "command": "title_case" },
@@ -17,8 +19,6 @@
     // Expand selection to quotes (comes from "expand selection to quotes package")
     // This is a default setting, I'm just putting it here so I remember it exists.
     { "keys": ["ctrl+'"], "command": "expand_selection_to_quotes" },
-    // Toggle minimap
-    { "keys": ["f8"], "command": "toggle_minimap" },
 
     // Origami settings
     { "keys": ["ctrl+q", "ctrl+d"], "command": "destroy_pane", "args": {"direction": "self"} },

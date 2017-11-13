@@ -44,6 +44,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"ColorHighlighter",
 		"Markdown",
 		"Vintage",
 		"Vintageous"
