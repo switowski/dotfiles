@@ -8,7 +8,7 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -74,6 +74,10 @@ bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 focus_follows_mouse no
+
+# Disable focus wrapping (https://github.com/i3/i3/issues/2352)
+# It will work in the next release of i3
+force_focus_wrapping no
 
 # change focus
 bindsym $mod+j focus left
@@ -383,13 +387,31 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border      backgr.     text        indic.      child_border
-client.focused          $i3_color8  $i3_color8  $i3_color11 $i3_color12
-client.focused_inactive $i3_color9  $i3_color9  $i3_color4  $i3_color10
-client.unfocused        $i3_color9  $i3_color9  $i3_color4  $i3_color10
-client.urgent           $i3_color13 $i3_color12 $i3_color4  $i3_color14
-client.placeholder      $i3_color15 $i3_color17 $i3_color16 $i3_color15 $i3_color17
+#client.focused          $i3_color8  $i3_color8  $i3_color11 $i3_color12
+#client.focused_inactive $i3_color9  $i3_color9  $i3_color4  $i3_color10
+#client.unfocused        $i3_color9  $i3_color9  $i3_color4  $i3_color10
+#client.urgent           $i3_color13 $i3_color12 $i3_color4  $i3_color14
+#client.placeholder      $i3_color15 $i3_color17 $i3_color16 $i3_color15 $i3_color17
 
 client.background       $i3_background
+
+# Custom theme colors
+set $bg            #8b2f45
+set $bg-inactive   #a0a0a0
+set $bg-urgent     #b5294a
+set $text          #eeeeec
+set $text-inactive #babdb6
+
+set $bar           #222222
+set $seperator     #444444
+set $statusline    #888A85
+
+#                       border        background   text           indicator
+client.focused          $bg           $bg          $text          $bar
+client.unfocused        $bg-inactive  $bg-inactive $text-inactive $bar
+client.focused_inactive $bg-inactive  $bg-inactive $text-inactive $bar
+client.urgent           $bg-urgent    $bg-urgent   $text          $bar
+
 
 #############################
 ### settings for i3-gaps: ###
@@ -454,8 +476,7 @@ mode "$mode_gaps_outer" {
 ########################
 ### Custom settings: ###
 ########################
-# Use Alt+Tab and Alt+Shift+Tab to cycle between workspaces
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+# Use Alt+Tab to cycle between recent workspaces
+bindsym Mod1+Tab workspace back_and_forth
 # User alt+f4 to close focused window
 #bindsym $alt+F4 kill
