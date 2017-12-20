@@ -143,6 +143,7 @@ alias gunpush="git push -f origin HEAD^:master"
 
 # Faster IPython
 alias i='ipython'
+alias i3='ipython3'
 
 # Rails aliases
 alias rs="rails server"
@@ -181,7 +182,7 @@ function cds3install() {
   cd "$cur_dir"
 
   echo "Remember to run $ ./scripts/setup-instance.sh to setup the DB, create user and load fixtures!"
-  echo "You can now start the server with $ cds run --debugger --with-threads command"
+  echo "You can now start the server with $ cds run --debugger --with-threads"
 }
 
 alias cds3dbrecreate='yes | cds db destroy && cds db init && cds db create && cds users create test@test.ch -a'
@@ -193,7 +194,7 @@ alias cds3celerystart='celery -A cds.celery worker -l info'
 alias cds3flowerstart='celery -A cds.celery worker -l info'
 
 #SSH aliases
-alias deploystackaws='ssh -i "/home/switowsk/.ssh/private/DeployStackProd.pem" ubuntu@ec2-13-58-113-162.us-east-2.compute.amazonaws.com'
+alias deploystackaws='ssh -i "/home/switowsk/.ssh/private/DeployStackProd.pem" ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias dev='ssh pccis85'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
@@ -224,17 +225,23 @@ alias tweb1='ssh root@cdslabs-qa-web1.cern.ch'
 alias tweb2='ssh root@cdslabs-qa-web2.cern.ch'
 alias tweb3='ssh root@cdslabs-qa-web3.cern.ch'
 alias tweb4='ssh root@cdslabs-qa-web4.cern.ch'
+alias tlb1='ssh root@cdslabs-qa-lb1.cern.ch'
+alias tlb2='ssh root@cdslabs-qa-lb2.cern.ch'
 # cds-videos aliases
 alias mq='ssh root@videos-cds-mq.cern.ch'
 alias task1='ssh root@videos-cds-task1.cern.ch'
 alias task2='ssh root@videos-cds-task2.cern.ch'
 alias task3='ssh root@videos-cds-task3.cern.ch'
+alias task4='ssh root@videos-cds-task4.cern.ch'
+alias task5='ssh root@videos-cds-task5.cern.ch'
 alias builder='ssh root@videos-cds-builder1.cern.ch'
 alias web1='ssh root@videos-cds-web1.cern.ch'
 alias web2='ssh root@videos-cds-web2.cern.ch'
 alias web3='ssh root@videos-cds-web3.cern.ch'
 alias web4='ssh root@videos-cds-web4.cern.ch'
 alias mq='ssh root@videos-cds-mq.cern.ch'
+alias lb1='ssh root@videos-cds-lb1.cern.ch'
+alias lb2='ssh root@videos-cds-lb2.cern.ch'
 
 #Windows terminal
 alias windowsr='rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch'

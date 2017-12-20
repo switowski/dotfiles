@@ -3,17 +3,16 @@
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
 [keybindings]
-  broadcast_all = <Ctrl><Shift>a
+  broadcast_all = None
   broadcast_group = <Ctrl><Shift>g
   broadcast_off = <Primary><Shift>d
   go_down = <Shift>Down
   go_left = <Shift>Left
   go_right = <Shift>Right
   go_up = <Shift>Up
-  next_tab = <Primary>Page_Up
-  prev_tab = <Primary>Page_Down
-  rotate_ccw = <Shift><Alt>r
-  rotate_cw = <Alt>r
+  next_tab = <Primary>Page_Down
+  prev_tab = <Primary>Page_Up
+  rotate_ccw = <Shift><Super>r
   switch_to_tab_1 = <Primary>1
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3
@@ -92,6 +91,63 @@
       group = All
       order = 1
       parent = child7
+      profile = default
+      type = Terminal
+  [[test]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = cd379bb9-2c24-4b46-9a7f-a57f48b6c04b
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:25
+      size = 1920, 1123
+      title = cds@cdslabs-qa-web2:/opt/cds/src
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 957
+      ratio = 0.5
+      type = HPaned
+    [[[terminal2]]]
+      group = All
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 5a60aecb-806a-48bb-8079-1514ba769cc1
+    [[[terminal3]]]
+      group = All
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = cd379bb9-2c24-4b46-9a7f-a57f48b6c04b
+  [[videos-qa]]
+    [[[child0]]]
+      maximised = True
+      order = 0
+      parent = ""
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      ratio = 0.5
+      type = HPaned
+    [[[terminal2]]]
+      group = All
+      command = ssh root@cdslabs-qa-web1.cern.ch
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+    [[[terminal3]]]
+      group = All
+      command = ssh root@cdslabs-qa-web2.cern.ch
+      order = 1
+      parent = child1
       profile = default
       type = Terminal
 [plugins]
