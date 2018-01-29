@@ -1,5 +1,4 @@
 [global_config]
-  broadcast_default = off
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
 [keybindings]
@@ -125,6 +124,68 @@
       profile = default
       type = Terminal
       uuid = cd379bb9-2c24-4b46-9a7f-a57f48b6c04b
+  [[videos]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 96caa06c-a77c-45f9-9873-8d49806a8378
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:25
+      size = 1920, 1123
+      title = root@videos-cds-web1:~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 957
+      ratio = 0.5
+      type = HPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 558
+      ratio = 0.499554764025
+      type = VPaned
+    [[[child5]]]
+      order = 1
+      parent = child1
+      position = 558
+      ratio = 0.499554764025
+      type = VPaned
+    [[[terminal3]]]
+      command = ssh root@videos-cds-web1.cern.ch
+      group = All
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 96caa06c-a77c-45f9-9873-8d49806a8378
+    [[[terminal4]]]
+      command = ssh root@videos-cds-web2.cern.ch
+      group = All
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = eace6062-be20-40d8-ae0b-b4c6d3a3cee5
+    [[[terminal6]]]
+      command = ssh root@videos-cds-web3.cern.ch
+      group = All
+      order = 0
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 508d8248-99a2-4280-8cd3-78e9e3b354cc
+    [[[terminal7]]]
+      command = ssh root@videos-cds-web4.cern.ch
+      group = All
+      order = 1
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 672ca38e-aa3b-4675-9acc-6661f3a44dfb
   [[videos-qa]]
     [[[child0]]]
       maximised = True
@@ -137,15 +198,15 @@
       ratio = 0.5
       type = HPaned
     [[[terminal2]]]
-      group = All
       command = ssh root@cdslabs-qa-web1.cern.ch
+      group = All
       order = 0
       parent = child1
       profile = default
       type = Terminal
     [[[terminal3]]]
-      group = All
       command = ssh root@cdslabs-qa-web2.cern.ch
+      group = All
       order = 1
       parent = child1
       profile = default

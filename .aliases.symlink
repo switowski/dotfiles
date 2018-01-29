@@ -136,6 +136,7 @@ alias gsa="git stash apply"
 alias gsh="git show"
 alias gss="git stash save"
 alias gst="git status"
+alias gdss='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R' # Git diff side-by-side
 
 # Advanced git aliases
 alias gbrauthors="git for-each-ref --sort=-committerdate --format='%(committerdate) %(authorname) %(refname)'"
@@ -207,7 +208,7 @@ alias oldprod07='ssh pcudssx1507'
 alias oldprod97='ssh pccis97'
 alias oldprod99='ssh pccis99'
 #alias loadbalancer='ssh pcudssx1504'
-alias loadbalancer='ssh cds-lb-01'
+alias loadbalancer='ssh cds-lb-02'
 alias prod='ssh cds-wn-01'
 alias prod1='ssh cds-wn-01'
 alias prod2='ssh cds-wn-02'

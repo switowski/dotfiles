@@ -1,193 +1,129 @@
 {
-	"user":
-	{
-		"debug": false,
-		"delay": 0.25,
-		"error_color": "D02000",
-		"gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
-		"gutter_theme_excludes":
-		[
-		],
-		"lint_mode": "background",
-		"linters":
-		{
-			"jshint":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
-			},
-			"json":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				],
-				"strict": true
-			},
-			"pep8":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				],
-				"ignore": "E501",
-				"max-line-length": null,
-				"select": ""
-			},
-			"puppetlint":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
-			},
-			"pydocstyle":
-			{
-				"@disable": false,
-				"add-ignore": "D209, D203, D213",
-				"add-select": "",
-				"args":
-				[
-				],
-				"config": "",
-				"convention": "",
-				"excludes":
-				[
-				],
-				"ignore": "",
-				"ignore-decorators": "",
-				"select": ""
-			},
-			"pyflakes":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
-			},
-			"rubocop":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
-			},
-			"sass":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
-			},
-			"scss":
-			{
-				"@disable": false,
-				"args":
-				[
-				],
-				"exclude-linter": "",
-				"excludes":
-				[
-				],
-				"include-linter": ""
-			}
-		},
-		"mark_style": "outline",
-		"no_column_highlights_line": false,
-		"passive_warnings": true,
-		"paths":
-		{
-			"linux":
-			[
-				"/home/switowsk/.rbenv/shims/rubocop"
-			],
-			"osx":
-			[
-			],
-			"windows":
-			[
-			]
-		},
-		"python_paths":
-		{
-			"linux":
-			[
-			],
-			"osx":
-			[
-			],
-			"windows":
-			[
-			]
-		},
-		"rc_search_limit": 3,
-		"shell_timeout": 10,
-		"show_errors_on_save": true,
-		"show_marks_in_minimap": true,
-		"syntax_map":
-		{
-			"coffeescript (gulpfile)": "coffeescript",
-			"html (django)": "html",
-			"html (rails)": "html",
-			"html 5": "html",
-			"javascript (eslint)": "javascript",
-			"javascript (gruntfile)": "javascript",
-			"javascript (gulpfile)": "javascript",
-			"javascript (postcss)": "javascript",
-			"javascript (stylelint)": "javascript",
-			"javascript (webpack)": "javascript",
-			"json (babel)": "json",
-			"json (bower)": "json",
-			"json (composer)": "json",
-			"json (eslint)": "json",
-			"json (npm)": "json",
-			"json (postcss)": "json",
-			"json (settings)": "json",
-			"json (stylelint)": "json",
-			"json (sublime)": "json",
-			"json (tern js)": "json",
-			"php": "html",
-			"python django": "python",
-			"xml (config)": "xml",
-			"xml (svg)": "xml",
-			"yaml (circleci)": "yaml",
-			"yaml (docker)": "yaml",
-			"yaml (eslint)": "yaml",
-			"yaml (lock)": "yaml",
-			"yaml (procfile)": "yaml",
-			"yaml (stylelint)": "yaml",
-			"yaml (yarn)": "yaml"
-		},
-		"tooltip_fontsize": "1rem",
-		"tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme",
-		"tooltip_theme_excludes":
-		[
-		],
-		"tooltips": false,
-		"warning_color": "DDB700",
-		"wrap_find": true
-	}
+    "user": {
+        "@disable": true,
+        "debug": false,
+        "delay": 0.25,
+        "error_color": "D02000",
+        "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
+        "gutter_theme_excludes": [],
+        "lint_mode": "background",
+        "linters": {
+            "jshint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "json": {
+                "@disable": false,
+                "args": [],
+                "excludes": [],
+                "strict": true
+            },
+            "pep8": {
+                "@disable": false,
+                "args": [],
+                "excludes": [],
+                "ignore": "E501",
+                "max-line-length": null,
+                "select": ""
+            },
+            "puppetlint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "pydocstyle": {
+                "@disable": false,
+                "add-ignore": "D209, D203, D213",
+                "add-select": "",
+                "args": [],
+                "config": "",
+                "convention": "",
+                "excludes": [],
+                "ignore": "",
+                "ignore-decorators": "",
+                "select": ""
+            },
+            "pyflakes": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "rubocop": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "sass": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "scss": {
+                "@disable": false,
+                "args": [],
+                "exclude-linter": "",
+                "excludes": [],
+                "include-linter": ""
+            }
+        },
+        "mark_style": "outline",
+        "no_column_highlights_line": false,
+        "passive_warnings": true,
+        "paths": {
+            "linux": [
+                "/home/switowsk/.rbenv/shims/rubocop"
+            ],
+            "osx": [],
+            "windows": []
+        },
+        "python_paths": {
+            "linux": [],
+            "osx": [],
+            "windows": []
+        },
+        "rc_search_limit": 3,
+        "shell_timeout": 10,
+        "show_errors_on_save": true,
+        "show_marks_in_minimap": true,
+        "syntax_map": {
+            "coffeescript (gulpfile)": "coffeescript",
+            "html (django)": "html",
+            "html (rails)": "html",
+            "html 5": "html",
+            "javascript (eslint)": "javascript",
+            "javascript (gruntfile)": "javascript",
+            "javascript (gulpfile)": "javascript",
+            "javascript (postcss)": "javascript",
+            "javascript (stylelint)": "javascript",
+            "javascript (webpack)": "javascript",
+            "json (babel)": "json",
+            "json (bower)": "json",
+            "json (composer)": "json",
+            "json (eslint)": "json",
+            "json (npm)": "json",
+            "json (postcss)": "json",
+            "json (settings)": "json",
+            "json (stylelint)": "json",
+            "json (sublime)": "json",
+            "json (tern js)": "json",
+            "php": "html",
+            "python django": "python",
+            "xml (config)": "xml",
+            "xml (svg)": "xml",
+            "yaml (circleci)": "yaml",
+            "yaml (docker)": "yaml",
+            "yaml (eslint)": "yaml",
+            "yaml (lock)": "yaml",
+            "yaml (procfile)": "yaml",
+            "yaml (stylelint)": "yaml",
+            "yaml (yarn)": "yaml"
+        },
+        "tooltip_fontsize": "1rem",
+        "tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme",
+        "tooltip_theme_excludes": [],
+        "tooltips": false,
+        "warning_color": "DDB700",
+        "wrap_find": true
+    }
 }
