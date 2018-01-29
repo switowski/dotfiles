@@ -38,7 +38,7 @@ alias diffs="diff --side-by-side"
 alias colordiffs="colordiff --side-by-side"
 alias grep='grep --color=auto' # Automatic colors in grep output
 
-# GIT aliases
+# git aliases
 alias ga="git add"
 alias gb="git branch"
 alias gbr="git branch"
@@ -48,7 +48,7 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gf="git reflog"
-alias gffs="git add --all and git commit --amend --no-edit"
+alias gffs="git add --all && git commit --amend --no-edit"
 alias gl="git log"
 alias glp="git log --pretty=oneline"
 alias gp="git push"
@@ -76,7 +76,8 @@ alias rc="rails console"
 alias bx="bundle exec"
 
 # Miscellaneous
-alias gpw="workon gpw and cd ./workspace/gpw and ./gpw.py"
+alias gpw="workon gpw && cd ./workspace/gpw && ./gpw.py"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Elasticsearch aliases
 alias es-delete-indexes="curl -XDELETE 'http://localhost:9200/_all'"
@@ -86,10 +87,10 @@ alias di="curl -XDELETE 'http://localhost:9200/_all'"
 #   ---------------------------
 #   Work related aliases
 #   ---------------------------
-alias cds3dbrecreate='yes | cds db destroy and cds db init and cds db create and cds users create test@test.ch -a'
-alias cds3indexrecreate="curl -XDELETE 'http://localhost:9200/_all' and cds index init"
+alias cds3dbrecreate='yes | cds db destroy && cds db init && cds db create && cds users create test@test.ch -a'
+alias cds3indexrecreate="curl -XDELETE 'http://localhost:9200/_all' && cds index init"
 alias cds3locationcreate="cds files location default /eos/workspace/c/cds/avworkflow/sorenson_input --default"
-alias cds3fixtures="cds fixtures keywords and cds fixtures categories and cds fixtures licenses and cds index run"
+alias cds3fixtures="cds fixtures keywords && cds fixtures categories && cds fixtures licenses && cds index run"
 
 alias cds3celerystart='celery -A cds.celery worker -l info'
 alias cds3flowerstart='celery -A cds.celery worker -l info'

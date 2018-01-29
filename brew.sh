@@ -44,5 +44,8 @@ brew install node # This installs `npm` too using the recommended installation m
 brew install tree
 brew install ffmpeg --with-libvpx
 
+# Programming
+brew install pyenv
+
 # Remove outdated versions from the cellar
 brew cleanup

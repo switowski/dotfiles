@@ -1,0 +1,62 @@
+{
+    /*
+        Set to false to disable Anaconda linting entirely.
+    */
+    "anaconda_linting": false,  // I will use SublimeLinter for linting
+    /*
+
+        If anaconda_gutter_marks is true, this determines what theme is used.
+        Theme 'basic' only adds dots and circles to gutter.
+
+        Other available themes are 'alpha', 'bright', 'dark', 'hard', "retina"
+        (for retina displays) and 'simple'. To see icons that will be used for
+        each theme check gutter_icon_themes folder in Anaconda package.
+    */
+    "anaconda_gutter_theme": "bright",
+    /*
+        Autoformat files on save
+
+        This option is disabled by default, AutoPEP8 is really slow and it get
+        the file buffer read only while its working in the background.
+
+        Use this at your own risk.
+    */
+    // "auto_formatting": true,  // Disabled - probably makes sublime slow
+    /*
+        If complete_parameters is true, anaconda will add function and class
+        parameters to its completions.
+
+        If complete_all_parameters is true, it will add all the possible
+        parameters, if it's false, it will add only required parameters
+    */
+    // "complete_parameters": true,  // Disabled - probably makes sublime slow
+    // "complete_all_parameters": false,
+    // "display_signatures": false,  -- I don't know why I was disabling it
+    /*
+        A list of pep8 error numbers to ignore.
+        The list of error codes is in this file:
+            https://github.com/jcrocholl/pep8/blob/master/pep8.py.
+        Search for "Ennn:", where nnn is a 3-digit number.
+        E309 is ignored by default as it conflicts with pep257 E211
+    */
+    "pep8_ignore":[
+        "E501"
+    ],
+    // Set this to true to turn pep257 checking on.
+    "pep257": true,
+    /*
+        A list of pep257 error numbers to ignore.
+
+        The list can be found here: https://github.com/GreenSteam/pep257/#error-codes
+
+        D209: Multi-line docstring should end with 1 blank line is ignored by
+        default as this rule has been deprecated.
+
+        D203: 1 blank line before class docstring is ignored by default, as
+        this rule has been deprecated.
+    */
+    "pep257_ignore":[
+        "D209",
+        "D203"
+    ]
+}
