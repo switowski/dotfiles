@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-#
+# Load functions
+source ./functions.sh
+
 # Create symlinks to different files
 
 DOTFILES_ROOT="`pwd`"
@@ -35,24 +37,6 @@ fi
 set -e
 
 echo ''
-
-info () {
-  printf "  [ \033[00;34m..\033[0m ] $1 \n"
-}
-
-user () {
-  printf "\r  [ \033[0;33m?\033[0m ] $1 \n "
-}
-
-success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
-}
-
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
-  exit
-}
 
 setup_gitconfig () {
   user "Do you want to set up github user name and email ? [y]es or [n]o ?"

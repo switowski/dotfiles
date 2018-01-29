@@ -1,77 +1,3 @@
-# Temporary aliases, remember to remove later
-alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
-
-# Functions, I might want to move them somewhere
-#   extract:  Extract most know archives with one command
-#   ---------------------------------------------------------
-extract () {
-if [ -f $1 ] ; then
-  case $1 in
-    *.tar.bz2)   tar xjf $1     ;;
-    *.tar.gz)    tar xzf $1     ;;
-    *.bz2)       bunzip2 $1     ;;
-    *.rar)       unrar e $1     ;;
-    *.gz)        gunzip $1      ;;
-    *.tar)       tar xf $1      ;;
-    *.tbz2)      tar xjf $1     ;;
-    *.tgz)       tar xzf $1     ;;
-    *.zip)       unzip $1       ;;
-    *.Z)         uncompress $1  ;;
-    *.7z)        7z x $1        ;;
-    *)     echo "'$1' cannot be extracted via extract()" ;;
-     esac
- else
-     echo "'$1' is not a valid file"
- fi
-}
-
-#   findPid: find out the pid of a specified process
-#   -----------------------------------------------------
-#       Note that the command name can be specified via a regex
-#       E.g. findPid '/d$/' finds pids of all processes with names ending in 'd'
-#       Without the 'sudo' it will only find processes of the current user
-#   -----------------------------------------------------
-findPid () { lsof -t -c "$@" ; }
-
-#   killport: Kill all proccess on the spicified port:
-#   ------------------------------------------------------------
-function killport(){
-  [ $# -ne 1 ] && echo "You should choose a port" && return 1
-  sudo kill -9 $(sudo lsof -t -i :"$1")
-}
-
-#  mpr: Merge GitHub pull request on top of the `master` branch
-#   -----------------------------------------------------
-function mpr() {
-  if [[ -z $2 ]] ; then
-    branch='master'
-    echo 'Rebasing inside default branch master, if you want to use different branch, specify branch name as second parameter'
-  else
-    branch=$2
-    echo 'Rebasing inside branch $2'
-  fi
-  if [[ $1 =~ "^[0-9]+$" ]] ; then
-    git fetch upstream refs/pull/$1/head:pr/$1 && git checkout $branch && git merge --ff-only pr/$1 && git branch -D pr/$1 && echo 'Done !';
-  else
-    echo "You need to specify PR number !"
-  fi
-}
-
-# Update all invenio modules in the src folder
-function update-invenio-modules() {
-  for repo in ~/src/invenio*
-  do
-    cd $repo && git checkout master && git pull && cd ..
-  done
-}
-
-#   ---------------------------
-#   5.  NETWORKING
-#   ---------------------------
-
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
-alias server_here='python -m SimpleHTTPServer 7777' # This will start a server that lists files in the current directory
-
 #   ---------------------------
 #   6. Miscellaneous
 #   ---------------------------
@@ -122,7 +48,7 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gf="git reflog"
-alias gffs="git add --all && git commit --amend --no-edit"
+alias gffs="git add --all and git commit --amend --no-edit"
 alias gl="git log"
 alias glp="git log --pretty=oneline"
 alias gp="git push"
@@ -150,7 +76,7 @@ alias rc="rails console"
 alias bx="bundle exec"
 
 # Miscellaneous
-alias gpw="workon gpw && cd ./workspace/gpw && ./gpw.py"
+alias gpw="workon gpw and cd ./workspace/gpw and ./gpw.py"
 
 # Elasticsearch aliases
 alias es-delete-indexes="curl -XDELETE 'http://localhost:9200/_all'"
@@ -160,34 +86,10 @@ alias di="curl -XDELETE 'http://localhost:9200/_all'"
 #   ---------------------------
 #   Work related aliases
 #   ---------------------------
-
-# CDS 3 commands
-#alias cds3install='pip install -r requirements.developer.txt &&  pip install -e .[all] && python -O -m compileall . && cds npm && cdvirtualenv var/instance/static && npm install && cds collect -v && cds assets build && cd -'
-# Change alias into a function as it gets more complicated
-function cds3install() {
-  cur_dir=$(pwd)
-  pip install -r requirements.developer.txt
-  pip install -e .[all]
-
-  python -O -m compileall .
-  ./scripts/setup-assets.sh
-
-  cdvirtualenv var/instance
-  # Allow overwriting existing files
-  set -o noclobber
-  # Set some settings in case we forget to export them in env
-  echo "SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://cds:cds@localhost/cds'" >| cds.cfg
-  set +o noclobber
-  cd "$cur_dir"
-
-  echo "Remember to run $ ./scripts/setup-instance.sh to setup the DB, create user and load fixtures!"
-  echo "You can now start the server with $ cds run --debugger --with-threads command"
-}
-
-alias cds3dbrecreate='yes | cds db destroy && cds db init && cds db create && cds users create test@test.ch -a'
-alias cds3indexrecreate="curl -XDELETE 'http://localhost:9200/_all' && cds index init"
+alias cds3dbrecreate='yes | cds db destroy and cds db init and cds db create and cds users create test@test.ch -a'
+alias cds3indexrecreate="curl -XDELETE 'http://localhost:9200/_all' and cds index init"
 alias cds3locationcreate="cds files location default /eos/workspace/c/cds/avworkflow/sorenson_input --default"
-alias cds3fixtures="cds fixtures keywords && cds fixtures categories && cds fixtures licenses && cds index run"
+alias cds3fixtures="cds fixtures keywords and cds fixtures categories and cds fixtures licenses and cds index run"
 
 alias cds3celerystart='celery -A cds.celery worker -l info'
 alias cds3flowerstart='celery -A cds.celery worker -l info'
@@ -249,7 +151,12 @@ alias syncfromremote='rsync -avz switowsk@lxplus.cern.ch:/afs/cern.ch/user/s/swi
 #virtualenv aliases
 alias master='workon master'
 
-# i3 aliases
+# Temporary alias for DFS
+alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
+
+#   ---------------------------
+#   i3 aliases
+#   ---------------------------
 alias con='vim $HOME/.i3/config'
 alias comp='vim $HOME/.config/compton.conf'
 alias fixit='sudo rm -f /var/lib/pacman/db.lck'
@@ -257,4 +164,10 @@ alias inst='sudo pacman -S'
 alias mirrors='sudo pacman-mirrors -g'
 alias printer='system-config-printer'
 alias update='yaourt -Syua'
+
+#   ---------------------------
+#   Mac OS aliases
+#   ---------------------------
+
+alias cask='brew cask'
 

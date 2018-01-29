@@ -3,6 +3,11 @@ dotfiles
 
 # INSTALLATION
 
+### For MacOS:
+# TODO
+
+
+### For Linux:
 Run this
 ```sh
 git clone https://github.com/switowski/dotfiles ~/.dotfiles
