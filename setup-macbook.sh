@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# This script will setup Macbook with fish
+
 # Go through the file and uncomment parts that you don't want
 
 # Load functions
@@ -20,5 +22,13 @@ brew install mas
 # Install npm packages
 ./npm.sh
 
-# Install of-my-fish and plugins
-./omf.sh
+# Install oh-my-fish and plugins
+./fish.sh
+
+# Symlink stuff
+## Fish symlinks
+DOTFILES_ROOT="`pwd`"
+ln -s "$DOTFILES_ROOT/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
+## Sublime symlink
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin"
+

@@ -3,18 +3,31 @@ dotfiles
 
 # INSTALLATION
 
-### For MacOS:
-# TODO
-
-
-### For Linux:
+## For MacOS:
 Run this
 ```sh
 git clone https://github.com/switowski/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-# Create symlinks and install
-chmod +x install.sh
-./install.sh
+# Go through setup-macbook.sh and comment out what you don't need
+chmod +x setup-macbook.sh
+chmod +x brew.sh
+chmod +x brew-cask.sh
+chmod +x mas.sh
+chmod +x npm.sh
+chmod +x fish.sh
+# Install brew packages, fish, oh-my-fish and setup some functions
+./setup-macbook.sh
+```
+
+
+## For Linux:
+Run this
+```sh
+git clone https://github.com/switowski/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+# Create symlinks and install packages
+chmod +x setup-linux.sh
+./setup-linux.sh
 ```
 
 ### Manual tweaks:
