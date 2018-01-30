@@ -22,3 +22,6 @@ brew cask install imageoptim
 
 # work related stuff
 brew cask install gitter
+
+# Remove outdated versions from the cellar
+brew cask cleanup
