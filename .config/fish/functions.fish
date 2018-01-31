@@ -23,14 +23,18 @@ function killport --argument port --description 'Kills process on a given port'
    end
 end
 
+function ip
+  ifconfig | grep "broadcast" | awk '{print $2}'
+end
+
 
 ########################### Temporary stuff for CERN #########################
 function mount_dfs --description "Mounts CERN dfs"
   sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777
 end
 
-function cds3install() {
-  cur_dir=$PWD
+function cds3install --description "Installs CDS Labs in the current folder"
+  set cur_dir $PWD
   pip install -r requirements.developer.txt
   pip install -e .[all]
 
@@ -45,6 +49,6 @@ function cds3install() {
   set +o noclobber
   cd "$cur_dir"
 
-  echo "Remember to run $ ./scripts/setup-instance.sh to setup the DB, create user and load fixtures!"
-  echo "You can now start the server with $ cds run --debugger --with-threads"
-}
+  echo 'Remember to run $ ./scripts/setup-instance.sh to setup the DB, create user and load fixtures!'
+  echo 'You can now start the server with $ cds run --debugger --with-threads'
+end

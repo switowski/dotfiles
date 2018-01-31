@@ -52,7 +52,15 @@ ln -sf "$DOTFILES_ROOT/git/.gitignore.symlink" "$HOME/.gitignore"
 # Other .rc files
 cp "$HOME/.vimrc" "$HOME/.vimrc_bak" 2>/dev/null
 cp "$HOME/.pryrc" "$HOME/.pryrc_bak" 2>/dev/null
-ln -sf "$DOTFILES_ROOT/.vimrc" "$HOME/.vimrc"
-ln -sf "$DOTFILES_ROOT/.pryrc" "$HOME/.pryrc"
+ln -sf "$DOTFILES_ROOT/.vimrc" "$HOME/.vimrc.symlink"
+ln -sf "$DOTFILES_ROOT/.pryrc" "$HOME/.pryrc.symlink"
 
-# TODO: Synchronize Sublime packages
+# Backup current Sublime Packages directory and symlink it
+if [[ -d "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+ ]]
+ cp -R "$HOME/Library/Application Support/Sublime Text 3/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User_backup"
+then
+fi
+
+rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+ln -sf "$DOTFILES_ROOT/.config/sublime-text-3-mac/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"

@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
+# This might fail if fish is not yet installed
 
 # Install oh my fish
 curl -L https://get.oh-my.fish | fish

@@ -7,12 +7,8 @@ function ..... ; cd ../../../.. ; end
 # Utilities
 function g        ; git $argv ; end
 function grep     ; command grep --color=auto $argv ; end
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
 
 # List directory contents
-alias ls='ls -G --color' # Compact view, show colors
-alias la='ls -AF' # Compact view, show hidden
 alias ll='ls -al'
 
 # Important one ! Parenting changing perms on /
@@ -23,6 +19,9 @@ alias chgrp='chgrp --preserve-root'
 # Shortcuts
 alias g="git"
 alias v="vim"
+
+# Ack is not installed, but we have ag which is supposed to be a replacement
+alias ack='ag'
 
 # Git aliases
 alias ga="git add"
@@ -65,6 +64,11 @@ alias gpw="workon gpw and cd ./workspace/gpw and ./gpw.py"
 # Elasticsearch aliases
 alias es-delete-indexes="curl -XDELETE 'http://localhost:9200/_all'"
 alias di="curl -XDELETE 'http://localhost:9200/_all'"
+
+#   ---------------------------
+#   Mac OS aliases
+#   ---------------------------
+alias cask='brew cask'
 
 #   ---------------------------
 #   Work related aliases
@@ -133,8 +137,3 @@ alias master='workon master'
 
 # Temporary alias for DFS
 alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
-
-#   ---------------------------
-#   Mac OS aliases
-#   ---------------------------
-alias cask='brew cask'
