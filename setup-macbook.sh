@@ -18,10 +18,6 @@ brew install mas
 ############################## Install npm packages ##########################
 ./npm.sh
 
-####################### Install pip and Python packages ######################
-sudo easy_install pip
-./pip.sh
-
 ########################### Install oh-my-fish and plugins ###################
 ./fish.sh
 
@@ -56,11 +52,16 @@ ln -sf "$DOTFILES_ROOT/.vimrc" "$HOME/.vimrc.symlink"
 ln -sf "$DOTFILES_ROOT/.pryrc" "$HOME/.pryrc.symlink"
 
 # Backup current Sublime Packages directory and symlink it
-if [[ -d "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
- ]]
- cp -R "$HOME/Library/Application Support/Sublime Text 3/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User_backup"
+if [[ -d "$HOME/Library/Application Support/Sublime Text 3/Packages/User" ]]
 then
+ cp -R "$HOME/Library/Application Support/Sublime Text 3/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User_backup"
 fi
 
 rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 ln -sf "$DOTFILES_ROOT/.config/sublime-text-3-mac/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+
+
+####################### Install pip and Python packages ######################
+# Pip packages can't be installed manually as the default pip is not the one from pyenv, so make sure the pyenv shims are setup first
+echo "Áfter you setup the pyenv, run ./pip.sh to install pip packages"
+

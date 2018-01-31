@@ -1,0 +1,25 @@
+[
+    { "keys": ["super+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+    { "keys": ["super+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+    // Just to prevent closing sublime by mistake
+    { "keys": ["alt+left"], "command": "jump_back" },
+
+    { "keys": ["alt+right"], "command": "jump_forward" },
+    { "keys": ["alt+d"], "command": "goto_definition" },
+
+    { "keys": ["ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+    { "keys": ["f8"], "command": "toggle_minimap" },
+    { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" },
+    { "keys": ["super+shift+c"], "command": "copy_path" },
+
+    { "keys": ["super+shift+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+
+    // Expand selection to quotes (comes from "expand selection to quotes package")
+    // This is a default setting, I'm just putting it here so I remember it exists.
+    { "keys": ["super+'"], "command": "expand_selection_to_quotes" },
+
+    { "keys": ["super+shift+up"], "command": "swap_line_up" },
+    { "keys": ["super+shift+down"], "command": "swap_line_down" },
+    { "keys": ["f3"], "command": "find_next" },
+    // Add :esc to unselect
+]

@@ -36,7 +36,7 @@ brew install wget --with-iri
 brew install vim --with-override-system-vi
 brew install nano
 brew install grep
-brew install openssh
+#brew install openssh - this fucks up the ssh-agent on mac
 
 # z hopping around folders
 brew install z

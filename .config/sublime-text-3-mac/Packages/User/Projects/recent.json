@@ -21,5 +21,7 @@
 	"~/.config/sublime-text-3/Packages/User/Projects/adventofcode2017.sublime-project",
 	"~/.config/sublime-text-3/Packages/User/Projects/game.sublime-project",
 	"~/.config/sublime-text-3/Packages/User/Projects/deploystack.sublime-project",
-	"~/.config/sublime-text-3/Packages/User/Projects/railsgirls-writeup.sublime-project"
+	"~/.config/sublime-text-3/Packages/User/Projects/railsgirls-writeup.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/dotfiles.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/puppet.sublime-project"
 ]
