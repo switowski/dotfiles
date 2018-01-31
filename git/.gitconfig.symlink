@@ -34,6 +34,14 @@
                 git branch -D pr/$1; \
             fi \
         }; f"
+    # Switch to PR
+    # source https://github.com/egabancho/dotfiles/blob/osx/.gitconfig#L31
+    copr = "!f(){ \
+                if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
+                    git fetch origin refs/pull/$1/head:pr/$1 && \
+                    git checkout pr/$1; \
+                fi \
+            }; f"
 [color]
     ui = auto
 
