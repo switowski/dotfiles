@@ -18,3 +18,6 @@ eval (python -m virtualfish compat_aliases)
 
 # omf-thefuck is broken, so we need the following line
 thefuck --alias | source 
+
+# Store history from all tabs
+history --merge

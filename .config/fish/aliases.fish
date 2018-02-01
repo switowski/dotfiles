@@ -10,6 +10,7 @@ function grep     ; command grep --color=auto $argv ; end
 
 # List directory contents
 alias ll='ls -al'
+alias l='ls -al'
 
 # Important one ! Parenting changing perms on /
 alias chown='chown --preserve-root'
@@ -83,19 +84,19 @@ alias cds3celerystart='celery -A cds.celery worker -l info'
 alias cds3flowerstart='celery -A cds.celery worker -l info'
 
 #SSH aliases
-alias deploystackaws='ssh -i "/home/switowsk/.ssh/private/DeployStackProd.pem" ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com'
+alias deploystackaws='ssh ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
 alias cdstest='ssh cds-test-wn-02'
 alias cdstest1='ssh cds-test-wn-01'
 alias cdstest2='ssh cds-test-wn-02'
 alias loadbalancer='ssh cds-lb-01'
-alias prod='ssh switowsk@cds-wn-01'
-alias prod1='ssh switowsk@cds-wn-01'
-alias prod2='ssh switowsk@cds-wn-02'
-alias prod3='ssh switowsk@cds-wn-03'
-alias prod4='ssh switowsk@cds-wn-04'
-alias prod5='ssh switowsk@cds-wn-05'
+alias prod='ssh switowsk@cds-wn-01.cern.ch'
+alias prod1='ssh switowsk@cds-wn-01.cern.ch'
+alias prod2='ssh switowsk@cds-wn-02.cern.ch'
+alias prod3='ssh switowsk@cds-wn-03.cern.ch'
+alias prod4='ssh switowsk@cds-wn-04.cern.ch'
+alias prod5='ssh switowsk@cds-wn-05.cern.ch'
 alias dbmaster='ssh switowsk@cds-dbmaster-01'
 alias builder='ssh switowsk@cds-builder-test-01.cern.ch'
 # CDSLABS-QA aliases
