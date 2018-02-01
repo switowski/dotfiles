@@ -22,4 +22,9 @@
     { "keys": ["super+shift+down"], "command": "swap_line_down" },
     { "keys": ["f3"], "command": "find_next" },
     // Add :esc to unselect
+    { "keys": ["escape"], "command": "deselect", "context":
+      [
+          { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+      ]
+    }
 ]

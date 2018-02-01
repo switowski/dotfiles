@@ -7,3 +7,4 @@
 
 # Install apps
 mas install 442160987 # Flycut (clipboard manager)
+mas install 441258766 # Magnet - windows manager

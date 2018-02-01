@@ -253,5 +253,7 @@ EOF
 endif
 " }}}
 
+" Fix for backspace on Mac OS
+set backspace=indent,eol,start
 
 " vim:foldmethod=marker:foldlevel=0
