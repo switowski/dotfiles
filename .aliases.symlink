@@ -114,6 +114,7 @@ alias grep='grep --color=auto' # Automatic colors in grep output
 
 # GIT aliases
 alias ga="git add"
+alias ga.="git add ."
 alias gb="git branch"
 alias gbr="git branch"
 alias gci="git commit"
