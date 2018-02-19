@@ -9,7 +9,7 @@
 [kp-lctrl]>[kp-lwin]
 [rctrl]>[rwin]
 [kp-rctrl]>[kp-rwin]
-[rwin]>[rctrl]
+[rwin]>[lalt]
 [kp-rwin]>[kp-rctrl]
 [pup]>[lctrl]
 {intl-\}>{-kp-lshift}{kp-insert}{+kp-lshift}
