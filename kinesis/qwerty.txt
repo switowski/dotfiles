@@ -1,0 +1,9 @@
+# Configuration of active/qwerty.txt file for kinesis advantage keybord
+
+[escape]>[caps]
+[caps]>[escape]
+[home]>[kp-ralt]
+[end]>[rwin]
+{intl-\}>{-kp-lshift}{kp-insert}{+kp-lshift}
+{lshift}{pup}>{home}
+{lshift}{pdown}>{end}

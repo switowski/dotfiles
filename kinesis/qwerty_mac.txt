@@ -1,0 +1,17 @@
+# Configuration of active/qwerty.txt file for kinesis advantage keybord for macbook
+[escape]>[caps]
+[caps]>[escape]
+[scroll]>[shutdn]
+[kp=]>[kp=mac]
+[home]>[rctrl]
+[end]>[pup]
+[lctrl]>[lwin]
+[kp-lctrl]>[kp-lwin]
+[rctrl]>[rwin]
+[kp-rctrl]>[kp-rwin]
+[rwin]>[rctrl]
+[kp-rwin]>[kp-rctrl]
+[pup]>[lctrl]
+{intl-\}>{-kp-lshift}{kp-insert}{+kp-lshift}
+{lshift}{pup}>{home}
+{lshift}{pdown}>{end}
