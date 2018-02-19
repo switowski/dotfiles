@@ -12,3 +12,5 @@ omf install extract # No more googling for correct tar command!
 omf install brew # Adds brew packages to the PATH
 omf install pyenv # Support for pyenv
 # omf install rbenv # Enable rbenv - require rbenv to be installed
+
+omf install scorphish # Nice theme with virtualenv and python version displayed

@@ -1,5 +1,6 @@
 {
-	"non_blocking": true,
+  "git_binary": "/usr/local/bin/git",
+  "non_blocking": true,
     "protected_regions": [
         "sublimelinter-warning-marks",
         "sublimelinter-error-marks",

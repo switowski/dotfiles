@@ -23,5 +23,6 @@
 	"~/.config/sublime-text-3/Packages/User/Projects/deploystack.sublime-project",
 	"~/.config/sublime-text-3/Packages/User/Projects/railsgirls-writeup.sublime-project",
 	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/dotfiles.sublime-project",
-	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/puppet.sublime-project"
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/puppet.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/mk.sublime-project"
 ]

@@ -11,7 +11,6 @@ if test -e "$HOME/.extra.fish";
 end
 
 # Enable virtualfish with some plugins
-# TODO: Add virtualfish to prompt: http://virtualfish.readthedocs.io/en/latest/install.html#customizing-your-fish-prompt
 # Or find a prompt that supports it
 eval (python -m virtualfish compat_aliases)
 # Read more on virtualfish plugins: http://virtualfish.readthedocs.io/en/latest/plugins.html
@@ -21,3 +20,6 @@ thefuck --alias | source
 
 # Store history from all tabs
 history --merge
+
+# Enable rbenv
+status --is-interactive; and source (rbenv init -|psub)
