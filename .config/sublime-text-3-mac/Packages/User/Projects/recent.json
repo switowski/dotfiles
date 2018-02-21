@@ -23,6 +23,12 @@
 	"~/.config/sublime-text-3/Packages/User/Projects/deploystack.sublime-project",
 	"~/.config/sublime-text-3/Packages/User/Projects/railsgirls-writeup.sublime-project",
 	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/dotfiles.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/mk.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/cds-videos.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/react-invenio-app.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/cds-master.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/cds-legacy.sublime-project",
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/cds-prod.sublime-project",
 	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/puppet.sublime-project",
-	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/mk.sublime-project"
+	"~/Library/Application Support/Sublime Text 3/Packages/User/Projects/django-test.sublime-project"
 ]

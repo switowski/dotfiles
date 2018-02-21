@@ -4,14 +4,14 @@
 [scroll]>[shutdn]
 [kp=]>[kp=mac]
 [home]>[rctrl]
-[end]>[pup]
+{end}>{rctrl}{lalt}{lwin}
 [lctrl]>[lwin]
 [kp-lctrl]>[kp-lwin]
 [rctrl]>[rwin]
 [kp-rctrl]>[kp-rwin]
 [rwin]>[lalt]
 [kp-rwin]>[kp-rctrl]
-[pup]>[lctrl]
+
 {intl-\}>{-kp-lshift}{kp-insert}{+kp-lshift}
 {lshift}{pup}>{home}
 {lshift}{pdown}>{end}

@@ -60,6 +60,9 @@ fi
 rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 ln -sf "$DOTFILES_ROOT/.config/sublime-text-3-mac/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
+# Symlink osascripts directory
+ln -sf "$DOTFILES_ROOT/.config/osascripts" "$HOME/Library/Scripts"
+
 
 ####################### Install pip and Python packages ######################
 # Pip packages can't be installed manually as the default pip is not the one from pyenv, so make sure the pyenv shims are setup first

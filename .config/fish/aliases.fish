@@ -29,6 +29,7 @@ alias ga="git add"
 alias gb="git branch"
 alias gbr="git branch"
 alias gci="git commit"
+alias gcp="git cherry-pick"
 # alias gcl="git clone" # I never used it
 alias gco="git checkout"
 alias gd="git diff"
@@ -97,6 +98,7 @@ alias prod2='ssh switowsk@cds-wn-02.cern.ch'
 alias prod3='ssh switowsk@cds-wn-03.cern.ch'
 alias prod4='ssh switowsk@cds-wn-04.cern.ch'
 alias prod5='ssh switowsk@cds-wn-05.cern.ch'
+alias sshprod='osascript ~/Library/Scripts/cds-prod.scpt'
 alias dbmaster='ssh switowsk@cds-dbmaster-01'
 alias builder='ssh switowsk@cds-builder-test-01.cern.ch'
 # CDSLABS-QA aliases

@@ -12,6 +12,9 @@
     { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" },
     { "keys": ["super+shift+c"], "command": "copy_path" },
 
+    // Anaconda
+    { "keys": ["super+shift+g"], "command": "anaconda_goto" },
+
     { "keys": ["super+shift+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
     // Expand selection to quotes (comes from "expand selection to quotes package")
