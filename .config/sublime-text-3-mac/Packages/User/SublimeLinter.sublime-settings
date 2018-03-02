@@ -94,6 +94,7 @@
             "javascript (gruntfile)": "javascript", 
             "javascript (gulpfile)": "javascript", 
             "javascript (postcss)": "javascript", 
+            "javascript (puglint)": "javascript", 
             "javascript (stylelint)": "javascript", 
             "javascript (webpack)": "javascript", 
             "json (babel)": "json", 
@@ -102,6 +103,7 @@
             "json (eslint)": "json", 
             "json (npm)": "json", 
             "json (postcss)": "json", 
+            "json (puglint)": "json", 
             "json (settings)": "json", 
             "json (stylelint)": "json", 
             "json (sublime)": "json", 
@@ -122,6 +124,7 @@
         "tooltip_theme": "Packages/SublimeLinter/tooltip-themes/Default/Default.tooltip-theme", 
         "tooltip_theme_excludes": [], 
         "tooltips": false, 
+        "use_current_shell_path": false, 
         "warning_color": "DDB700", 
         "wrap_find": true
     }

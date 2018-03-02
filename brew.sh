@@ -49,6 +49,9 @@ brew install mtr
 
 brew install git
 brew install fish
+# Fish doesn't have ctrl+r, so fzf will fix it
+brew install fzf
+
 
 # Install other useful binaries
 brew install the_silver_searcher

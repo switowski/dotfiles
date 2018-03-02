@@ -14,43 +14,45 @@ set nocompatible      " We're running Vim, not Vi!
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-" =============== Vundle plugins =============== {{{
-" Don't put it at the end because other parts of the config needs plugins
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-" let Vundle manage Vundle, required
-" To install plugins :PluginInstall
-Plugin 'gmarik/vundle'
-"Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'morhetz/gruvbox'
-" allows you to use <Tab> for all your insert completion needs
-Plugin 'ervandew/supertab'
+" =============== Vim-plug plugins =============== {{{
+" Automatic install of vim-plug if not exists
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+" To install or update plugins :PlugUpdate
+call plug#begin('~/.vim/plugged')
+" Gruvbox theme
+Plug 'morhetz/gruvbox'
+" Allows you to use <Tab> for all your insert completion needs
+Plug 'ervandew/supertab'
 " Adjusts the shiftwidth and expandtab based on current file
-Plugin 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 " Fuzzy file, buffer, mru, tag, etc. finder
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " Nice bottom bar
-Plugin 'bling/vim-airline'
-" Syntax checking hacks
-Plugin 'scrooloose/syntastic'
-" A tree explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
 " All about surroundings: parentheses, brackets, quotes, XML tags
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Git gutter for vim
-Plugin 'airblade/vim-gitgutter'
-" Visual undo tree
-Plugin 'sjl/gundo.vim'
+Plug 'airblade/vim-gitgutter'
 " Puppet linter
-Plugin 'rodjek/vim-puppet'
+Plug 'rodjek/vim-puppet'
+" Syntax checking hacks
+" Disabled as it's very slow on Mac
+" Plug 'scrooloose/syntastic'
+" A tree explorer
+" I'm not using it anyway
+" Plug 'scrooloose/nerdtree'
+" Initialize plugin system
+call plug#end()
 " }}}
 
-
 " =============== Plugins settings =================== {{{
-
 " ==== Ctrlp settings ====
 let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 " ==== Vim Airline ====

@@ -21,9 +21,12 @@
     // This is a default setting, I'm just putting it here so I remember it exists.
     { "keys": ["super+'"], "command": "expand_selection_to_quotes" },
 
+    // Make MacOS behave like Linux bindings
     { "keys": ["super+shift+up"], "command": "swap_line_up" },
     { "keys": ["super+shift+down"], "command": "swap_line_down" },
     { "keys": ["f3"], "command": "find_next" },
+    { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+    { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
     // Add :esc to unselect
     { "keys": ["escape"], "command": "deselect", "context":
       [

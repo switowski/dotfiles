@@ -99,7 +99,7 @@ alias prod3='ssh switowsk@cds-wn-03.cern.ch'
 alias prod4='ssh switowsk@cds-wn-04.cern.ch'
 alias prod5='ssh switowsk@cds-wn-05.cern.ch'
 alias sshprod='osascript ~/Library/Scripts/cds-prod.scpt'
-alias dbmaster='ssh switowsk@cds-dbmaster-01'
+alias dbmaster='ssh switowsk@cds-dbmaster-01.cern.ch'
 alias builder='ssh switowsk@cds-builder-test-01.cern.ch'
 # CDSLABS-QA aliases
 alias ttask1='ssh switowsk@cdslabs-qa-task1.cern.ch'

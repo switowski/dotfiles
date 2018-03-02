@@ -1,5 +1,7 @@
 # Compiled Python files
 *.pyc
+# Pytest cache directory
+.pytest_cache*
 
 # Folder view configuration files
 .DS_Store
