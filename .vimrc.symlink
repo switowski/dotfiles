@@ -126,8 +126,15 @@ set wildmenu                    " visual autocomplete for command menu
 set lazyredraw                  " redraw only when we need to
 set showmatch                   " higlight matching parenthesis
 set cursorline                  "Line to indicate the cursor location
-set mouse=a                     "Allow mouse in all modes
-"set ttymouse=xterm2
+" Removing the following part allows to select stuff in MacOS without any
+" modifier keys (like Shift in Linux)
+"set mouse=a                     "Allow mouse in all modes
+"if has("mouse_sgr")
+"    set ttymouse=sgr
+"else
+"    set ttymouse=xterm2
+"end
+set clipboard=unnamed           " Needed for MacOS for some reason
 set history=1000                "Store lots of :cmdline history
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds

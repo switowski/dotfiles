@@ -17,7 +17,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change home to command+control+option.",
+                                "description": "Change end to hyper (shift+command+control+option).",
                                 "from": {
                                     "key_code": "end",
                                     "modifiers": {
@@ -28,8 +28,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_command",
+                                        "key_code": "left_shift",
                                         "modifiers": [
+                                            "left_command",
                                             "left_control",
                                             "left_option"
                                         ]

@@ -26,6 +26,7 @@
 		"*.zip",
 		".cache/**",
 		".eggs/**",
+		"/Users/switowski/src/cds-videos/.coverage",
 		"/home/switowsk/workspace/mk/tmp/**",
 		"CDS.egg-info/**",
 		"__pycache__/**",

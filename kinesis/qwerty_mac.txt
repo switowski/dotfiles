@@ -1,6 +1,7 @@
 # Configuration of active/qwerty.txt file for kinesis advantage keybord for macbook
-[escape]>[caps]
-[caps]>[escape]
+# caps <-> esc is now done with Karabiner-Elements
+#[escape]>[caps]
+#[caps]>[escape]
 [scroll]>[shutdn]
 [kp=]>[kp=mac]
 [home]>[rctrl]

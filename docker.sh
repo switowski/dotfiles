@@ -31,6 +31,6 @@ docker pull mysql
 docker swarm init
 #docker service create --name redis --publish 6379:6379 redis
 #docker service create --name postgres --publish 5432:5432 -e POSTGRES_USER=$USER postgres
-#docker service create --name elasticsearch --publish 9200:9200 --publish 9300:9300 elasticsearch-switowski
+docker service create --name elasticsearch --publish 9200:9200 --publish 9300:9300 elasticsearch-switowski
 docker service create --name mysql --publish 3306:3306 --env MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 

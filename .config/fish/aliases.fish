@@ -35,7 +35,7 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
 # alias gf="git reflog" # I never used it
-alias gffs="git add --all and git commit --amend --no-edit"
+alias gffs="git add --all; and git commit --amend --no-edit"
 alias gl="git log"
 # alias glp="git log --pretty=oneline" # I never used it
 alias gp="git push"
