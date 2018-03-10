@@ -17,7 +17,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change end to hyper (shift+command+control+option).",
+                                "description": "Change end to command+ctrl+alt.",
                                 "from": {
                                     "key_code": "end",
                                     "modifiers": {
@@ -28,9 +28,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
+                                        "key_code": "left_command",
                                         "modifiers": [
-                                            "left_command",
                                             "left_control",
                                             "left_option"
                                         ]
@@ -40,7 +39,7 @@
                             }
                         ]
                     }
-            ]
+                ]
             },
             "devices": [],
             "fn_function_keys": [
@@ -143,7 +142,24 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "escape"
+                    },
+                    "to": {
+                        "key_code": "caps_lock"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "escape"
+                    }
+                }
+            ],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi"
