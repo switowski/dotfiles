@@ -51,6 +51,9 @@ brew install git
 brew install fish
 # Fish doesn't have ctrl+r, so fzf will fix it
 brew install fzf
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+printf "${RED}You need to add autocomplete and keyboard bindings by hand!: https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew${NC}\n"
 
 
 # Install other useful binaries
@@ -63,6 +66,7 @@ brew install ffmpeg --with-libvpx
 
 # Programming
 brew install pyenv
+brew install rbenv
 
 # Remove outdated versions from the cellar
 brew cleanup

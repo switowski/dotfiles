@@ -8,9 +8,9 @@
 # Install native apps
 
 # tools
-brew cask install spectacle
+#brew cask install spectacle
 brew cask install dropbox
-brew cask install rescuetime
+#brew cask install rescuetime
 brew cask install vlc
 brew cask install the-unarchiver # check the unarchiver page for unar CLI command
 brew cask install flux

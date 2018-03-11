@@ -21,13 +21,6 @@ brew install mas
 ########################### Install oh-my-fish and plugins ###################
 ./fish.sh
 
-############################## Install Vundle for Vim ########################
-if [[ ! -d ~/.vim/bundle/Vundle.vim ]]
-then
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-vim +PluginInstall +qall
-
 ################################### Symlink stuff ############################
 ################### (Backs up the previous versions if they exist) ###########
 # Fish symlinks
@@ -48,8 +41,8 @@ ln -sf "$DOTFILES_ROOT/git/.gitignore.symlink" "$HOME/.gitignore"
 # Other .rc files
 cp "$HOME/.vimrc" "$HOME/.vimrc_bak" 2>/dev/null
 cp "$HOME/.pryrc" "$HOME/.pryrc_bak" 2>/dev/null
-ln -sf "$DOTFILES_ROOT/.vimrc" "$HOME/.vimrc.symlink"
-ln -sf "$DOTFILES_ROOT/.pryrc" "$HOME/.pryrc.symlink"
+ln -sf "$DOTFILES_ROOT/.vimrc.symlink" "$HOME/.vimrc"
+ln -sf "$DOTFILES_ROOT/.pryrc.symlink" "$HOME/.pryrc"
 
 # Backup current Sublime Packages directory and symlink it
 if [[ -d "$HOME/Library/Application Support/Sublime Text 3/Packages/User" ]]
@@ -60,7 +53,7 @@ rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 ln -sf "$DOTFILES_ROOT/.config/sublime-text-3-mac/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 # Symlink osascripts directory
-ln -sf "$DOTFILES_ROOT/.config/osascripts" "$HOME/Library/Scripts"
+ln -sf "$DOTFILES_ROOT/.config/osascripts" "$HOME/Library/Scripts/osascripts"
 
 # Symlink karabiner config
 ln -sf "$DOTFILES_ROOT/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"

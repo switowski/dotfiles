@@ -27,6 +27,15 @@ function ip
   ifconfig | grep "broadcast" | awk '{print $2}'
 end
 
+# Get back the "sudo !!" bash function
+function sudo
+    if test "$argv" = !!
+    eval command sudo $history[1]
+else
+    command sudo $argv
+    end
+end
+
 
 ########################### Temporary stuff for CERN #########################
 function mount_dfs --description "Mounts CERN dfs"
