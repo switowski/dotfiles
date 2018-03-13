@@ -58,6 +58,9 @@ ln -sf "$DOTFILES_ROOT/.config/osascripts" "$HOME/Library/Scripts/osascripts"
 # Symlink karabiner config
 ln -sf "$DOTFILES_ROOT/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 
+# Copy automator services to ~/Library/Services
+cp -R "$DOTFILES_ROOT/automator/*" "$HOME/Library/Services"
+
 ####################### Install pip and Python packages ######################
 # Pip packages can't be installed manually as the default pip is not the one from pyenv, so make sure the pyenv shims are setup first
 echo "Áfter you setup the pyenv, run ./pip.sh to install pip packages"
