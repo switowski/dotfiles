@@ -1,5 +1,9 @@
-set default_user "switowski"
-set default_machine "smbp"
+set default_user switowski
+set default_machine smbp
+
+# Set locale to avoid various error messages
+set -x LC_ALL en_US.UTF-8
+set -x LANG en_US.UTF-8
 
 source ~/.config/fish/path.fish
 source ~/.config/fish/aliases.fish
