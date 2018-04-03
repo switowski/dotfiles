@@ -27,3 +27,6 @@ history --merge
 
 # Enable rbenv
 status --is-interactive; and source (rbenv init -|psub)
+
+# Settings for scorpfish theme
+#set -x SCORPHISH_GIT_INFO_ON_FIRST_LINE 1

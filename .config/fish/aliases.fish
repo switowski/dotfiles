@@ -84,14 +84,17 @@ alias cds3fixtures="cds fixtures keywords; and cds fixtures categories; and cds 
 alias cds3celerystart='celery -A cds.celery worker -l info'
 alias cds3flowerstart='celery -A cds.celery worker -l info'
 
+# Log in to cds-prod machines
+alias 'cds-prod'='osascript ~/Library/Scripts/cds-prod.scpt'
+
 #SSH aliases
 alias deploystackaws='ssh ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
-alias cdstest='ssh cds-test-wn-02'
-alias cdstest1='ssh cds-test-wn-01'
-alias cdstest2='ssh cds-test-wn-02'
-alias loadbalancer='ssh cds-lb-01'
+alias cdstest='ssh switowsk@cds-test-wn-02.cern.ch'
+alias cdstest1='ssh switowsk@cds-test-wn-01.cern.ch'
+alias cdstest2='ssh switowsk@cds-test-wn-02.cern.ch'
+alias loadbalancer='ssh switowsk@cds-lb-01.cern.ch'
 alias prod='ssh switowsk@cds-wn-01.cern.ch'
 alias prod1='ssh switowsk@cds-wn-01.cern.ch'
 alias prod2='ssh switowsk@cds-wn-02.cern.ch'

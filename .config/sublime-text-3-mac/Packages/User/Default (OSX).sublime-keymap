@@ -1,4 +1,5 @@
 [
+    { "keys": ["super+k", "super+t"], "command": "title_case" },
     { "keys": ["super+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
     { "keys": ["super+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
     // Just to prevent closing sublime by mistake
@@ -25,8 +26,10 @@
     { "keys": ["super+shift+up"], "command": "swap_line_up" },
     { "keys": ["super+shift+down"], "command": "swap_line_down" },
     { "keys": ["f3"], "command": "find_next" },
+    { "keys": ["shift+f3"], "command": "find_prev" },
     { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
     { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+    { "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
     // Add :esc to unselect
     { "keys": ["escape"], "command": "deselect", "context":
       [
