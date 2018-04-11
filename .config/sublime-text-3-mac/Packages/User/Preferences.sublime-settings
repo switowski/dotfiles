@@ -33,6 +33,7 @@
 		"cds_dojson.egg-info/**",
 		"dist/*",
 		"node_modules/*",
+		"test_datamodel.egg-info/**",
 		"tmp/*"
 	],
 	"bold_folder_labels": true,
@@ -41,6 +42,14 @@
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"find_selected_text": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"__pycache__"
+	],
 	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,

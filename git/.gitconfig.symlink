@@ -35,13 +35,10 @@
             fi \
         }; f"
     # Switch to PR
-    # source https://github.com/egabancho/dotfiles/blob/osx/.gitconfig#L31
-    copr = "!f(){ \
-                if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-                    git fetch upstream refs/pull/$1/head:pr/$1 && \
-                    git checkout pr/$1; \
-                fi \
-            }; f"
+    # source https://nedbatchelder.com/blog/201407/fetching_github_pull_requests.html
+    # usage: `git copr 1234` or `git copr 1234 upstream`
+    copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
+                   git checkout pr/$1; }; f"
 [color]
     ui = auto
 

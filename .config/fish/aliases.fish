@@ -20,6 +20,7 @@ alias chgrp='chgrp --preserve-root'
 # Shortcuts
 alias g="git"
 alias v="vim"
+alias o="open"
 
 # Ack is not installed, but we have ag which is supposed to be a replacement
 alias ack='ag'

@@ -29,7 +29,7 @@
     { "keys": ["shift+f3"], "command": "find_prev" },
     { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
     { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
-    { "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+    // { "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
     // Add :esc to unselect
     { "keys": ["escape"], "command": "deselect", "context":
       [

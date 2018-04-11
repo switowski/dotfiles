@@ -52,8 +52,9 @@ fi
 rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 ln -sf "$DOTFILES_ROOT/.config/sublime-text-3-mac/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
-# Symlink osascripts directory
-ln -sf "$DOTFILES_ROOT/.config/osascripts" "$HOME/Library/Scripts/osascripts"
+# Symlink osascripts scripts one by one (if we symlink the directory, we won't see the list of scripts in the Scripts menulet)
+ln -sf "$DOTFILES_ROOT/.config/osascripts/cds-prod.scpt" "$HOME/Library/Scripts/cds-prod.scpt"
+ln -sf "$DOTFILES_ROOT/.config/osascripts/test.scpt" "$HOME/Library/Scripts/test.scpt"
 
 # Symlink karabiner config
 ln -sf "$DOTFILES_ROOT/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
