@@ -57,7 +57,7 @@ ln -sf "$DOTFILES_ROOT/.config/osascripts/cds-prod.scpt" "$HOME/Library/Scripts/
 ln -sf "$DOTFILES_ROOT/.config/osascripts/test.scpt" "$HOME/Library/Scripts/test.scpt"
 
 # Symlink karabiner config
-ln -sf "$DOTFILES_ROOT/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+ln -sf "$DOTFILES_ROOT/.config/karabiner" "$HOME/.config/karabiner"
 
 # Copy automator services to ~/Library/Services
 cp -R "$DOTFILES_ROOT/automator/*" "$HOME/Library/Services"
