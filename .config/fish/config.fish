@@ -20,7 +20,7 @@ eval (python -m virtualfish compat_aliases)
 # Read more on virtualfish plugins: http://virtualfish.readthedocs.io/en/latest/plugins.html
 
 # omf-thefuck is broken, so we need the following line
-thefuck --alias | source 
+thefuck --alias | source
 
 # Store history from all tabs
 history --merge
@@ -28,5 +28,11 @@ history --merge
 # Enable rbenv
 status --is-interactive; and source (rbenv init -|psub)
 
-# Settings for scorpfish theme
-#set -x SCORPHISH_GIT_INFO_ON_FIRST_LINE 1
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
+  if type source > /dev/null
+    source '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
+  else
+    . '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
+  end
+end
