@@ -196,12 +196,10 @@ set comments=fb:*
 " ================ Persistent Undo ================== {{{
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-
-if version >= 703
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
-endif
+" Requires making the directory:
+" mkdir ~/.vim/undodir
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir
 " }}}
 
 
