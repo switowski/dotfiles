@@ -23,7 +23,11 @@ eval (python -m virtualfish compat_aliases)
 thefuck --alias | source
 
 # Store history from all tabs
-history --merge
+history merge
+# History from various tabs is stored in separate sessions, so by default it's not possible to run a command in 1 tab and immediately have access to it in another tab (https://mvolkmann.github.io/fish-article/#CommandHistory).
+# To synchronize history from other tabs, you need to run `history merge`
+# To run the `history merge` command each time you press arrow up to perform history search (that way we don't have to merge after each single command, as discussed here: https://github.com/fish-shell/fish-shell/issues/825) - you need to put the following line in the ./functions/fish_user_key_binding.fish - but it doesn't seem to work :/
+#bind -k up 'history --merge ; up-or-search'
 
 # Enable rbenv
 status --is-interactive; and source (rbenv init -|psub)

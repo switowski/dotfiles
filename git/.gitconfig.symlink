@@ -12,7 +12,7 @@
     d = diff
     ds = diff --staged
     l = log
-    loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     lp = log --pretty=oneline
     sa = stash apply
     sh = show
@@ -39,6 +39,7 @@
     # usage: `git copr 1234` or `git copr 1234 upstream`
     copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
                    git checkout pr/$1; }; f"
+	pushf = push --force-with-lease
 [color]
     ui = auto
 
@@ -70,6 +71,8 @@
     editor = vim
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
+    # Configure Git on OS X to properly handle line endings
+    autocrlf = input
 
 [credential]
     helper = cache --timeout=21600 # 6 hours

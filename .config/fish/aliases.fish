@@ -21,6 +21,7 @@ alias chgrp='chgrp --preserve-root'
 alias g="git"
 alias v="vim"
 alias o="open"
+alias hm="history merge"
 
 # Ack is not installed, but we have ag which is supposed to be a replacement
 alias ack='ag'
@@ -42,7 +43,7 @@ alias gl="git log"
 alias gp="git push"
 alias gps="git push"
 alias gpl="git pull"
-alias gpf="git push --force"
+alias gpf="git push --force-with-lease"
 alias gpr="git pull --rebase"
 # alias grm="git reset --hard upstream/master" # I never used it
 alias gs="git status"
@@ -90,6 +91,7 @@ alias 'cds-prod'='osascript ~/Library/Scripts/cds-prod.scpt'
 
 #SSH aliases
 alias deploystackaws='ssh ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com'
+alias deploystackgce='ssh 104.155.123.218'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
 alias cdstest='ssh switowsk@cds-test-wn-02.cern.ch'
