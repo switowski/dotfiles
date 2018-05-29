@@ -41,6 +41,7 @@
                    git checkout pr/$1; }; f"
 	pushf = push --force-with-lease
 	# Ignore or unignore some local files (https://stackoverflow.com/a/18317425)
+    # usage: git ignore path-to-file-to-ignore
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
