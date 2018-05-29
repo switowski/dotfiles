@@ -40,6 +40,10 @@
     copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
                    git checkout pr/$1; }; f"
 	pushf = push --force-with-lease
+	# Ignore or unignore some local files (https://stackoverflow.com/a/18317425)
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
 [color]
     ui = auto
 
