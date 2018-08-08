@@ -25,6 +25,9 @@ chmod +x fish.sh
     - App Shortcuts -> Mail.app -> Mark All Messages as Read: Shift+Cmd+C
     - Services -> General -> Open Iterm2: Cmd+Alt+T
     - Services -> General -> Start Screensaver: Cmd+Alt+L
+* Install some additional tools:
+    - `Scroll reverser`, so you can reverse scrolling direction for mouse
+    - [Discreet scroll](https://apple.stackexchange.com/questions/253111/how-to-disable-scroll-acceleration-in-macos-sierra) to disable scroll acceleration bullshit
 
 
 ## For Linux:
