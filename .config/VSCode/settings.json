@@ -1,0 +1,23 @@
+{
+    // Sublime-like settings
+    "editor.find.autoFindInSelection": true,
+    "window.closeWhenEmpty": false,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [79],
+    "files.insertFinalNewline": true,
+    "editor.find.seedSearchStringFromSelection": true,
+    "editor.fontSize": 12,
+    "window.restoreFullscreen": true,
+    "window.title": "${activeEditorFull}${separator}${rootName}",
+    "editor.tabSize": 4,
+    "files.trimTrailingWhitespace": true,
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "workbench.colorTheme": "Brogrammer",
+    // End of Sublime-like settings
+    // Make search results appear in a separate panel
+    "search.location": "panel",
+    "window.zoomLevel": 0
+}
