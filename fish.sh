@@ -1,16 +1,18 @@
 #!/usr/bin/env fish
 # This might fail if fish is not yet installed
 
-# Install oh my fish
-curl -L https://get.oh-my.fish | fish
+# Install fisherman
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 # Install plugins
-omf install z
-#omf install thefuck # Fix previous command with `fuck`
-# thefuck is broken in fish (WTF?!), so we initialize it manually in config.fish
-omf install extract # No more googling for correct tar command!
-omf install brew # Adds brew packages to the PATH
-omf install pyenv # Support for pyenv
-# omf install rbenv # Enable rbenv - require rbenv to be installed
+fisher install foreign-env
+fisher install fzf
+fisher install nvm
+fisher install pyenv
+fisher install scorphish
 
-omf install scorphish # Nice theme with virtualenv and python version displayed
+echo "You will probably have to install virtualfish manualy"
+fisher install virtualfish
+
+fisher install z
+

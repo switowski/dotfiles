@@ -148,3 +148,6 @@ alias master='workon master'
 
 # Temporary alias for DFS
 alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777'
+
+# Project related aliases
+alias js='jekyll serve -w --config _config.yml,_config-dev.yml'

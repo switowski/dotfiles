@@ -1,0 +1,19 @@
+// SublimeLinter Settings - User
+{
+    "debug": true,
+    "paths": {
+        "linux": [],
+        "osx": [
+            "~/.rbenv/shims"
+        ],
+        "windows": []
+    },
+    "linters": {
+        "yamllint": {
+           "python": "/Users/switowski/.pyenv/versions/3.6.2/bin/python"
+        },
+        "eslint": {
+            // "disable": true,
+        }
+    }
+}

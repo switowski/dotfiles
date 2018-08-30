@@ -27,7 +27,9 @@ history merge
 #bind -k up 'history --merge ; up-or-search'
 
 # Enable rbenv
-#status --is-interactive; and source (rbenv init -|psub)
+status --is-interactive; and source (rbenv init -|psub)
+# Enable nodenv
+status --is-interactive; and source (nodenv init -|psub)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
@@ -37,3 +39,6 @@ if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
     . '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
   end
 end
+
+# For openssl
+set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
