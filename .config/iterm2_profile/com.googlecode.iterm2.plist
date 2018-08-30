@@ -12,7 +12,7 @@
 	<string>manual</string>
 	<key>Custom Color Presets</key>
 	<dict>
-		<key>Tango-dark-my</key>
+		<key>tango-my</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -451,9 +451,9 @@ Resize Split Pane.Move Divider Down</string>
 		<key>0xf702-0x300000</key>
 		<dict>
 			<key>Action</key>
-			<integer>11</integer>
+			<integer>2</integer>
 			<key>Text</key>
-			<string>0x15</string>
+			<string></string>
 		</dict>
 		<key>0xf702-0x320000</key>
 		<dict>
@@ -541,10 +541,8 @@ Resize Split Pane.Move Divider Right</string>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads/mbadolato-iTerm2-Color-Schemes-ec87449/schemes</string>
+	<string>~/workspace/dotfiles/.config/iterm2_profile</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{878, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -554,11 +552,6 @@ Resize Split Pane.Move Divider Right</string>
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
-	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
-	<array>
-		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
-		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
-	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -582,23 +575,21 @@ Resize Split Pane.Move Divider Right</string>
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<key>NSUserKeyEquivalents</key>
 	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
+		<key>Split Horizontally with Current Profile</key>
+		<string>@$e</string>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 152 606 469 0 0 1920 1178 </string>
+	<string>269 126 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>354 456 796 473 0 0 1680 1028 </string>
+	<string>369 524 928 394 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1178 0 0 1920 1178 </string>
+	<string>840 0 836 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 956 1178 0 0 1920 1178 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>960 6 941 1172 0 0 1920 1178 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>360 11 585 475 0 0 1920 1178 </string>
+	<string>911 184 570 452 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242_selection</key>
@@ -1230,8 +1221,6 @@ Resize Split Pane.Move Divider Right</string>
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
-			<key>Minimum Contrast</key>
-			<real>0.46746439873417722</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1316,20 +1305,14 @@ Resize Split Pane.Move Divider Right</string>
 			<string>/Users/switowski</string>
 		</dict>
 	</array>
-	<key>NoSyncHaveUsedCopyMode</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>BCE0AFAB-41F4-491F-9170-C28B0312B9A3</string>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
+	<string>BCB094AE-A00F-4AA5-AECF-5406C5319697</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>539096298.53271306</real>
+	<real>542150791.63068998</real>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1366,7 +1349,7 @@ Resize Split Pane.Move Divider Right</string>
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/switowski/dotfiles/.config/iterm2_profile</string>
+	<string>/Users/switowski/workspace/dotfiles/.config/iterm2_profile</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1374,15 +1357,15 @@ Resize Split Pane.Move Divider Right</string>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=69</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=14</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-04T13:53:39Z</date>
+	<date>2018-07-03T22:56:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>SwitchPaneModifier</key>
@@ -4951,6 +4934,6 @@ Resize Split Pane.Move Divider Right</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 </dict>
 </plist>

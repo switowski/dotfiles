@@ -91,7 +91,7 @@ alias 'cds-prod'='osascript ~/Library/Scripts/cds-prod.scpt'
 
 #SSH aliases
 alias deploystackaws='ssh ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com'
-alias deploystackgce='ssh 104.155.123.218'
+alias deploystackgce='ssh 35.231.149.85'
 alias lx='ssh switowsk@lxplus.cern.ch'
 alias aiadm='ssh switowsk@aiadm.cern.ch'
 alias cdstest='ssh switowsk@cds-test-wn-02.cern.ch'

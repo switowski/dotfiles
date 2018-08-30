@@ -36,26 +36,3 @@ else
     end
 end
 
-
-########################### Temporary stuff for CERN #########################
-function mount_dfs --description "Mounts CERN dfs"
-  sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/Digitization/ /dfs/cern.ch/ -o user=switowsk,iocharset=utf8,file_mode=0777,dir_mode=0777
-end
-
-function cds3install --description "Installs CDS Labs in the current folder"
-  set cur_dir $PWD
-  pip install -r requirements.developer.txt
-  pip install -e .[all]
-
-  python -O -m compileall .
-  # Make sure you ran ./scripts/setup-npm.sh the first time you run this!
-  ./scripts/setup-assets.sh
-
-  cdvirtualenv var/instance
-  # Set some settings in case we forget to export them in env
-  echo "SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://cds:cds@localhost/cds'" > cds.cfg
-  cd "$cur_dir"
-
-  echo 'Remember to run $ ./scripts/setup-instance.sh to setup the DB, create user and load fixtures!'
-  echo 'You can now start the server with $ cds run --debugger --with-threads'
-end

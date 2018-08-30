@@ -19,9 +19,6 @@ end
 eval (python -m virtualfish compat_aliases)
 # Read more on virtualfish plugins: http://virtualfish.readthedocs.io/en/latest/plugins.html
 
-# omf-thefuck is broken, so we need the following line
-thefuck --alias | source
-
 # Store history from all tabs
 history merge
 # History from various tabs is stored in separate sessions, so by default it's not possible to run a command in 1 tab and immediately have access to it in another tab (https://mvolkmann.github.io/fish-article/#CommandHistory).
@@ -30,7 +27,7 @@ history merge
 #bind -k up 'history --merge ; up-or-search'
 
 # Enable rbenv
-status --is-interactive; and source (rbenv init -|psub)
+#status --is-interactive; and source (rbenv init -|psub)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
