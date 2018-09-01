@@ -358,6 +358,8 @@
 	<string>cds-prod</string>
 	<key>Default Bookmark Guid</key>
 	<string>AFE5CB22-7390-4748-9852-9B5C0E96C242</string>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -585,9 +587,9 @@ Resize Split Pane.Move Divider Right</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>369 524 928 394 0 0 1680 1028 </string>
+	<string>369 563 1018 447 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>840 0 836 1028 0 0 1680 1028 </string>
+	<string>840 0 840 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>911 184 570 452 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242</key>
@@ -1242,7 +1244,7 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1361,7 +1363,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-03T22:56:04Z</date>
+	<date>2018-09-01T14:41:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -4934,6 +4936,6 @@ Resize Split Pane.Move Divider Right</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.2.0</string>
 </dict>
 </plist>
