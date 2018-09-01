@@ -52,18 +52,6 @@ fi
 rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 ln -sf "$DOTFILES_ROOT/.config/sublime-text-3-mac/Packages/User" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
-# Backup current VSCode directory and symlink it
-if [[ -d "$HOME/Library/Application Support/Code/User" ]]
-then
- cp -R "$HOME/Library/Application Support/Code/User" "$HOME/Library/Application Support/Code/User_Backup"
-fi
-rm -rf "$HOME/Library/Application Support/Code/User/keybindings.json"
-rm -rf "$HOME/Library/Application Support/Code/User/settings.json"
-rm -rf "$HOME/Library/Application Support/Code/User/snippets"
-ln -sf "$DOTFILES_ROOT/.config/VSCode/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
-ln -sf "$DOTFILES_ROOT/.config/VSCode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
-ln -sf "$DOTFILES_ROOT/.config/VSCode/snippets" "$HOME/Library/Application Support/Code/User/snippets"
-
 # Symlink osascripts scripts one by one (if we symlink the directory, we won't see the list of scripts in the Scripts menulet)
 ln -sf "$DOTFILES_ROOT/.config/osascripts/cds-prod.scpt" "$HOME/Library/Scripts/cds-prod.scpt"
 ln -sf "$DOTFILES_ROOT/.config/osascripts/test.scpt" "$HOME/Library/Scripts/test.scpt"
