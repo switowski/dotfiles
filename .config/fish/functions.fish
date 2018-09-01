@@ -12,10 +12,6 @@ function subl --description 'Open Sublime Text'
   end
 end
 
-function sudo!!
-  eval sudo $history[1]
-end
-
 function killport --argument port --description 'Kills process on a given port'
    for pid in (lsof -i TCP:$port | awk '/LISTEN/{print $2}')
      echo -n "Found server for port $port with pid $pid: "
@@ -36,3 +32,7 @@ else
     end
 end
 
+# Run black in a docker container (doesn't mess up Python/virtualenv)
+function black
+    docker run -v (pwd):/code jbbarth/black $argv
+end
