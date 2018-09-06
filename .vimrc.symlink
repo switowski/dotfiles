@@ -48,6 +48,8 @@ Plug 'rodjek/vim-puppet'
 " A tree explorer
 " I'm not using it anyway
 " Plug 'scrooloose/nerdtree'
+" Plugin for fish syntax
+Plug 'dag/vim-fish'
 " Initialize plugin system
 call plug#end()
 " }}}
