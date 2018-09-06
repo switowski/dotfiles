@@ -36,3 +36,8 @@ end
 function black
     docker run -v (pwd):/code jbbarth/black $argv
 end
+
+# Function to profile fish startup time - since I tend to mess it up often
+function fish_profile
+  fish --profile prompt.prof -ic 'fish_prompt; exit'; sort -nk 2 prompt.prof
+end

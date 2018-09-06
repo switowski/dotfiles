@@ -151,3 +151,6 @@ alias mount_dfs='sudo mount -t cifs //cerndfs.cern.ch/dfs/Services/E-Publishing/
 
 # Project related aliases
 alias js='jekyll serve -w --config _config.yml,_config-dev.yml'
+
+# ML tools
+alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"

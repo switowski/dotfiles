@@ -1,0 +1,566 @@
+Time	Sum	Command
+2488	263465	> builtin source /usr/local/Cellar/fish/2.7.1/share/fish/config.fish
+65	65	-> set -g IFS \n\ \t
+14	14	-> set -qg __fish_added_user_paths
+15	15	-> or set -g __fish_added_user_paths
+18	18	-> function __fish_default_command_not_found_handler...
+26	26	-> set -g version $FISH_VERSION
+9	507	-> if status --is-interactive...
+17	17	--> status --is-interactive
+9	481	--> if not contains -- "string" (builtin -n)...
+281	325	---> not contains -- "string" (builtin -n)
+44	44	----> builtin -n
+17	147	---> if not set -q NVIM_LISTEN_ADDRESS...
+11	11	----> not set -q NVIM_LISTEN_ADDRESS
+7	7	----> and not set -q STY
+37	37	----> and not string match -q -- 'eterm*' $TERM
+20	49	----> and begin
+                set -q KONSOLE_PROFILE_NAME # KDE's konsole
+                or string match -q -- "*:*" $ITERM_SESSION_ID # Supporting versions of iTerm2 will include a colon here
+                or string match -q -- "st-*" $TERM # suckless' st
+                or test -n "$VTE_VERSION" -a "$VTE_VERSION" -ge 3600 # Should be all gtk3-vte-based terms after version 3.6.0.0
+                or test "$COLORTERM" = truecolor -o "$COLORTERM" = 24bit # slang expects this
+            end
+9	9	-----> set -q KONSOLE_PROFILE_NAME
+20	20	-----> or string match -q -- "*:*" $ITERM_SESSION_ID
+8	8	----> set -q fish_term24bit
+18	18	----> or set -g fish_term24bit 1
+88	88	-> set -l configdir ~/.config
+7	16	-> if set -q XDG_CONFIG_HOME...
+9	9	--> set -q XDG_CONFIG_HOME
+36	36	-> set -l userdatadir ~/.local/share
+7	15	-> if set -q XDG_DATA_HOME...
+8	8	--> set -q XDG_DATA_HOME
+13	13	-> set -l __extra_completionsdir
+18	18	-> set -l __extra_functionsdir
+13	13	-> set -l __extra_confdir
+10	390	-> if test -f $__fish_datadir/__fish_build_paths.fish...
+42	42	--> test -f $__fish_datadir/__fish_build_paths.fish
+277	338	--> source $__fish_datadir/__fish_build_paths.fish
+25	25	---> set __extra_completionsdir /usr/local/share/fish/vendor_completions.d
+18	18	---> set __extra_functionsdir /usr/local/share/fish/vendor_functions.d
+18	18	---> set __extra_confdir /usr/local/share/fish/vendor_conf.d
+10	82	-> if not set -q fish_function_path...
+8	8	--> not set -q fish_function_path
+64	64	--> set fish_function_path $configdir/fish/functions $__fish_sysconfdir/functions $__extra_functionsdir $__fish_datadir/functions
+7	112	-> if not contains -- $__fish_datadir/functions $fish_function_path...
+105	105	--> not contains -- $__fish_datadir/functions $fish_function_path
+7	104	-> if not set -q fish_complete_path...
+37	37	--> not set -q fish_complete_path
+60	60	--> set fish_complete_path $configdir/fish/completions $__fish_sysconfdir/completions $__extra_completionsdir $__fish_datadir/completions $userdatadir/fish/generated_completions
+39	82	-> if not contains -- $__fish_datadir/completions $fish_complete_path...
+43	43	--> not contains -- $__fish_datadir/completions $fish_complete_path
+7	49	-> if test -d /usr/xpg4/bin...
+42	42	--> test -d /usr/xpg4/bin
+96	96	-> set -g __fish_tmp_path $PATH
+13	13	-> function __fish_load_path_helper_paths...
+25	25	-> test -r /etc/paths
+132	2211	-> and __fish_load_path_helper_paths </etc/paths
+110	110	--> set __fish_tmp_path $__fish_tmp_path[-1..1]
+26	1885	--> while read -l new_path_comp...
+86	86	---> read -l new_path_comp
+15	416	---> if test -d $new_path_comp...
+29	29	----> test -d $new_path_comp
+71	165	----> set -l where (contains -i -- $new_path_comp $__fish_tmp_path)
+94	94	-----> contains -i -- $new_path_comp $__fish_tmp_path
+40	40	----> and set -e __fish_tmp_path[$where]
+167	167	----> set __fish_tmp_path $new_path_comp $__fish_tmp_path
+32	32	---> read -l new_path_comp
+17	454	---> if test -d $new_path_comp...
+30	30	----> test -d $new_path_comp
+134	269	----> set -l where (contains -i -- $new_path_comp $__fish_tmp_path)
+135	135	-----> contains -i -- $new_path_comp $__fish_tmp_path
+50	50	----> and set -e __fish_tmp_path[$where]
+88	88	----> set __fish_tmp_path $new_path_comp $__fish_tmp_path
+26	26	---> read -l new_path_comp
+12	278	---> if test -d $new_path_comp...
+23	23	----> test -d $new_path_comp
+57	128	----> set -l where (contains -i -- $new_path_comp $__fish_tmp_path)
+71	71	-----> contains -i -- $new_path_comp $__fish_tmp_path
+32	32	----> and set -e __fish_tmp_path[$where]
+83	83	----> set __fish_tmp_path $new_path_comp $__fish_tmp_path
+23	23	---> read -l new_path_comp
+13	259	---> if test -d $new_path_comp...
+22	22	----> test -d $new_path_comp
+52	123	----> set -l where (contains -i -- $new_path_comp $__fish_tmp_path)
+71	71	-----> contains -i -- $new_path_comp $__fish_tmp_path
+31	31	----> and set -e __fish_tmp_path[$where]
+70	70	----> set __fish_tmp_path $new_path_comp $__fish_tmp_path
+21	21	---> read -l new_path_comp
+12	246	---> if test -d $new_path_comp...
+20	20	----> test -d $new_path_comp
+49	113	----> set -l where (contains -i -- $new_path_comp $__fish_tmp_path)
+64	64	-----> contains -i -- $new_path_comp $__fish_tmp_path
+30	30	----> and set -e __fish_tmp_path[$where]
+71	71	----> set __fish_tmp_path $new_path_comp $__fish_tmp_path
+18	18	---> read -l new_path_comp
+84	84	--> set __fish_tmp_path $__fish_tmp_path[-1..1]
+105	685	-> for pathfile in /etc/paths.d/*...
+106	580	--> __fish_load_path_helper_paths <$pathfile
+85	85	---> set __fish_tmp_path $__fish_tmp_path[-1..1]
+11	314	---> while read -l new_path_comp...
+25	25	----> read -l new_path_comp
+10	259	----> if test -d $new_path_comp...
+23	23	-----> test -d $new_path_comp
+53	125	-----> set -l where (contains -i -- $new_path_comp $__fish_tmp_path)
+72	72	------> contains -i -- $new_path_comp $__fish_tmp_path
+30	30	-----> and set -e __fish_tmp_path[$where]
+71	71	-----> set __fish_tmp_path $new_path_comp $__fish_tmp_path
+19	19	----> read -l new_path_comp
+75	75	---> set __fish_tmp_path $__fish_tmp_path[-1..1]
+92	92	-> set -xg PATH $__fish_tmp_path
+14	14	-> set -e __fish_tmp_path
+49	49	-> functions -e __fish_load_path_helper_paths
+6	15	-> if set -q MANPATH...
+9	9	--> set -q MANPATH
+19	19	-> function __fish_reconstruct_path -d "Update PATH when fish_user_paths changes" --on-variable fish_user_paths...
+116	315	-> __fish_reconstruct_path
+76	76	--> set -l local_path $PATH
+10	10	--> for x in $__fish_added_user_paths...
+14	14	--> set -g __fish_added_user_paths
+6	14	--> if set -q fish_user_paths...
+8	8	---> set -q fish_user_paths
+85	85	--> set -xg PATH $local_path
+28	28	-> function fish_sigtrap_handler --on-signal TRAP --no-scope-shadowing --description "Signal handler for the TRAP signal. Launches a debug prompt."...
+9	9	-> function __fish_on_interactive --on-event fish_prompt...
+12	12	-> function . --description 'Evaluate contents of file (deprecated, see "source")' --no-scope-shadowing...
+330	1093	-> __fish_set_locale
+511	552	--> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/__fish_set_locale.fish
+41	41	---> function __fish_set_locale...
+18	18	--> set -l LOCALE_VARS
+24	24	--> set LOCALE_VARS $LOCALE_VARS LANG LANGUAGE LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE
+44	44	--> set LOCALE_VARS $LOCALE_VARS LC_MONETARY LC_MESSAGES LC_PAPER LC_NAME LC_ADDRESS
+47	47	--> set LOCALE_VARS $LOCALE_VARS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION
+46	78	--> for locale_var in $LOCALE_VARS LC_ALL...
+9	32	---> if set -q $locale_var...
+15	15	----> set -q $locale_var
+8	8	----> return 0
+40	40	-> set -l sourcelist
+263	254569	-> for file in $configdir/fish/conf.d/*.fish $__fish_sysconfdir/conf.d/*.fish $__extra_confdir/*.fish...
+73	765	--> set -l basename (string replace -r '^.*/' '' -- $file)
+216	692	---> string replace -r '^.*/' '' -- $file
+241	476	----> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/string.fish
+7	235	-----> if not contains string (builtin -n)...
+197	228	------> not contains string (builtin -n)
+31	31	-------> builtin -n
+17	17	--> contains -- $basename $sourcelist
+19	19	--> set sourcelist $sourcelist $basename
+66	66	--> [ -f $file -a -r $file ]
+111	139	--> and source $file
+12	12	---> set -q FZF_TMUX_HEIGHT
+8	8	---> set -q FZF_DEFAULT_OPTS
+8	8	---> set -q FZF_LEGACY_KEYBINDINGS
+55	83	--> set -l basename (string replace -r '^.*/' '' -- $file)
+28	28	---> string replace -r '^.*/' '' -- $file
+17	17	--> contains -- $basename $sourcelist
+20	20	--> set sourcelist $sourcelist $basename
+43	43	--> [ -f $file -a -r $file ]
+219	5139	--> and source $file
+57	1446	---> if not command -s pyenv > /dev/null...
+1389	1389	----> not command -s pyenv > /dev/null
+44	44	---> set -l pyenv_root ""
+9	54	---> if test -z "$PYENV_ROOT"...
+24	24	----> test -z "$PYENV_ROOT"
+21	21	----> set pyenv_root "$PYENV_ROOT"
+7	70	---> if status --is-login...
+63	63	----> status --is-login
+3306	3306	---> command mkdir -p "$pyenv_root/"{shims,versions}
+362	639	--> set -l basename (string replace -r '^.*/' '' -- $file)
+277	277	---> string replace -r '^.*/' '' -- $file
+76	76	--> contains -- $basename $sourcelist
+109	109	--> set sourcelist $sourcelist $basename
+263	263	--> [ -f $file -a -r $file ]
+806	240835	--> and source $file
+35	472	---> if set -q $VIRTUALFISH_PYTHON...
+339	339	----> set -q $VIRTUALFISH_PYTHON
+98	98	----> set VIRTUALFISH_PYTHON python
+794	239523	---> eval (eval $VIRTUALFISH_PYTHON -m virtualfish $VIRTUALFISH_PLUGINS 2>/dev/null)
+1054	1254	----> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/eval.fish
+200	200	-----> function eval -S -d "Evaluate parameters as a command"...
+690	177192	----> eval $VIRTUALFISH_PYTHON -m virtualfish $VIRTUALFISH_PLUGINS 2>/dev/null
+65	65	-----> set -l status_copy $status
+8	8	-----> function __fish_restore_status...
+23	96	-----> if not set -q argv[2]...
+73	73	------> not set -q argv[2]
+51	51	-----> set -l mode
+21	93	-----> if status --is-interactive-job-control...
+37	37	------> status --is-interactive-job-control
+35	35	------> set mode interactive
+15	51	-----> if status --is-interactive...
+20	20	------> status --is-interactive
+16	16	------> status --job-control full
+140	321	-----> __fish_restore_status $status_copy
+181	181	------> return $argv[1]
+2059	175717	-----> echo "begin; $argv "\n" ;end <&3 3<&-" | source 3<&0
+100	173658	------> begin; python -m virtualfish 
+ ;end <&3 3<&-
+173558	173558	-------> python -m virtualfish
+63	63	-----> set -l res $status
+27	27	-----> status --job-control $mode
+10	10	-----> return $res
+21	21	----> set -l status_copy $status
+8	8	----> function __fish_restore_status...
+6	30	----> if not set -q argv[2]...
+10	10	-----> not set -q argv[2]
+14	14	-----> switch "$argv[1]"...
+11	11	----> set -l mode
+7	26	----> if status --is-interactive-job-control...
+8	8	-----> status --is-interactive-job-control
+11	11	-----> set mode interactive
+6	19	----> if status --is-interactive...
+6	6	-----> status --is-interactive
+7	7	-----> status --job-control full
+34	55	----> __fish_restore_status $status_copy
+21	21	-----> return $argv[1]
+1020	60049	----> echo "begin; $argv "\n" ;end <&3 3<&-" | source 3<&0
+37	59029	-----> begin; set -g VIRTUALFISH_VERSION 1.0.6;set -g VIRTUALFISH_PYTHON_EXEC /Users/switowski/.pyenv/versions/3.6.2/bin/python;source /Users/switowski/.pyenv/versions/3.6.2/lib/python3.6/site-packages/virtualfish/virtual.fish;emit virtualfish_did_setup_plugins 
+ ;end <&3 3<&-
+51	51	------> set -g VIRTUALFISH_VERSION 1.0.6
+28	28	------> set -g VIRTUALFISH_PYTHON_EXEC /Users/switowski/.pyenv/versions/3.6.2/bin/python
+1904	2364	------> source /Users/switowski/.pyenv/versions/3.6.2/lib/python3.6/site-packages/virtualfish/virtual.fish
+10	138	-------> if not set -q VIRTUALFISH_HOME...
+87	87	--------> not set -q VIRTUALFISH_HOME
+41	41	--------> set -g VIRTUALFISH_HOME $HOME/.virtualenvs
+20	20	-------> function vf --description "VirtualFish: fish plugin to manage virtualenvs"...
+16	16	-------> function __vf_activate --description "Activate a virtualenv"...
+19	19	-------> function __vf_deactivate --description "Deactivate this virtualenv"...
+11	11	-------> function __vf_new --description "Create a new virtualenv"...
+9	9	-------> function __vf_rm --description "Delete a virtualenv"...
+12	12	-------> function __vf_ls --description "List all of the available virtualenvs"...
+8	8	-------> function __vf_cd --description "Change directory to this virtualenv"...
+12	12	-------> function __vf_cdpackages --description "Change to the site-packages directory of this virtualenv"...
+9	9	-------> function __vf_tmp --description "Create a virtualenv that will be removed when deactivated"...
+23	23	-------> function __vfsupport_remove_env_on_deactivate_or_exit --on-event virtualenv_did_deactivate --on-process %self...
+11	11	-------> function __vf_addpath --description "Adds a path to sys.path in this virtualenv"...
+10	10	-------> function __vf_all --description "Run a command in all virtualenvs sequentially"...
+10	60	-------> if not set -q VIRTUALFISH_ACTIVATION_FILE...
+23	23	--------> not set -q VIRTUALFISH_ACTIVATION_FILE
+27	27	--------> set -g VIRTUALFISH_ACTIVATION_FILE .venv
+9	61	-------> if not set -q VIRTUALFISH_GLOBAL_SITE_PACKAGES_FILE...
+24	24	--------> not set -q VIRTUALFISH_GLOBAL_SITE_PACKAGES_FILE
+28	28	--------> set -g VIRTUALFISH_GLOBAL_SITE_PACKAGES_FILE "no-global-site-packages.txt"
+10	10	-------> function __vf_connect --description "Connect this virtualenv to the current directory"...
+9	9	-------> function __vf_help --description "Print VirtualFish usage information"...
+13	13	-------> function __vf_globalpackages --description "Toggle global site packages"...
+9	9	-------> function __vfsupport_setup_autocomplete --on-event virtualfish_did_setup_plugins...
+89	56549	------> emit virtualfish_did_setup_plugins
+163	56460	-------> __vfsupport_setup_autocomplete
+8	8	--------> function __vfcompletion_needs_command...
+5	5	--------> function __vfcompletion_using_command...
+383	56222	--------> for sc in (functions -a | sed -n '/__vf_/{s///g;p;}')...
+3970	3970	---------> functions -a | sed -n '/__vf_/{s///g;p;}'
+207	4216	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+4009	4009	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+83	83	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+127	3857	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3730	3730	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+56	56	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+129	3803	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3674	3674	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+53	53	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+159	3972	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3813	3813	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+52	52	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+173	3817	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3644	3644	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+70	70	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+140	3773	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3633	3633	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+47	47	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+149	4053	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3904	3904	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+60	60	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+201	3943	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3742	3742	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+53	53	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+123	4020	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3897	3897	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+46	46	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+135	3965	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3830	3830	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+47	47	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+148	3959	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3811	3811	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+47	47	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+136	3893	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3757	3757	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+45	45	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+143	3894	---------> set -l helptext (functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|")
+3751	3751	----------> functions "__vf_$sc" | head -n 1 | sed -E "s|.*'(.*)'.*|\1|"
+45	45	---------> complete -x -c vf -n '__vfcompletion_needs_command' -a $sc -d $helptext
+36	36	--------> complete -x -c vf -n '__vfcompletion_using_command activate' -a "(vf ls)"
+26	26	--------> complete -x -c vf -n '__vfcompletion_using_command rm' -a "(vf ls)"
+32	32	----> set -l res $status
+24	24	----> status --job-control $mode
+8	8	----> return $res
+7	34	---> if test $status -gt 0...
+27	27	----> test $status -gt 0
+59	97	--> set -l basename (string replace -r '^.*/' '' -- $file)
+38	38	---> string replace -r '^.*/' '' -- $file
+23	23	--> contains -- $basename $sourcelist
+28	28	--> set sourcelist $sourcelist $basename
+44	44	--> [ -f $file -a -r $file ]
+297	5884	--> and source $file
+5	77	---> if test -z "$Z_DATA"...
+72	72	----> test -z "$Z_DATA"
+7	29	---> if test ! -e "$Z_DATA"...
+22	22	----> test ! -e "$Z_DATA"
+5	17	---> if test -z "$Z_CMD"...
+12	12	----> test -z "$Z_CMD"
+56	56	---> set -U ZO_CMD "$Z_CMD"o
+6	34	---> if test ! -z $Z_CMD...
+13	13	----> test ! -z $Z_CMD
+15	15	----> function $Z_CMD -d "jump around"...
+7	27	---> if test ! -z $ZO_CMD...
+10	10	----> test ! -z $ZO_CMD
+10	10	----> function $ZO_CMD -d "open target dir"...
+4	13	---> if not set -q Z_EXCLUDE...
+9	9	----> not set -q Z_EXCLUDE
+145	5323	---> __z_complete
+170	184	----> source /Users/switowski/.config/fish/functions/__z_complete.fish
+14	14	-----> function __z_complete -d "add completions"...
+278	4674	----> set -l __z_marks (string replace -r '\|.*' '' < $Z_DATA | string escape)
+4396	4396	-----> string replace -r '\|.*' '' < $Z_DATA | string escape
+111	111	----> complete -c $Z_CMD -a "$__z_marks" -f
+100	100	----> complete -c $ZO_CMD -a "$__z_marks" -f
+21	21	----> complete -c $Z_CMD -s c -l clean  -d "Cleans out $Z_DATA"
+15	15	----> complete -c $Z_CMD -s e -l echo   -d "Prints best match, no cd"
+14	14	----> complete -c $Z_CMD -s l -l list   -d "List matches, no cd"
+17	17	----> complete -c $Z_CMD -s p -l purge  -d "Purges $Z_DATA"
+14	14	----> complete -c $Z_CMD -s r -l rank   -d "Searches by rank, cd"
+14	14	----> complete -c $Z_CMD -s t -l recent -d "Searches by recency, cd"
+14	14	----> complete -c $Z_CMD -s h -l help   -d "Print help"
+11	11	---> function __z_on_variable_pwd --on-variable PWD...
+5	16	-> if not set -q __fish_init_2_3_0...
+11	11	--> not set -q __fish_init_2_3_0
+6	13	-> if status --is-login...
+7	7	--> status --is-login
+58	58	> builtin source /usr/local/Cellar/fish/2.7.1/etc/fish/config.fish
+377	118142	> fish_prompt
+959	1063	-> source /Users/switowski/.config/fish/functions/fish_prompt.fish
+17	17	--> function _prompt_rubies -a sep_color -a ruby_color -d 'Display current Ruby (rvm/rbenv)'...
+15	15	--> function _prompt_virtualfish -a sep_color -a venv_color -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"...
+14	14	--> function _prompt_rust -a sep_color -a rust_color -d "Display current activated Rust"...
+12	12	--> function _prompt_nvm -a sep_color -a nvm_color -d "Display current activated Node"...
+11	11	--> function _prompt_whoami -a sep_color -a whoami_color -d "Display user@host if on a SSH session"...
+4	4	--> function _git_branch_name...
+6	6	--> function _is_git_dirty...
+8	8	--> function _git_ahead_count -a remote -a branch_name...
+10	10	--> function _git_dirty_remotes -a remote_color -a ahead_color...
+7	7	--> function fish_prompt...
+19	19	-> set -l exit_code $status
+49	105	-> set -l gray (set_color 666)
+56	56	--> set_color 666
+44	66	-> set -l blue (set_color blue)
+22	22	--> set_color blue
+41	53	-> set -l red (set_color red)
+12	12	--> set_color red
+43	55	-> set -l normal (set_color normal)
+12	12	--> set_color normal
+43	54	-> set -l yellow (set_color ffcc00)
+11	11	--> set_color ffcc00
+41	55	-> set -l orange (set_color ffb300)
+14	14	--> set_color ffb300
+57	72	-> set -l green (set_color green)
+15	15	--> set_color green
+32	32	-> set_color -o 666
+53	53	-> printf '['
+158	179	-> _prompt_whoami $gray $green
+8	21	--> if set -q SSH_TTY...
+13	13	---> set -q SSH_TTY
+23	23	-> set_color -o cyan
+54	767	-> printf '%s' (prompt_pwd)
+194	713	--> prompt_pwd
+182	198	---> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/prompt_pwd.fish
+16	16	----> function prompt_pwd --description "Print the current working directory, shortened to fit the prompt"...
+21	21	---> set -l options 'h/help'
+60	60	---> argparse -n prompt_pwd --max-args=0 $options -- $argv
+7	18	---> if set -q _flag_help...
+11	11	----> set -q _flag_help
+9	9	---> set -q fish_prompt_pwd_dir_length
+15	15	---> or set -l fish_prompt_pwd_dir_length 1
+37	37	---> set realhome ~
+54	96	---> set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
+42	42	----> string replace -r '^'"$realhome"'($|/)' '~$1' $PWD
+9	65	---> if [ $fish_prompt_pwd_dir_length -eq 0 ]...
+16	16	----> [ $fish_prompt_pwd_dir_length -eq 0 ]
+40	40	----> string replace -ar '(\.?[^/]{'"$fish_prompt_pwd_dir_length"'})[^/]*/' '$1/' $tmp
+195	60612	-> _prompt_rubies $gray $red
+20	20	--> [ "$theme_display_ruby" = 'no' ]
+14	14	--> set -l ruby_version
+14	58069	--> if type rvm-prompt >/dev/null 2>&1...
+516	7564	---> type rvm-prompt >/dev/null 2>&1
+621	644	----> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/type.fish
+23	23	-----> function type --description 'Print the type of a command'...
+16	16	----> set -q argv[1]
+37	37	----> set -l options 'h/help' 'a/all' 'f/no-functions' 't/type' 'p/path' 'P/force-path' 'q/quiet'
+66	66	----> argparse -n type --min-args=1 -x t,p,P $options -- $argv
+7	17	----> if set -q _flag_help...
+10	10	-----> set -q _flag_help
+12	12	----> set -l res 1
+12	12	----> set -l mode normal
+12	12	----> set -l multi no
+11	11	----> set -l selection all
+8	38	----> if set -q _flag_quiet...
+8	8	-----> set -q _flag_quiet
+7	7	-----> set -q _flag_type
+7	7	-----> set -q _flag_path
+8	8	-----> set -q _flag_force_path
+7	7	----> set -q _flag_all
+6	6	----> set -q _flag_no_functions
+25	6152	----> for i in $argv...
+11	11	-----> set -l found 0
+8	273	-----> if test $selection != files...
+18	18	------> test $selection != files
+6	41	------> if functions -q -- $i...
+35	35	-------> functions -q -- $i
+7	206	------> if contains -- $i (builtin -n)...
+170	199	-------> contains -- $i (builtin -n)
+29	29	--------> builtin -n
+13	13	-----> set -l paths
+7	167	-----> if test $multi != yes...
+12	12	------> test $multi != yes
+49	148	------> set paths (command -s -- $i)
+99	99	-------> command -s -- $i
+7	7	-----> for path in $paths...
+45	5656	-----> if test $found = 0...
+11	11	------> test $found = 0
+12	12	------> and test $mode != quiet
+873	5588	------> printf (_ "%s: Could not find '%s'\n") type $i >&2
+104	4715	-------> _ "%s: Could not find '%s'\n"
+117	208	--------> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/_.fish
+7	91	---------> if command -sq gettext...
+72	72	----------> command -sq gettext
+12	12	----------> function _ --description "Alias for the gettext command"...
+4403	4403	--------> command gettext fish $argv
+18	18	----> return $res
+494	6746	---> type rbenv >/dev/null 2>&1
+18	18	----> set -q argv[1]
+39	39	----> set -l options 'h/help' 'a/all' 'f/no-functions' 't/type' 'p/path' 'P/force-path' 'q/quiet'
+59	59	----> argparse -n type --min-args=1 -x t,p,P $options -- $argv
+8	79	----> if set -q _flag_help...
+71	71	-----> set -q _flag_help
+13	13	----> set -l res 1
+12	12	----> set -l mode normal
+12	12	----> set -l multi no
+13	13	----> set -l selection all
+10	38	----> if set -q _flag_quiet...
+7	7	-----> set -q _flag_quiet
+7	7	-----> set -q _flag_type
+7	7	-----> set -q _flag_path
+7	7	-----> set -q _flag_force_path
+8	8	----> set -q _flag_all
+7	7	----> set -q _flag_no_functions
+22	5944	----> for i in $argv...
+11	11	-----> set -l found 0
+8	281	-----> if test $selection != files...
+14	14	------> test $selection != files
+5	48	------> if functions -q -- $i...
+43	43	-------> functions -q -- $i
+5	211	------> if contains -- $i (builtin -n)...
+176	206	-------> contains -- $i (builtin -n)
+30	30	--------> builtin -n
+14	14	-----> set -l paths
+8	177	-----> if test $multi != yes...
+12	12	------> test $multi != yes
+54	157	------> set paths (command -s -- $i)
+103	103	-------> command -s -- $i
+23	5416	-----> for path in $paths...
+11	11	------> set res 0
+12	12	------> set found 1
+56	5321	------> switch $mode...
+845	5265	-------> printf (_ '%s is %s\n') $i $path
+50	4420	--------> _ '%s is %s\n'
+4370	4370	---------> command gettext fish $argv
+10	49	------> if test $multi != yes...
+32	32	-------> test $multi != yes
+7	7	-------> continue
+9	23	-----> if test $found = 0...
+14	14	------> test $found = 0
+10	10	----> return $res
+102	43745	---> set ruby_version (rbenv version-name)
+43643	43643	----> rbenv version-name
+22	22	--> [ -z "$ruby_version" ]
+123	2292	--> echo -n -s $sep_color '|' $ruby_color (echo -n -s $ruby_version | cut -d- -f2-)
+2169	2169	---> echo -n -s $ruby_version | cut -d- -f2-
+12	125	-> if [ "$VIRTUAL_ENV" != "$LAST_VIRTUAL_ENV" -o -z "$PYTHON_VERSION" ]...
+113	113	--> [ "$VIRTUAL_ENV" != "$LAST_VIRTUAL_ENV" -o -z "$PYTHON_VERSION" ]
+129	193	-> _prompt_virtualfish $gray $blue
+16	16	--> [ "$theme_display_virtualenv" = 'no' ]
+30	30	--> echo -n -s $sep_color '|' $venv_color $PYTHON_VERSION
+18	18	--> [ -n "$VIRTUAL_ENV" ]
+99	117	-> _prompt_rust $gray $orange
+14	14	--> [ "$theme_display_rust" != 'yes' ]
+4	4	--> and return
+6	33	-> if [ "$NVM_BIN" != "$LAST_NVM_BIN" -o -z "$NVM_VERSION" ]...
+27	27	--> [ "$NVM_BIN" != "$LAST_NVM_BIN" -o -z "$NVM_VERSION" ]
+89	116	-> _prompt_nvm $gray $green
+24	24	--> [ "$theme_display_nvm" != 'yes' -o -z "$NVM_VERSION" ]
+3	3	--> and return
+29	29	-> set_color -o 666
+12	50	-> if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE...
+14	14	--> set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
+24	24	--> printf ']\n'
+14	53492	-> if [ (_git_branch_name) ]...
+50	4204	--> [ (_git_branch_name) ]
+57	4154	---> _git_branch_name
+86	4097	----> echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+4011	4011	-----> command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||'
+76	4972	--> set -l git_branch (_git_branch_name)
+40	4896	---> _git_branch_name
+104	4856	----> echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+4752	4752	-----> command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||'
+73	32254	--> set dirty_remotes (_git_dirty_remotes $red $orange)
+264	32181	---> _git_dirty_remotes $red $orange
+153	7550	----> set current_branch (command git rev-parse --abbrev-ref HEAD ^/dev/null)
+7397	7397	-----> command git rev-parse --abbrev-ref HEAD ^/dev/null
+253	4228	----> set current_ref (command git rev-parse HEAD ^/dev/null)
+3975	3975	-----> command git rev-parse HEAD ^/dev/null
+140	20139	----> for remote in (git remote | grep 'origin\|upstream')...
+1885	7474	-----> git remote | grep 'origin\|upstream'
+251	3126	------> source /usr/local/Cellar/fish/2.7.1/share/fish/functions/grep.fish
+62	2875	-------> if echo | command grep --color=auto "" >/dev/null 2>&1...
+2794	2794	--------> echo | command grep --color=auto "" >/dev/null 2>&1
+19	19	--------> function grep...
+2463	2463	------> command grep --color=auto $argv
+79	8465	-----> set -l git_ahead_count (_git_ahead_count $remote $current_branch)
+99	8386	------> _git_ahead_count $remote $current_branch
+104	8287	-------> echo (command git log $remote/$branch_name..HEAD ^/dev/null | \
+    grep '^commit' | wc -l | tr -d ' ')
+4837	8183	--------> command git log $remote/$branch_name..HEAD ^/dev/null | \
+    grep '^commit' | wc -l | tr -d ' '
+3346	3346	---------> command grep --color=auto $argv
+87	87	-----> set remote_branch "refs/remotes/$remote/$current_branch"
+135	3909	-----> set remote_ref (git for-each-ref --format='%(objectname)' $remote_branch)
+3774	3774	------> git for-each-ref --format='%(objectname)' $remote_branch
+10	64	-----> if test "$remote_ref" != ''...
+26	26	------> test "$remote_ref" != ''
+7	28	------> if test "$remote_ref" != $current_ref...
+21	21	-------> test "$remote_ref" != $current_ref
+8	12048	--> if [ (_is_git_dirty) ]...
+49	11988	---> [ (_is_git_dirty) ]
+58	11939	----> _is_git_dirty
+137	11881	-----> echo (command git status -s --ignore-submodules=dirty ^/dev/null)
+11744	11744	------> command git status -s --ignore-submodules=dirty ^/dev/null
+52	52	---> echo -n -s $gray '‹' $yellow $git_branch $red '*' $dirty_remotes $gray '›' $normal
+12	112	-> if test $exit_code -ne 0...
+15	15	--> test $exit_code -ne 0
+85	85	--> set arrow_colors 060 090 0c0 0f0
+11	45	-> if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE...
+16	16	--> set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
+18	18	--> printf ' '
+54	202	-> for arrow_color in $arrow_colors...
+27	27	--> set_color $arrow_color
+30	30	--> printf '»'
+25	25	--> set_color $arrow_color
+12	12	--> printf '»'
+15	15	--> set_color $arrow_color
+12	12	--> printf '»'
+15	15	--> set_color $arrow_color
+12	12	--> printf '»'
+19	19	-> printf ' '
+24	24	-> set_color normal
+36	36	> exit
+47	64	> __vfsupport_remove_env_on_deactivate_or_exit PROCESS_EXIT 54966 0
+7	17	-> if set -q VF_TEMPORARY_ENV...
+10	10	--> set -q VF_TEMPORARY_ENV
