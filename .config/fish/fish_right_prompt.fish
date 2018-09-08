@@ -51,11 +51,9 @@ function fish_right_prompt
   set prompt $prompt "$color_gray|$color_red"(rbenv version-name)
 
   #NVM
-  if available nvm
-    set node_version (string trim -l -c=v (node -v 2>/dev/null)) # trimmed lef 'v'; can use 'nvm current', but slower
-    if set -q node_version
-      set prompt $prompt "$color_gray|$color_green$node_version"
-    end
+  if test -n "$NVM_BIN"
+    set node_version (dirname $NVM_BIN | xargs basename | sed 's/^.//') # `nvm current` or `node -v` are slow
+    set prompt $prompt "$color_gray|$color_green$node_version"
   end
 
   set prompt $prompt $color_normal"]"

@@ -21,3 +21,4 @@ mkdir -p ~/.config/fish/functions/
 DOTFILES_ROOT="`pwd`"
 ln -sf "$DOTFILES_ROOT/config/fish/fish_prompt.fish" "~/.config/fish/functions/fish_prompt.fish"
 ln -sf "$DOTFILES_ROOT/config/fish/fish_right_prompt.fish" "~/.config/fish/functions/fish_right_prompt.fish"
+ln -sf "$DOTFILES_ROOT/config/fish/fish_greeting.fish" "~/.config/fish/functions/fish_greeting.fish"
