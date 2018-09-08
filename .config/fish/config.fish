@@ -27,18 +27,23 @@ history merge
 #bind -k up 'history --merge ; up-or-search'
 
 # Enable rbenv
-status --is-interactive; and source (rbenv init -|psub)
+# I'm using `fisher rbenv` plugin instead of this line to speed up fish startup time
+# status --is-interactive; and source (rbenv init -|psub)
 # Enable nodenv
-status --is-interactive; and source (nodenv init -|psub)
+# I'm using `fisher nodenv` plugin instead of this line to speed up fish startup time
+# status --is-interactive; and source (nodenv init -|psub)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
-  if type source > /dev/null
-    source '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
-  else
-    . '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
-  end
-end
 
-# For openssl
-set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+# Probably not used for now
+
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
+#   if type source > /dev/null
+#     source '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
+#   else
+#     . '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
+#   end
+# end
+
+# # For openssl
+# set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
