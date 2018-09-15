@@ -10,7 +10,6 @@ function __parse_current_folder -d "Replace '$HOME' with '~'"
 end
 
 # Uncomment this if you want to change the title in the terminal
-
 # # Set title to current folder and shell name
 # function fish_title
 #   set -l basename (string replace -r '^.*/' '' -- $PWD)
@@ -42,9 +41,6 @@ end
 
 ########################## SETTINGS ##########################################
 
-# Whether or not is a fresh session
-set -g __fresh_session 1
-
 # Deactivate the default virtualenv prompt so that we can add our own
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
@@ -54,6 +50,8 @@ __set_default symbol_git_down_arrow "⇣"
 __set_default symbol_git_up_arrow "⇡"
 __set_default symbol_git_dirty "*"
 __set_default symbol_horizontal_bar "—"
+__set_default symbol_root \u26a1
+__set_default symbol_bgjobs \u2699
 
 # Colors
 __set_default color_blue (set_color -o blue)
@@ -70,7 +68,7 @@ __set_default host_color $color_gray
 __set_default root_color $color_normal
 
 
-function pre_prompt --on-event fish_prompt
+function pre_prompt
   # Template
   set -l user_and_host ""
   set -l current_folder (__parse_current_folder)
@@ -144,7 +142,20 @@ function pre_prompt --on-event fish_prompt
 end
 
 function fish_prompt
+  # Print pre-prompt
+  pre_prompt
+
   set -l prompt ""
+
+  # # Check if the user is root
+  # if [ (id -u $USER) -eq 0 ]
+  #   set prompt $prompt "$symbol_root "
+  # end
+
+  # Check if there are some background jobs
+  if [ (jobs -l | wc -l) -ne 0 ]
+    set prompt $prompt "$symbol_bgjobs  "
+  end
 
   # Save previous exit code
   set -l exit_code $status
