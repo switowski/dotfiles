@@ -12,3 +12,4 @@ Package\ Control.ca-certs/
 *.sublime-workspace
 .config/sublime-text-3/Packages/User/Projects/recent.json
 .config/sublime-text-3-mac/Packages/User/Color Highlighter/ColorPicker/ColorPicker_osx_x64
+.config/sublime-text-3-mac/Packages/User/oscrypto-ca-bundle.crt

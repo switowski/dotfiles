@@ -82,5 +82,3 @@ function windowsrbig   ; xfreerdp  -a 16 -u switowsk -d CERN -g 1600x900 cernts.
 # Project related functiones
 function js ; jekyll serve -w --config _config.yml,_config-dev.yml $argv ; end
 
-# ML tools
-function octave ; /usr/local/octave/3.8.0/bin/octave-3.8.0 $argv ; end
