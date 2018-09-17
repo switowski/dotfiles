@@ -54,14 +54,15 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 " Puppet linter
 Plug 'rodjek/vim-puppet'
-" Syntax checking hacks
-" Disabled as it's very slow on Mac
-" Plug 'scrooloose/syntastic'
-" A tree explorer
-" I'm not using it anyway
-" Plug 'scrooloose/nerdtree'
 " Plugin for fish syntax
 Plug 'dag/vim-fish'
+" Plugin to manage Most Recently Used (MRU) files. This plugin can be opened with <leader+f>
+Plug 'vim-scripts/mru.vim'
+" Comment stuff out. Use gcc to comment out a line (takes a count), gc to comment out the target of a motion. gcu uncomments a set of adjacent commented lines
+Plug 'tpope/vim-commentary'
+" Syntax and lint checking for vim (async). Requires Vim 8
+Plug 'w0rp/ale'
+
 " Initialize plugin system
 call plug#end()
 " }}}
@@ -201,16 +202,6 @@ set nofoldenable        "don't fold by default
 " }}}
 
 
-" ================= Autocompletion ====================== {{{
-autocmd BufEnter * :syntax sync fromstart
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow"
-" Remap code completion to Ctrl+Tab (gui and termial)
-inoremap <Nul> <C-x><C-o>
-inoremap <C-Tab> <C-x><C-o>
-" }}}
-
-
 " ================ Commands ======================== {{{
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W w !sudo tee % > /dev/null
@@ -280,6 +271,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
+
+" Open MRU.vim to see the most recent files
+map <leader>f :MRU<CR>
 " }}}
 
 
