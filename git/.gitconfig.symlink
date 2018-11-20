@@ -39,12 +39,14 @@
     # usage: `git copr 1234` or `git copr 1234 upstream`
     copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
                    git checkout pr/$1; }; f"
-	pushf = push --force-with-lease
-	# Ignore or unignore some local files (https://stackoverflow.com/a/18317425)
+    pushf = push --force-with-lease
+    # Ignore or unignore some local files (https://stackoverflow.com/a/18317425)
     # usage: git ignore path-to-file-to-ignore
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
+    # Delete all local branches (except "master" and "dev") that has been merged
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 [color]
     ui = auto
 
@@ -83,3 +85,7 @@
     helper = cache --timeout=21600 # 6 hours
 [push]
     default = current
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
