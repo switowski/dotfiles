@@ -1,3 +1,27 @@
+# This function will print all custom commands that I have defined everywhere,
+# so I can easily keep track and stop forgetting about a command that I've
+# added 2 years ago and never used.
+function commands
+  echo "User functions (~/.config/fish/functions.fish):"
+  echo "  subl [file | dir]   Open file or directory in Sublime"
+  echo "  killport [port]     Kill port `port`"
+  echo "  ip                  Print current IP"
+  echo "  black [arg]         Run black in docker"
+  echo "  fish_profile        Profile fish startup time"
+  echo "  change_mac          Spoof MAC address"
+  echo ''
+  echo '========================================================'
+  echo ''
+  echo "Git aliases (/Users/switowski/workspace/dotfiles/git/.gitconfig.symlink):"
+  git config --get-regexp alias
+  echo ''
+  echo '========================================================'
+  echo ''
+  echo "User aliases (/Users/switowski/workspace/dotfiles/.config/fish/aliases.fish):"
+  cat /Users/switowski/workspace/dotfiles/.config/fish/aliases.fish
+end
+
+
 function subl --description 'Open Sublime Text'
   if test -d "/Applications/Sublime Text.app"
     "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $argv
@@ -40,4 +64,11 @@ end
 # Function to profile fish startup time - since I tend to mess it up often
 function fish_profile
   fish --profile prompt.prof -ic 'fish_prompt; exit'; sort -nk 2 prompt.prof
+end
+
+# Function to spoof my MAC address
+function change_mac
+  # Since I'm using the NPM package to do this in a nice way (easily randomize MAC address with 1 command),
+  # let's print the help of that command
+  command spoof --help
 end
