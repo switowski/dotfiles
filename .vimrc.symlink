@@ -208,6 +208,42 @@ command W w !sudo tee % > /dev/null
 
 " Treat :Q as :q - common mistake
 command! -bang Q q<bang>
+
+" Remove all trailing spaces
+command Fixspaces :%s/\s\+$//e
+" }}}
+
+" ================ Shortcuts ======================== {{{
+" Pressing <leader>s will toggle and untoggle spell checking
+map <leader>s :setlocal spell!<cr>
+
+" List open buffers and then select buffer number to switch
+nnoremap <leader>b :buffers<CR>:buffer<Space>
+
+" Toogle relative/nonrelative line numbers
+nnoremap <leader>l :set norelativenumber!<CR>
+
+" Toogle line numbers
+nnoremap <leader>n :set invnumber<CR>
+
+" Press F2 or <leader>pp to toogle paste mode
+set pastetoggle=<F2>
+map <leader>pp :setlocal paste!<cr>
+
+" Press // when selected some text in visual mode to find next occurence of this text
+vnoremap // y/<C-R>"<CR>
+
+" Turn off search highlight with double space
+nnoremap <leader><space> :nohlsearch<CR>
+
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" Open MRU.vim to see the most recent files
+map <leader>f :MRU<CR>
+
+" Fast save of a buffer
+nmap <leader>w :w!<cr>
 " }}}
 
 
@@ -242,38 +278,6 @@ map <leader>sa zg
 map <leader>s? z=
 " Fix spelling with <leader>sf
 nnoremap <leader>sf 1z=
-" }}}
-
-
-
-" ================ Shortcuts ======================== {{{
-" Pressing <leader>s will toggle and untoggle spell checking
-map <leader>s :setlocal spell!<cr>
-
-" List open buffers and then select buffer number to switch
-nnoremap <leader>b :buffers<CR>:buffer<Space>
-
-" Toogle relative/nonrelative line numbers
-nnoremap <leader>l :set norelativenumber!<CR>
-
-" Toogle line numbers
-nnoremap <leader>n :set invnumber<CR>
-
-" Press F2 or <leader>pp to toogle paste mode
-set pastetoggle=<F2>
-map <leader>pp :setlocal paste!<cr>
-
-" Press // when selected some text in visual mode to find next occurence of this text
-vnoremap // y/<C-R>"<CR>
-
-" Turn off search highlight with double space
-nnoremap <leader><space> :nohlsearch<CR>
-
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
-
-" Open MRU.vim to see the most recent files
-map <leader>f :MRU<CR>
 " }}}
 
 
