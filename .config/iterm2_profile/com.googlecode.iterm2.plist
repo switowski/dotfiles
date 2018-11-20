@@ -358,8 +358,18 @@
 	<string>cds-prod</string>
 	<key>Default Bookmark Guid</key>
 	<string>AFE5CB22-7390-4748-9852-9B5C0E96C242</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<false/>
 	<key>DisableWindowSizeSnap</key>
 	<true/>
+	<key>EnableDivisionView</key>
+	<true/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -587,11 +597,11 @@ Resize Split Pane.Move Divider Right</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>369 563 1018 447 0 0 1680 1028 </string>
+	<string>369 503 770 429 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>840 0 840 1028 0 0 1680 1028 </string>
+	<string>960 0 960 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>911 184 570 452 0 0 1680 1028 </string>
+	<string>752 0 928 1028 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242_selection</key>
@@ -1307,6 +1317,8 @@ Resize Split Pane.Move Divider Right</string>
 			<string>/Users/switowski</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -1363,11 +1375,21 @@ Resize Split Pane.Move Divider Right</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-01T14:41:51Z</date>
+	<date>2018-11-19T08:13:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
-	<key>ShowFullScreenTabBar</key>
+	<key>SUSkippedVersion</key>
+	<string>3.2.5</string>
+	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
+	<key>ShowNewOutputIndicator</key>
+	<true/>
+	<key>ShowPaneTitles</key>
+	<true/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.39763371394230773</real>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>SwitchPaneModifier</key>
@@ -1376,6 +1398,8 @@ Resize Split Pane.Move Divider Right</string>
 	<integer>3</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>UseBorder</key>
+	<false/>
 	<key>Window Arrangements</key>
 	<dict>
 		<key>cds-prod</key>
@@ -4936,6 +4960,6 @@ Resize Split Pane.Move Divider Right</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.0</string>
+	<string>3.2.4</string>
 </dict>
 </plist>
