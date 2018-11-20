@@ -50,11 +50,15 @@ function fish_right_prompt
   # Ruby
   set prompt $prompt "$color_gray|$color_red"(rbenv version-name)
 
+  # Nodenv
+  set prompt $prompt "$color_gray|$color_green"(nodenv version-name)
+
+  # I'm no longer using NVM, but I keep this line in case I go back
   #NVM
-  if test -n "$NVM_BIN"
-    set node_version (dirname $NVM_BIN | xargs basename | sed 's/^.//') # `nvm current` or `node -v` are slow
-    set prompt $prompt "$color_gray|$color_green$node_version"
-  end
+  #if test -n "$NVM_BIN"
+  #  set node_version (dirname $NVM_BIN | xargs basename | sed 's/^.//') # `nvm current` or `node -v` are slow
+  #  set prompt $prompt "$color_gray|$color_green$node_version"
+  #end
 
   set prompt $prompt $color_normal"]"
 
