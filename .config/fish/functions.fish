@@ -70,5 +70,10 @@ end
 function change_mac
   # Since I'm using the NPM package to do this in a nice way (easily randomize MAC address with 1 command),
   # let's print the help of that command
-  command spoof --help
+  if type -q spoof
+    command spoof --help
+  else
+    echo "Please install spoof (npm install spoof -g)"
+  end
+
 end
