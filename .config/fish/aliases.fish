@@ -26,6 +26,9 @@ function hm ; history merge ; end
 # Ack is not installed, but we have ag which is supposed to be a replacement
 function ack ; ag $argv ; end
 
+# Add message when using the 'locate' command to use mdfind instead
+function locate ; echo "Use `mdfind` or `mdfind -name foo` instead"; end
+
 # Git functions
 function ga     ; git add $argv ; end
 function gb     ; git branch $argv ; end
@@ -33,6 +36,7 @@ function gbr    ; git branch $argv ; end
 function gci    ; git commit $argv ; end
 function gcp    ; git cherry-pick $argv ; end
 function gco    ; git checkout $argv ; end
+function gca    ; git add -A; and git commit -av $argv; end
 function gd     ; git diff $argv ; end
 function gds    ; git diff --staged $argv ; end
 function gffs   ; git add --all; and git commit --amend --no-edit $argv ; end

@@ -24,16 +24,20 @@
     # Ignore repeated git command, like in: '$ git git git status'
     # source http://caiustheory.com/git-git-git-git-git/
     git = !exec git
-    # Merge GitHub pull request on top of the `master` branch
-    # source https://github.com/egabancho/dotfiles/blob/1c6629c846ac42c54d1d47b7343abf3f4343fea0/.gitconfig
+    # Merge GitHub pull request on top of the current branch or,
+    # if a branch name is specified, on top of the specified branch.
     mpr = "!f() { \
-            if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-                git fetch upstream refs/pull/$1/head:pr/$1 && \
-                git checkout master && \
-                git merge --ff-only pr/$1 && \
-                git branch -D pr/$1; \
-            fi \
-        }; f"
+        declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
+        declare branch=\"${2:-$currentBranch}\"; \
+        if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
+            git fetch origin refs/pull/$1/head:pr/$1 && \
+            git checkout -B $branch && \
+            git rebase $branch pr/$1 && \
+            git checkout -B $branch && \
+            git merge --ff-only pr/$1 && \
+            git branch -D pr/$1; \
+        fi \
+    }; f"
     # Switch to PR
     # source https://nedbatchelder.com/blog/201407/fetching_github_pull_requests.html
     # usage: `git copr 1234` or `git copr 1234 upstream`
@@ -47,6 +51,10 @@
     ignored = !git ls-files -v | grep "^[[:lower:]]"
     # Delete all local branches (except "master" and "dev") that has been merged
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+    # List aliases
+    aliases = config --get-regexp alias
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
 [color]
     ui = auto
 

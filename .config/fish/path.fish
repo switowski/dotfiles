@@ -6,3 +6,5 @@ set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Hom
 set -x LDFLAGS -L/usr/local/opt/openssl/lib
 set -x CPPFLAGS -I/usr/local/opt/openssl/include
 set -x PKG_CONFIG_PATH /usr/local/opt/openssl/lib/pkgconfig
+# Add poetry to path
+set -x PATH $PATH /usr/local/sbin
