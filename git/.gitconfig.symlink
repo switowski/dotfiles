@@ -49,7 +49,7 @@
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
-    # Delete all local branches (except "master" and "dev") that has been merged
+    # Delete all local branches that has been merged
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
     # List aliases
     aliases = config --get-regexp alias
