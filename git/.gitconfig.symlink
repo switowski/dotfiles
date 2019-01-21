@@ -55,6 +55,8 @@
     aliases = config --get-regexp alias
     # List contributors with number of commits
     contributors = shortlog --summary --numbered
+    # List all merge requests - works for GitLab for now
+    lmr = !echo "Remember to run 'git fetch' first!" && git branch -a --list "*merge-request*"
 [color]
     ui = auto
 
@@ -87,7 +89,8 @@
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
     # Configure Git on OS X to properly handle line endings
-    autocrlf = input
+    # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
+    #autocrlf = input
 
 [credential]
     helper = cache --timeout=28800 # 8 hours
