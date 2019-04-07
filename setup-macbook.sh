@@ -43,6 +43,10 @@ cp "$HOME/.vimrc" "$HOME/.vimrc_bak" 2>/dev/null
 cp "$HOME/.pryrc" "$HOME/.pryrc_bak" 2>/dev/null
 ln -sf "$DOTFILES_ROOT/.vimrc.symlink" "$HOME/.vimrc"
 ln -sf "$DOTFILES_ROOT/.pryrc.symlink" "$HOME/.pryrc"
+# Spacemacs in case I decide to use it
+cp "$HOME/.spacemacs" "$HOME/.spacemacs_bak" 2>/dev/null
+ln -sf "$DOTFILES_ROOT/.spacemacs.symlink" "$HOME/.spacemacs"
+
 
 # Backup current Sublime Packages directory and symlink it
 if [[ -d "$HOME/Library/Application Support/Sublime Text 3/Packages/User" ]]
@@ -67,5 +71,5 @@ cp -R "$DOTFILES_ROOT/automator/*" "$HOME/Library/Services"
 
 ####################### Install pip and Python packages ######################
 # Pip packages can't be installed manually as the default pip is not the one from pyenv, so make sure the pyenv shims are setup first
-echo "Áfter you setup the pyenv, run ./pip.sh to install pip packages"
+echo "After you setup the pyenv, run ./pip.sh to install pip packages"
 
