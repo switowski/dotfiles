@@ -2,6 +2,8 @@
 *.pyc
 # Pytest cache directory
 .pytest_cache*
+# Local version of python from pyenv
+.python-version
 
 # Folder view configuration files
 .DS_Store

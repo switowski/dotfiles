@@ -5,6 +5,9 @@ set default_machine smbp
 set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
 
+# Prevent opening this fucking Nano
+set -x EDITOR vim
+
 source ~/.config/fish/path.fish
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish

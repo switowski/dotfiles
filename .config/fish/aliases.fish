@@ -22,12 +22,17 @@ function g  ; git $argv ; end
 function v  ; vim $argv ; end
 function o  ; open $argv ; end
 function hm ; history merge ; end
+function ta ; tmux attach ; end
+function td ; tmux detach ; end
+function be ; bundle exec $argv ; end
 
 # Ack is not installed, but we have ag which is supposed to be a replacement
 function ack ; ag $argv ; end
+# Ack with pager if there are many results
+function ackp ; ag $argv --page="less -R"; end
 
 # Add message when using the 'locate' command to use mdfind instead
-function locate ; echo "Use `mdfind` or `mdfind -name foo` instead"; end
+function locate ; echo "Use `mdfind` or `mdfind -name foo` instead. Use 'command locate' if you really need to run it."; end
 
 # Git functions
 function ga     ; git add $argv ; end
@@ -84,5 +89,7 @@ function windowsr       ; rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts
 function windowsrbig   ; xfreerdp  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch $argv ; end
 
 # Project related functiones
-function js ; jekyll serve -w --config _config.yml,_config-dev.yml $argv ; end
+function js ; bundle exec jekyll serve -w --config _config.yml,_config-dev.yml $argv ; end
 
+
+######## Temporary stuff ########
