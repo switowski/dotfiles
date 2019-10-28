@@ -19,7 +19,7 @@ end
 
 # Enable virtualfish with some plugins
 # Or find a prompt that supports it
-eval (python -m virtualfish compat_aliases)
+eval (~/.pyenv/shims/python -m virtualfish compat_aliases)
 # Read more on virtualfish plugins: http://virtualfish.readthedocs.io/en/latest/plugins.html
 
 # Store history from all tabs

@@ -11,11 +11,14 @@ function grep     ; command grep --color=auto $argv ; end
 # List directory contents
 function ll ; ls -al $argv ; end
 function l  ; ls -al $argv ; end
+function e  ; exa $argv ; end
+function el  ; exa -l $argv ; end
 
 # Important one ! Parenting changing perms on /
-function chown  ; chown --preserve-root $argv ; end
-function chmod  ; chmod --preserve-root $argv ; end
-function chgrp  ; chgrp --preserve-root $argv ; end
+# In Mac there is no --preserve-root option
+#function chown  ; command chown --preserve-root $argv ; end
+#function chmod  ; command chmod --preserve-root $argv ; end
+#function chgrp  ; command chgrp --preserve-root $argv ; end
 
 # Shortcuts
 function g  ; git $argv ; end
@@ -30,9 +33,11 @@ function be ; bundle exec $argv ; end
 function ack ; ag $argv ; end
 # Ack with pager if there are many results
 function ackp ; ag $argv --page="less -R"; end
+# Run ripgrep (better version of ack and ag) output through pager
+function rgp      ; command rg -p $argv | less -RFX ; end
 
 # Add message when using the 'locate' command to use mdfind instead
-function locate ; echo "Use `mdfind` or `mdfind -name foo` instead. Use 'command locate' if you really need to run it."; end
+function locate ; echo "Use `fd`, `mdfind` or `mdfind -name foo` instead. Use '\locate' if you really need to run it."; end
 
 # Git functions
 function ga     ; git add $argv ; end
@@ -75,7 +80,6 @@ function di ;                curl -XDELETE 'http://localhost:9200/_all' $argv ; 
 #   Mac OS functions
 #   ---------------------------
 # function cask ; brew cask; end  # I never used it
-
 #   ---------------------------
 #   Work related functiones
 #   ---------------------------
@@ -89,7 +93,7 @@ function windowsr       ; rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts
 function windowsrbig   ; xfreerdp  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch $argv ; end
 
 # Project related functiones
-function js ; bundle exec jekyll serve -w --config _config.yml,_config-dev.yml $argv ; end
+function js ; bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml $argv ; end
 
 
 ######## Temporary stuff ########

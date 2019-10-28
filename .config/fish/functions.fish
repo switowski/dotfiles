@@ -21,6 +21,25 @@ function commands
   cat /Users/switowski/workspace/dotfiles/.config/fish/aliases.fish
 end
 
+function kodissh --description 'SSH to the media server'
+  ssh osmc@192.168.0.18
+end
+
+function kodi --argument-names type files --description 'Media server related functions'
+  switch $type
+  case m movie Movie Movies:
+    set dest "/home/osmc/Movies/"
+  case tv "TV Show" TV tv:
+    set dest "/home/osmc/TV\ Shows/"
+  case music Music:
+    set dest "/home/osmc/Music/"
+  case '*':
+    echo "Unknown type of files. Specify m (movie), tv (TV Show) or music!"
+    return 1
+  end
+  echo "Copying $files files to $dest"
+  scp -r $files osmc@192.168.0.18:$dest
+end
 
 function subl --description 'Open Sublime Text'
   if test -d "/Applications/Sublime Text.app"

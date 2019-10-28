@@ -19,7 +19,9 @@ brew cask install karabiner-elements
 
 # dev
 brew cask install iterm2
-brew cask install sublime-text
+brew cask install dbcli/litecli # Better SQLite CLI
+
+#brew cask install sublime-text
 # Image optimizers
 brew cask install imagealpha
 brew cask install imageoptim
