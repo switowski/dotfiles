@@ -14,12 +14,16 @@ brew cask install dropbox
 brew cask install vlc
 brew cask install the-unarchiver # check the unarchiver page for unar CLI command
 brew cask install flux
-# karabiner for mapping multiple keys to one
-brew cask install karabiner-elements
+brew cask install karabiner-elements # karabiner for mapping multiple keys to one
+brew cask install menumeters  # Install memory/CPU/disk/network menu bars (https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/)
+brew cask install endurance # Install Endurance app (http://enduranceapp.com/)
+
 
 # dev
 brew cask install iterm2
 brew cask install dbcli/litecli # Better SQLite CLI
+brew cask install dbcli/pgcli # Better PostgreSQL CLI (it will also install postgres!)
+brew cask install podman # Docker replacement
 
 #brew cask install sublime-text
 # Image optimizers
