@@ -20,15 +20,15 @@ brew cask install docker
 # Docker commands will probably fail now. Just start "Docker" app by hand and rerun this script
 
 # Build my custom services
-docker build -t elasticsearch-switowski ./docker/es/
+#docker build -t elasticsearch-switowski ./docker/es/
 
 # Developer services
 #docker pull mongo
-docker pull mysql
+#docker pull mysql
 #docker pull postgres
 #docker pull rabbitmq
 #docker pull redis
-docker swarm init
+#docker swarm init
 #docker service create --name redis --publish 6379:6379 redis
 #docker service create --name postgres --publish 5432:5432 -e POSTGRES_USER=$USER postgres
 
