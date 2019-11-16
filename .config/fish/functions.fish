@@ -3,12 +3,15 @@
 # added 2 years ago and never used.
 function commands
   echo "User functions (~/.config/fish/functions.fish):"
-  echo "  subl [file | dir]   Open file or directory in Sublime"
-  echo "  killport [port]     Kill port `port`"
-  echo "  ip                  Print current IP"
-  echo "  black [arg]         Run black in docker"
-  echo "  fish_profile        Profile fish startup time"
-  echo "  change_mac          Spoof MAC address"
+  echo "  kodissh               SSH to Kodi media server"
+  echo "  kodimount             Mount media server at ~/kodimount"
+  echo "  kodi [type] [files]   Copy files to media server"
+  echo "  killport [port]       Kill port `port`"
+  echo "  subl [file | dir]     Open file or directory in Sublime"
+  echo "  ip                    Print current IP"
+  echo "  black [arg]           Run black in docker"
+  echo "  fish_profile          Profile fish startup time"
+  echo "  change_mac            Spoof MAC address"
   echo ''
   echo '========================================================'
   echo ''
@@ -23,6 +26,10 @@ end
 
 function kodissh --description 'SSH to the media server'
   ssh osmc@192.168.0.18
+end
+
+function kodimount --description 'Mount the media server locally'
+  sshfs osmc@192.168.0.18: ~/kodimount
 end
 
 function kodi --argument-names type files --description 'Media server related functions'

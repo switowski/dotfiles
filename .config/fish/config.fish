@@ -8,6 +8,10 @@ set -x LANG en_US.UTF-8
 # Prevent opening this fucking Nano
 set -x EDITOR vim
 
+# Disable installing pip packages outside of virtualenv
+# To override run: PIP_REQUIRE_VIRTUALENV="" pip ...
+set -x PIP_REQUIRE_VIRTUALENV true
+
 source ~/.config/fish/path.fish
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
@@ -36,19 +40,10 @@ history merge
 # I'm using `fisher nodenv` plugin instead of this line to speed up fish startup time
 # status --is-interactive; and source (nodenv init -|psub)
 
+# For pipx:
+# Created by `userpath` on 2019-11-12 17:26:16
+set PATH $PATH /Users/switowski/.local/bin
+register-python-argcomplete --shell fish pipx | .
 
-# Probably not used for now
-
-# # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc' ]
-#   if type source > /dev/null
-#     source '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
-#   else
-#     . '/Users/switowski/Downloads/google-cloud-sdk/path.fish.inc'
-#   end
-# end
-
-# # For openssl
-# set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
-
-thefuck --alias | source
+# fisher-done settings:
+set -x __done_min_cmd_duration 15000  # set to 15s (default is 5s)
