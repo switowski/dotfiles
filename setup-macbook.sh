@@ -29,10 +29,12 @@ cp "$HOME/.config/fish/aliases.fish" "$HOME/.config/fish/aliases.fish_bak" 2>/de
 cp "$HOME/.config/fish/config.fish" "$HOME/.config/fish/config.fish_bak" 2>/dev/null
 cp "$HOME/.config/fish/functions.fish" "$HOME/.config/fish/functions.fish_bak" 2>/dev/null
 cp "$HOME/.config/fish/path.fish" "$HOME/.config/fish/path.fish_bak" 2>/dev/null
+cp "$HOME/.config/fish/fishfile" "$HOME/.config/fish/path.fishfile_bak" 2>/dev/null
 ln -sf "$DOTFILES_ROOT/.config/fish/aliases.fish" "$HOME/.config/fish/aliases.fish"
 ln -sf "$DOTFILES_ROOT/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sf "$DOTFILES_ROOT/.config/fish/functions.fish" "$HOME/.config/fish/functions.fish"
 ln -sf "$DOTFILES_ROOT/.config/fish/path.fish" "$HOME/.config/fish/path.fish"
+ln -sf "$DOTFILES_ROOT/.config/fish/fishfile" "$HOME/.config/fish/fishfile"
 # Git symlinks
 cp "$HOME/.gitconfig" "$HOME/.gitconfig_bak" 2>/dev/null
 cp "$HOME/.gitignore" "$HOME/.gitignore_bak" 2>/dev/null
