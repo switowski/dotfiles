@@ -48,7 +48,8 @@ ln -sf "$DOTFILES_ROOT/.pryrc.symlink" "$HOME/.pryrc"
 # Spacemacs in case I decide to use it
 cp "$HOME/.spacemacs" "$HOME/.spacemacs_bak" 2>/dev/null
 ln -sf "$DOTFILES_ROOT/.spacemacs.symlink" "$HOME/.spacemacs"
-
+# Starship prompt settings
+ln -sf "$DOTFILES_ROOT/.config/starship.toml" "$HOME/.config/starship.toml"
 
 # Backup current Sublime Packages directory and symlink it
 if [[ -d "$HOME/Library/Application Support/Sublime Text 3/Packages/User" ]]

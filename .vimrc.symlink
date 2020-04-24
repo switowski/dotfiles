@@ -62,6 +62,11 @@ Plug 'vim-scripts/mru.vim'
 Plug 'tpope/vim-commentary'
 " Syntax and lint checking for vim (async). Requires Vim 8
 Plug 'w0rp/ale'
+" Used to display tags in the vim-airline
+Plug 'majutsushi/tagbar'
+" Show indented lines
+Plug 'Yggdroot/indentLine'
+
 
 " Initialize plugin system
 call plug#end()
@@ -85,6 +90,7 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 " }}}
 
 
@@ -121,6 +127,11 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+" Set ruler on column 80
+" https://vi.stackexchange.com/questions/356/how-can-i-set-up-a-ruler-at-a-specific-column
+set colorcolumn=80
+highlight ColorColumn ctermbg=8 guibg=lightgrey
 
 " }}}
 
@@ -222,6 +233,9 @@ map <leader>s :setlocal spell!<cr>
 
 " List open buffers and then select buffer number to switch
 nnoremap <leader>b :buffers<CR>:buffer<Space>
+" Move between buffers quickly
+map [b :bn<cr>
+map ]b :bp<cr>
 
 " Toogle relative/nonrelative line numbers
 nnoremap <leader>l :set norelativenumber!<CR>

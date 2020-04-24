@@ -9,7 +9,8 @@ function commands
   echo "  killport [port]       Kill port `port`"
   echo "  subl [file | dir]     Open file or directory in Sublime"
   echo "  ip                    Print current IP"
-  echo "  black [arg]           Run black in docker"
+  # This black is conflicting with pipx
+  #echo "  black [arg]           Run black in docker"
   echo "  fish_profile          Profile fish startup time"
   echo "  change_mac            Spoof MAC address"
   echo ''
@@ -82,10 +83,11 @@ else
     end
 end
 
-# Run black in a docker container (doesn't mess up Python/virtualenv)
-function black
-    docker run -v (pwd):/code jbbarth/black $argv
-end
+# This function was conflicting with my pipx installation
+#Run black in a docker container (doesn't mess up Python/virtualenv)
+#function black
+#    docker run -v (pwd):/code jbbarth/black $argv
+#end
 
 # Function to profile fish startup time - since I tend to mess it up often
 function fish_profile

@@ -15,9 +15,9 @@ brew cask install vlc
 brew cask install the-unarchiver # check the unarchiver page for unar CLI command
 brew cask install flux
 brew cask install karabiner-elements # karabiner for mapping multiple keys to one
-brew cask install menumeters  # Install memory/CPU/disk/network menu bars (https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/)
-brew cask install endurance # Install Endurance app (http://enduranceapp.com/)
-
+brew cask install menumeters  # Memory/CPU/disk/network menu bars (https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/)
+brew cask install endurance # Extend life on battery (http://enduranceapp.com/)
+brew install m-cli # Additional scripts for macOS management (https://github.com/rgcr/m-cli)
 
 # dev
 brew cask install iterm2

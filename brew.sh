@@ -79,6 +79,7 @@ brew install the_silver_searcher # Better 'grep' - if rg doesn't work
 brew install ncdu # Nice disk usage analyzer
 brew install glances # Nice monitoring tools (better htop)
 brew install watchexec # Run commands if something changes in a directory
+brew install ctop # Htop but for docker containers
 
 brew install imagemagick --with-webp
 brew install node # This installs `npm` too using the recommended installation method

@@ -4,6 +4,8 @@
 .pytest_cache*
 # Local version of python from pyenv
 .python-version
+# Local version of node from nodeenv
+.node-version
 
 # Folder view configuration files
 .DS_Store

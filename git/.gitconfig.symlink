@@ -42,11 +42,16 @@
             git branch -D pr/$1; \
         fi \
     }; f"
-    # Switch to PR
+    # Switch to PR (GitHub)
     # source https://nedbatchelder.com/blog/201407/fetching_github_pull_requests.html
     # usage: `git copr 1234` or `git copr 1234 upstream`
     copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
                    git checkout pr/$1; }; f"
+    # Switch to MR (GitLab)
+    # source https://stackoverflow.com/questions/44992512/git-how-to-checkout-merge-request-locally-and-create-new-local-branch
+    # usage: `git comr 1234` or `git comr 1234 upstream`
+    comr = "!f() { git fetch -f ${2:-origin} merge-requests/$1/head:mr/$1 && \
+                   git checkout mr/$1; }; f"
     pushf = push --force-with-lease
     # Ignore or unignore some local files (https://stackoverflow.com/a/18317425)
     # usage: git ignore path-to-file-to-ignore

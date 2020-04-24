@@ -117,7 +117,8 @@ function pre_prompt
     end
 
     # Check if there is an upstream configured
-    command git rev-parse --abbrev-ref '@{upstream}' >/dev/null ^&1; and set -l has_upstream
+    # command git rev-parse --abbrev-ref '@{upstream}' > /dev/null 2>&1; and set -l has_upstream
+    set -l has_upstream (command git rev-parse --abbrev-ref '@{upstream}' ^/dev/null)
     if set -q has_upstream
       command git rev-list --left-right --count 'HEAD...@{upstream}' | read -la git_status
 

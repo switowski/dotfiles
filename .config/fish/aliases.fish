@@ -28,6 +28,8 @@ function ta ; tmux attach ; end
 function td ; tmux detach ; end
 function be ; bundle exec $argv ; end
 function dc ; docker-compose $argv ; end
+function k ; kubectl $argv ; end
+function i ; ipython $argv ; end
 
 # Ack is not installed, but we have ag which is supposed to be a replacement
 function ack ; ag $argv ; end
@@ -39,7 +41,7 @@ function rga      ; command rg -uuu $argv ; end  # look everywhere (in the ignor
 
 # Searching for stuff
 # Add message when using the 'locate' command to use mdfind instead
-function locate ; echo "Use `fd`, `mdfind` or `mdfind -name foo` instead. Use '\locate' if you really need to run it."; end
+function locate ; echo "Use `fd`, `mdfind` or `mdfind -name foo` instead. Use 'command locate' if you really need to run it."; end
 function fda    ; fd -IH $argv ; end  # fd in all files
 
 # Git functions
@@ -67,8 +69,15 @@ function gst    ; git status $argv ; end
 # Undo git push
 function gunpush    ; git push -f origin HEAD^:master $argv ; end
 
-# IPython
-function i ; ipython $argv ; end
+# Python
+function gpip ; env PIP_REQUIRE_VIRTUALENV="" pip $argv; end  # Run pip outside of a virtualenv
+
+# Virtualfish fix - this will enable fish when it's run for the first time and unregister the alias
+# It's the equivalent of doing the "eval" in config.fish but it doesn't slow you down
+# UPDATE: It was used when vf was installed with pyenv. Now that we use pipx, it's not needed
+#alias vf="eval (~/.pyenv/shims/python -m virtualfish compat_aliases); and vf" # <- this was use with pyenv
+# Same as above but for workon
+#function workon; eval (~/.pyenv/shims/python -m virtualfish compat_aliases); and workon $argv; end
 
 # Rails
 function rs ; rails server $argv ; end
@@ -79,6 +88,8 @@ function bx ; bundle exec $argv ; end
 function es-delete-indexes ; curl -XDELETE 'http://localhost:9200/_all' $argv ; end
 function di ;                curl -XDELETE 'http://localhost:9200/_all' $argv ; end
 
+# Docker stuff
+function dps ;  docker ps --format 'table {{.Names}}\t{{.Image}}' $argv; end
 #   ---------------------------
 #   Mac OS functions
 #   ---------------------------
@@ -99,7 +110,7 @@ function windowsr       ; rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts
 function windowsrbig   ; xfreerdp  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch $argv ; end
 
 # Project related functiones
-function js ; bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml $argv ; end
+function js ; bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml --livereload $argv ; end
 function watchpostimg ; watchexec -w _posts/img npm run gulp post-img $argv ; end
 
 ######## Temporary stuff ########

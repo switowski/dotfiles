@@ -23,7 +23,8 @@ end
 
 # Enable virtualfish with some plugins
 # Or find a prompt that supports it
-eval (~/.pyenv/shims/python -m virtualfish compat_aliases)
+# This eval slows down vf startup time by 0.4s that's a lot! So instead, I fixed it with a alias vf (see aliases.fish file)
+#eval (~/.pyenv/shims/python -m virtualfish compat_aliases)
 # Read more on virtualfish plugins: http://virtualfish.readthedocs.io/en/latest/plugins.html
 
 # Store history from all tabs
@@ -46,4 +47,7 @@ set PATH $PATH /Users/switowski/.local/bin
 register-python-argcomplete --shell fish pipx | .
 
 # fisher-done settings:
-set -x __done_min_cmd_duration 15000  # set to 15s (default is 5s)
+set -x __done_min_cmd_duration 10000  # set to 10s (default is 5s)
+
+# Start starship prompt
+starship init fish | source
