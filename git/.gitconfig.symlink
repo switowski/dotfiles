@@ -66,6 +66,10 @@
     contributors = shortlog --summary --numbered
     # List all merge requests - works for GitLab for now
     lmr = !echo "Remember to run 'git fetch' first!" && git branch -a --list "*merge-request*"
+    # Remove given commit from current branch (reverse of cherry-pick)
+    # Usage: git cherry-remove SHA
+    cherry-remove = "!f() { git rebase --onto ${1}^ ${1}; }; f"
+
 [color]
     ui = auto
 
@@ -97,6 +101,8 @@
     editor = vim
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
+    # Try a new diff tool
+    #pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
     # Configure Git on OS X to properly handle line endings
     # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
     #autocrlf = input

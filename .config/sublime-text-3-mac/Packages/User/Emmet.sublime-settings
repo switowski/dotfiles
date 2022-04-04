@@ -1,4 +1,0 @@
-{
-    // Disable some of the emmet key bindings that are overriding default Sublime keybindings
-    "disabled_keymap_actions": "expand_abbreviation, update_image_size, update_as_you_type, increment_number_by_1, decrement_number_by_1"
-}

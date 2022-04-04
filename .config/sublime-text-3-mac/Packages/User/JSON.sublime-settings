@@ -1,4 +1,0 @@
-// These settings override both User and Default settings for the JSON syntax
-{
-    "jsoncomma_on_save": true
-}

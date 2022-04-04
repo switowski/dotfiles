@@ -1,4 +1,0 @@
-{
-     "enable_ghc_mod" : false,
-     "add_to_PATH": ["$HOME/.local/bin", "$HOME/.cabal/bin"]
- }

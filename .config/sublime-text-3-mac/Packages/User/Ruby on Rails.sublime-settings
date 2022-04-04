@@ -1,8 +1,0 @@
-{
-	"extensions":
-	[
-		"rb"
-	],
-    "tab_size": 2,
-	"word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~"
-}

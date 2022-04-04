@@ -5,7 +5,15 @@ function ....  ; cd ../../.. ; end
 function ..... ; cd ../../../.. ; end
 
 # Utilities
+function fixdns     ; command bash ~/workspace/dotfiles/scripts/fixdns.sh $argv ; end
 function grep     ; command grep --color=auto $argv ; end
+
+# Replacements
+function cat  ; bat $argv ; end  
+function ncdu  ; command ncdu --confirm-quit $argv ; end  # Don't quit when I press "q" once  
+function catp  ; bat -p $argv ; end  # Skip line numbers
+function catpp  ; bat -pp $argv ; end  # Skip line numbers and pagination
+function ccat  ; command cat $argv ; end  # just in case I need 'cat'
 
 # List directory contents
 function ll ; ls -al $argv ; end
@@ -66,16 +74,15 @@ function gsa    ; git stash apply $argv ; end
 function gsh    ; git show $argv ; end
 function gss    ; git stash save $argv ; end
 function gst    ; git status $argv ; end
+function gfo    ; git fetch origin $argv ; end
 # Undo git push
 function gunpush    ; git push -f origin HEAD^:master $argv ; end
 
 # Python
-function gpip ; env PIP_REQUIRE_VIRTUALENV="" pip $argv; end  # Run pip outside of a virtualenv
+function ppip ; env PIP_REQUIRE_VIRTUALENV="" pip $argv; end  # Run pip outside of a virtualenv
 
 # Virtualfish fix - this will enable fish when it's run for the first time and unregister the alias
 # It's the equivalent of doing the "eval" in config.fish but it doesn't slow you down
-# UPDATE: It was used when vf was installed with pyenv. Now that we use pipx, it's not needed
-#alias vf="eval (~/.pyenv/shims/python -m virtualfish compat_aliases); and vf" # <- this was use with pyenv
 # Same as above but for workon
 #function workon; eval (~/.pyenv/shims/python -m virtualfish compat_aliases); and workon $argv; end
 
@@ -98,16 +105,17 @@ function dps ;  docker ps --format 'table {{.Names}}\t{{.Image}}' $argv; end
 #  ---------------------------
 #  Work related functiones
 #  ---------------------------
+
+# SSH to various servers
 function deploystackaws ; ssh ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com $argv ; end
 function deploystackgce ; ssh 35.231.149.85 $argv ; end
+function cftdev ; ssh -A -vv -o ProxyCommand="ssh -A sebastian.witowski@login.circle.mfsadmin.com -W %h:%p" cft-portal@172.31.40.196 $argv ; end
+function sshn8n ; ssh root@139.162.253.212 $argv ; end
 
 # CFT stuff
 function midbash         ; docker exec -it cft-portal_middleware_1 /bin/bash ; end
-function midrestart      ; docker-compose restart middleware ; end
+function dbdropbackend   ; dc run --rm backend "/cft/venv/backend/bin/python manage.py db-drop-tables" ; end
 function rpbash          ; docker-compose run --rm reports-pipeline bash ; end
-
-function windowsr       ; rdesktop  -a 16 -u switowsk -d CERN -g 1024x768 cernts.cern.ch $argv ; end
-function windowsrbig   ; xfreerdp  -a 16 -u switowsk -d CERN -g 1600x900 cernts.cern.ch $argv ; end
 
 # Project related functiones
 function js ; bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml --livereload $argv ; end
@@ -115,3 +123,7 @@ function watchpostimg ; watchexec -w _posts/img npm run gulp post-img $argv ; en
 
 ######## Temporary stuff ########
 
+function ptimeit
+  echo "\$ python -m timeit -s \"from $argv[1] import $argv[2]\" \"$argv[2]()\""
+  python -m timeit -s "from $argv[1] import $argv[2]" "$argv[2]()"
+end

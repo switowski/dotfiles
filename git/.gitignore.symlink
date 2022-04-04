@@ -28,3 +28,6 @@ invenio-local.conf
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# direnv config file
+.envrc

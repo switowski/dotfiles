@@ -43,7 +43,7 @@ history merge
 
 # For pipx:
 # Created by `userpath` on 2019-11-12 17:26:16
-set PATH $PATH /Users/switowski/.local/bin
+set -x PATH "/Users/switowski/.local/bin" $PATH
 register-python-argcomplete --shell fish pipx | .
 
 # fisher-done settings:
@@ -51,3 +51,21 @@ set -x __done_min_cmd_duration 10000  # set to 10s (default is 5s)
 
 # Start starship prompt
 starship init fish | source
+
+# Use Docker BuildKit
+set -x COMPOSE_DOCKER_CLI_BUILD 1
+set -x DOCKER_BUILDKIT 1
+
+# zoxide (z replacement)
+zoxide init fish | source
+
+# For rbenv
+#set -x RUBY_CONFIGURE_OPTS "--with-openssl-dir=(brew --prefix openssl@1.1)"  # This doesn't work!
+# Commented out on 2021-12-08 to see if it's still needed
+#set -x RUBY_CONFIGURE_OPTS "--with-openssl-dir=/usr/bin/openssl"
+
+# Fix for asdf
+source /usr/local/opt/asdf/asdf.fish
+
+# Enable direnv
+direnv hook fish | source
