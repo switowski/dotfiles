@@ -6,5 +6,11 @@
 # mas signin witowski.sebastian@gmail.com
 
 # Install apps
-mas install 442160987 # Flycut (clipboard manager)
-mas install 441258766 # Magnet - windows manager
+mas install 439654198  #   SimpleMind   (1.31.0)
+mas install 957734279  #   Toggl Track  (7.5.441)
+mas install 409201541  #   Pages        (11.2)
+mas install 1233965871  #  ScreenBrush  (1.7.8)
+mas install 409183694  #   Keynote      (11.2)
+mas install 585829637  #   Todoist      (8.0.6)
+mas install 441258766  #   Magnet       (2.7.0)
+mas install 409203825  #   Numbers      (11.2)

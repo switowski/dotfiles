@@ -7,31 +7,19 @@
 
 # Install native apps
 
-# tools
-#brew cask install spectacle
-brew cask install dropbox
-#brew cask install rescuetime
-brew cask install vlc
-brew cask install the-unarchiver # check the unarchiver page for unar CLI command
-brew cask install flux
-brew cask install karabiner-elements # karabiner for mapping multiple keys to one
-brew cask install menumeters  # Memory/CPU/disk/network menu bars (https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/)
-brew cask install endurance # Extend life on battery (http://enduranceapp.com/)
-brew install m-cli # Additional scripts for macOS management (https://github.com/rgcr/m-cli)
+brew install --cask dropbox
+brew install --cask vlc
+brew install --cask the-unarchiver # Adds unar command
+brew install --cask flux
+brew install --cask karabiner-elements # karabiner for mapping multiple keys to one
+brew install --cask captin # Displays the status of capslock key
 
-# dev
-brew cask install iterm2
-brew cask install dbcli/litecli # Better SQLite CLI
-brew cask install dbcli/pgcli # Better PostgreSQL CLI (it will also install postgres!)
-brew cask install podman # Docker replacement
+brew install --cask iterm2
+brew install --cask visual-studio-code
 
-#brew cask install sublime-text
 # Image optimizers
-brew cask install imagealpha
-brew cask install imageoptim
-
-# work related stuff
-brew cask install gitter
+brew install --cask imagealpha
+brew install --cask imageoptim
 
 # Remove outdated versions from the cellar
 brew cask cleanup

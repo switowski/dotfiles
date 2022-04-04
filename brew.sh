@@ -36,61 +36,64 @@ brew install coreutils
 # vidir: edit a directory in your text editor
 # vipe: insert a text editor into a pipe
 # zrun: automatically uncompress arguments to command
-brew install moreutils
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`
-brew install findutils --with-default-names
-
-# GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --with-default-names
+#brew install moreutils  # I wasn't really using this
 
 # Python (better to install it before others, like vim)
 brew install python
-brew install python3
 
-# Install wget with IRI support (internationalization)
-brew install wget --with-iri
-
-# Install more recent versions of some OS X tools
-brew install vim --with-override-system-vi
-brew install nano
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`
+brew install findutils
+# GNU `sed`, overwriting the built-in `sed`
+brew install gnu-sed
+brew install wget
+brew install vim
 brew install grep
-#brew install openssh - this fucks up the ssh-agent on mac
-
 
 brew install git
 brew install fish
 brew install brew-cask-completion # Fish completion for brew-cask
 brew install fzf # Fish doesn't have ctrl+r, so fzf will fix it
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-printf "${RED}You need to add autocomplete and keyboard bindings by hand!: https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew${NC}\n"
 
 ################## OTHERS ###################
 
-brew install thefuck # Type `fuck` to fix last error
-brew install z # 'z' hopping around folders
-brew install mtr # mtr - ping & traceroute. best.
-brew install exa # Better 'ls' with colors and nice defaults
+# brew install thefuck # Type `fuck` to fix last error  # Not used
+brew install mtr # mtr - ping & traceroute
+
+# Some nice replacements for existing tools - with colors and written in Rust
+# brew install z # 'z' hopping around folders - replaced with zoxide
+brew install zoxide # hopping around folders
+# brew install exa # Better 'ls' with colors and nice defaults # not really used
 brew install bat # Better 'cat' with syntax highlighting
 brew install fd # Better 'find' - faster
 brew install ripgrep # Better 'grep'
-brew install the_silver_searcher # Better 'grep' - if rg doesn't work
+# brew install the_silver_searcher # Better 'grep' - if rg doesn't work # Not used
+
 brew install ncdu # Nice disk usage analyzer
+brew install tldr # Gives nice TLDR from man pages
+brew install tree  # Tree of folder's structure
+brew install trash  # Moves to trash instead of removing completely - use it with "rm" alias
+brew install terminal-notifier  # Nice notifications from the terminal
+
+# Process managers
+brew install htop # Better top
 brew install glances # Nice monitoring tools (better htop)
-brew install watchexec # Run commands if something changes in a directory
+brew install btop # Like glances but useful in some other situations
 brew install ctop # Htop but for docker containers
-brew install git-delta # Better git-diff
 
-brew install imagemagick --with-webp
-brew install node # This installs `npm` too using the recommended installation method
-brew install tree
-brew install ffmpeg --with-libvpx
+brew install watchexec # Run commands if something changes in a directory
+brew install git-delta # Better git-diff (replaces diff-so-fancy)
 
-# Programming
+brew install litecli # Better SQLite CLI
+brew install pgcli # Better PostgreSQL CLI (it will also install postgres!)
+
+# brew install node # This installs `npm` too using the recommended installation method # Replaced with asdf
+
 brew install pyenv
-brew install rbenv
-brew install nodenv
+brew install asdf
+# brew install rbenv # Replaced with asdf
+# brew install nodenv # Replaced with asdf
+
+brew install starship # Better prompt
 
 # Remove outdated versions from the cellar
 brew cleanup

@@ -9,8 +9,8 @@ function fixdns     ; command bash ~/workspace/dotfiles/scripts/fixdns.sh $argv 
 function grep     ; command grep --color=auto $argv ; end
 
 # Replacements
-function cat  ; bat $argv ; end  
-function ncdu  ; command ncdu --confirm-quit $argv ; end  # Don't quit when I press "q" once  
+function cat  ; bat $argv ; end
+function ncdu  ; command ncdu --confirm-quit $argv ; end  # Don't quit when I press "q" once
 function catp  ; bat -p $argv ; end  # Skip line numbers
 function catpp  ; bat -pp $argv ; end  # Skip line numbers and pagination
 function ccat  ; command cat $argv ; end  # just in case I need 'cat'
@@ -18,8 +18,9 @@ function ccat  ; command cat $argv ; end  # just in case I need 'cat'
 # List directory contents
 function ll ; ls -al $argv ; end
 function l  ; ls -al $argv ; end
-function e  ; exa $argv ; end
-function el  ; exa -l $argv ; end
+# Currently exa is not installed
+# function e  ; exa $argv ; end
+# function el  ; exa -l $argv ; end
 
 # Important one ! Parenting changing perms on /
 # In Mac there is no --preserve-root option
@@ -75,8 +76,8 @@ function gsh    ; git show $argv ; end
 function gss    ; git stash save $argv ; end
 function gst    ; git status $argv ; end
 function gfo    ; git fetch origin $argv ; end
-# Undo git push
-function gunpush    ; git push -f origin HEAD^:master $argv ; end
+function gdss   ; git diff -s $argv ; end  # Git diff side-by-side
+function gunpush    ; git push -f origin HEAD^:master $argv ; end # Undo git push
 
 # Python
 function ppip ; env PIP_REQUIRE_VIRTUALENV="" pip $argv; end  # Run pip outside of a virtualenv
@@ -97,27 +98,15 @@ function di ;                curl -XDELETE 'http://localhost:9200/_all' $argv ; 
 
 # Docker stuff
 function dps ;  docker ps --format 'table {{.Names}}\t{{.Image}}' $argv; end
-#   ---------------------------
-#   Mac OS functions
-#   ---------------------------
-# function cask ; brew cask; end  # I never used it
 
 #  ---------------------------
-#  Work related functiones
+#  Work related functions
 #  ---------------------------
 
 # SSH to various servers
-function deploystackaws ; ssh ubuntu@ec2-18-217-157-146.us-east-2.compute.amazonaws.com $argv ; end
-function deploystackgce ; ssh 35.231.149.85 $argv ; end
-function cftdev ; ssh -A -vv -o ProxyCommand="ssh -A sebastian.witowski@login.circle.mfsadmin.com -W %h:%p" cft-portal@172.31.40.196 $argv ; end
 function sshn8n ; ssh root@139.162.253.212 $argv ; end
 
-# CFT stuff
-function midbash         ; docker exec -it cft-portal_middleware_1 /bin/bash ; end
-function dbdropbackend   ; dc run --rm backend "/cft/venv/backend/bin/python manage.py db-drop-tables" ; end
-function rpbash          ; docker-compose run --rm reports-pipeline bash ; end
-
-# Project related functiones
+# Project related functions
 function js ; bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml --livereload $argv ; end
 function watchpostimg ; watchexec -w _posts/img npm run gulp post-img $argv ; end
 

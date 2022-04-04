@@ -97,21 +97,31 @@
     changed = green
     untracked = cyan
 
+[credential]
+    helper = cache --timeout=28800 # 8 hours
+
 [core]
     editor = vim
     excludesfile = ~/.gitignore
-    pager = diff-so-fancy | less --tabs=4 -RFX
-    # Try a new diff tool
-    #pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+    pager = delta --diff-so-fancy
     # Configure Git on OS X to properly handle line endings
     # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
     #autocrlf = input
 
-[credential]
-    helper = cache --timeout=28800 # 8 hours
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
 [push]
     default = current
+
 [diff]
-    tool = default-difftool
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE

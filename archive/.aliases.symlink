@@ -1,0 +1,75 @@
+# Aliases used before switching to fish
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+## get rid of command not found ##
+alias cd..='cd ..'
+
+# List directory contents
+alias ls='ls -G --color' # Compact view, show colors
+alias la='ls -AF' # Compact view, show hidden
+alias ll='ls -al'
+
+# Important one ! Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Map rm to trash so files end up in trash can
+alias rm='trash'
+
+# Shortcuts
+alias g="git"
+alias v="vim"
+
+# Diff side by side for a nicer diff
+alias diffs="diff --side-by-side"
+alias colordiffs="colordiff --side-by-side"
+alias grep='grep --color=auto' # Automatic colors in grep output
+
+# git aliases
+alias ga="git add"
+alias gb="git branch"
+alias gbr="git branch"
+alias gci="git commit"
+alias gcl="git clone"
+alias gco="git checkout"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gf="git reflog"
+alias gffs="git add --all && git commit --amend --no-edit"
+alias gl="git log"
+alias glp="git log --pretty=oneline"
+alias gp="git push"
+alias gps="git push"
+alias gpl="git pull"
+alias gpf="git push --force-with-lease"
+alias gpr="git pull --rebase"
+alias grm="git reset --hard upstream/master"
+alias gs="git status"
+alias gsa="git stash apply"
+alias gsh="git show"
+alias gss="git stash save"
+alias gst="git status"
+alias gdss='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R' # Git diff side-by-side
+
+# Advanced git aliases
+alias gbrauthors="git for-each-ref --sort=-committerdate --format='%(committerdate) %(authorname) %(refname)'"
+alias gunpush="git push -f origin HEAD^:master"
+
+# Faster IPython
+alias i='ipython'
+
+# Rails aliases
+alias rs="rails server"
+alias rc="rails console"
+alias bx="bundle exec"
+
+# Miscellaneous
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
