@@ -8,17 +8,17 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ######################### Install Homebrew and packages ######################
-./brew.sh
-./brew-cask.sh
+# ./brew.sh
+# ./brew-cask.sh
 
 ############################# Install apps from apple store ##################
-brew install mas
-./mas.sh
+# brew install mas
+# ./mas.sh
 
 ############################## Install npm packages ##########################
 # ./npm.sh
 
-########################### Install oh-my-fish and plugins ###################
+########################### Install fisher plugins ###################
 # ./fish.sh
 
 ################################### Symlink stuff ############################

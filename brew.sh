@@ -90,6 +90,7 @@ brew install pgcli # Better PostgreSQL CLI (it will also install postgres!)
 
 brew install pyenv
 brew install asdf
+brew install direnv
 # brew install rbenv # Replaced with asdf
 # brew install nodenv # Replaced with asdf
 
