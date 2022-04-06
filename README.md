@@ -38,6 +38,10 @@ Some software can't be installed neither with brew nor with mas. Here is a non-e
 * Point iTerm2 settings folder to: `/Users/switowski/workspace/dotfiles/.config/iterm2_profile`
 * Point Alfred settings to: `~/Dropbox/Backups/Alfred` (requires Dropbox to be installed!)
 * Point BetterTouchTool to use Dropbox for settings synchronziation
+  * If this doesn't work, create the following shortcuts:
+    * Cmd+H -> A No action (disables the annoying "Hide app" shortcut)
+    * Cmd+M -> A No action (disables the annoying "Minimize app" shortcut)
+    * Cmd+Shift+W -> Close app under cursor (Consistent behavior for closing any app)
 
 ### Shortcuts
 
