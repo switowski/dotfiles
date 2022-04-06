@@ -37,6 +37,7 @@ Some software can't be installed neither with brew nor with mas. Here is a non-e
 
 * Point iTerm2 settings folder to: `/Users/switowski/workspace/dotfiles/.config/iterm2_profile`
 * Point Alfred settings to: `~/Dropbox/Backups/Alfred` (requires Dropbox to be installed!)
+* Point BetterTouchTool to use Dropbox for settings synchronziation
 
 ### Shortcuts
 

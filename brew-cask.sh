@@ -21,7 +21,6 @@ brew install --cask blockblock # monitors common persistence locations and alert
 brew install --cask carbon-copy-cloner # disk backup and cloning
 brew install --cask discord # chat
 brew install --cask dozer # Hide menubar items
-brew install --cask evernote # note taking
 brew install --cask ferdi # chat aggregator
 brew install --cask gimp # image editor
 brew install --cask grammarly # keylogger (jk, it fixes grammar)
@@ -41,6 +40,11 @@ brew install --cask switchresx # for setting up unusual screen resolutions
 brew install --cask teamviewer # for helping parents with their computers
 brew install --cask workflowy # Note taking app
 brew install --cask zoom # video conferencing
+brew install --cask bettertouchtool # Custom gestures, touchbar icons and more.
+# brew install --cask evernote # note taking
+# Don't install latest Evernote, go here to download the legacy version:
+# https://help.evernote.com/hc/en-us/articles/360052560314-Install-an-older-version-of-Evernote
+
 
 # Work
 brew install --cask citrix-workspace # VPN (technically, desktop virtualization) for work
@@ -48,7 +52,6 @@ brew install --cask logitech-presentation # Software for my presentation clicker
 brew install --cask microsoft-teams # Work chat
 
 # Currently unused
-# brew install --cask bettertouchtool # Custom gestures, touchbar icons and more.
 # brew install --cask camtasia # Recording videos
 # brew install --cask element # chat
 # brew install --cask nordvpn # VPN
