@@ -5,24 +5,26 @@
 * Symlink what you can to dotfiles directory
 
 ## Recipe
+
 Run those scripts in this order!
+
 ```
 ./restore-mac.sh
 sudo ./sudo-restore-mac.sh
 ```
 
-## Manual changes:
+## Manual changes
 
 * Point iTerm2 settings folder to: `/Users/switowski/workspace/dotfiles/.config/iterm2_profile`
 * Point Alfred settings to: `~/Dropbox/Backups/Alfred` (requires Dropbox to be installed!)
 
-## TODO:
+## TODO
 
 * How to restore:
-  - iTerm2 settings
+  * iTerm2 settings
     * Move my custom made iterm theme to dotfiles folder
-  - Karabiner
-  - BetterTouchTools
-  - Keyboard shortcuts
-  - VS Code settings (should be backed up automatically!)
-  - Alfred settings, workflows, snippets
+  * Karabiner
+  * BetterTouchTools
+  * Keyboard shortcuts
+  * VS Code settings (should be backed up automatically!)
+  * Alfred settings, workflows, snippets

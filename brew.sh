@@ -47,6 +47,7 @@ brew install findutils
 brew install gnu-sed
 brew install wget
 brew install vim
+brew install nano
 brew install grep
 
 brew install git
@@ -82,6 +83,7 @@ brew install ctop # Htop but for docker containers
 
 brew install watchexec # Run commands if something changes in a directory
 brew install git-delta # Better git-diff (replaces diff-so-fancy)
+brew install gh # Github CLI
 
 brew install litecli # Better SQLite CLI
 brew install pgcli # Better PostgreSQL CLI (it will also install postgres!)

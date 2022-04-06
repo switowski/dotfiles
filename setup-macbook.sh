@@ -15,11 +15,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # brew install mas
 # ./mas.sh
 
-############################## Install npm packages ##########################
-# ./npm.sh
-
 ########################### Install fisher plugins ###################
-# ./fish.sh
+# ./fisher.sh
 
 ################################### Symlink stuff ############################
 ################### Always backs up the previous versions if they exist ###########
@@ -52,9 +49,8 @@ ln -sf "$DOTFILES_ROOT/.config/starship.toml" "$HOME/.config/starship.toml"
 # Symlink karabiner config
 ln -sf "$DOTFILES_ROOT/.config/karabiner" "$HOME/.config/karabiner"
 
-####################### Install pip and Python packages ######################
-# Pip packages can't be installed manually as the default pip is not the one from pyenv,
-# so make sure the pyenv shims are setup first
-
-echo "After you setup the pyenv, run ./pip.sh to install pip packages"
+########################## Setup Evernote backup folder #######################
+mkdir -p "$HOME/Backup/Evernote"
+echo 'To set up a cronjob that backs up Evernote, run:'
+echo '$ sudo sudo-setup-macbook.sh'
 
