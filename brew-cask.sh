@@ -6,14 +6,14 @@
 
 
 # Applications
-# brew install --cask google-chrome
-# brew install --cask dropbox
-# brew install --cask iterm2
-# brew install --cask visual-studio-code
+brew install --cask google-chrome
+brew install --cask dropbox
+brew install --cask iterm2
+brew install --cask visual-studio-code
 brew install --cask vlc
-# brew install --cask the-unarchiver # Adds unar command
+brew install --cask the-unarchiver # Adds unar command
 brew install --cask flux
-# brew install --cask karabiner-elements # karabiner for mapping multiple keys to one
+brew install --cask karabiner-elements # karabiner for mapping multiple keys to one
 brew install --cask captin # Displays the status of capslock key
 brew install --cask anki # Flashcards
 brew install --cask audacity # audio editing

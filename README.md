@@ -16,10 +16,13 @@ chmod +x brew.sh
 chmod +x brew-cask.sh
 chmod +x mas.sh
 chmod +x fish.sh
+chmod +x macos-defaults.sh
 # Install brew packages, fish, and symlink configuration files
 ./setup-macbook.sh
 # Run commands that require admin privileges
 sudo ./sudo-setup-macbook.sh
+# Write some better default settings
+./macos-defaults.sh
 ```
 
 ## Software that requires manual installation

@@ -4,4 +4,5 @@
 # Install fisher
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
-# fisher install virtualfish
+echo 'After symlinking fish_plugins folder, run:'
+echo (set_color green) '$ fisher update' (set_color normal)

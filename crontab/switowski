@@ -6,4 +6,5 @@
 # * - day of the week (0-6, 0 is Sunday)
 # command - command to execute
 
+# Evernote Backup.scpt is actually stored in iCloud and should be available on this machine after iCloud synchronization
 00 20 * * * osascript /Users/switowski/Library/Mobile\ Documents/com~apple~ScriptEditor2/Documents/Evernote\ Backup.scpt daily ~/Backups/Evernote/

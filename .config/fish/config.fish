@@ -1,5 +1,9 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
+
+  # Disable greeting function
+  set -U fish_greeting ""
+
   set default_user switowski
   set default_machine smbp
 
@@ -7,7 +11,6 @@ if status is-interactive
   set -x LC_ALL en_US.UTF-8
   set -x LANG en_US.UTF-8
 
-  # Prevent opening this fucking Nano
   set -x EDITOR vim
 
   # Disable installing pip packages outside of virtualenv
