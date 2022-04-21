@@ -1,2 +1,4 @@
 [directory]
 truncation_length = 8
+[nodejs]
+symbol = "⬢ "

@@ -64,4 +64,15 @@ if status is-interactive
 
   # Start starship prompt
   starship init fish | source
+
+  # Start pyenv
+  pyenv init - | source
+
+  # Created by `pipx` on 2022-04-06 19:51:59
+  set PATH $PATH /Users/switowski/.local/bin
+end
+
+# Non-interactive session
+if status is-login
+  pyenv init --path | source
 end

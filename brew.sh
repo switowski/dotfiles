@@ -84,6 +84,7 @@ brew install ctop # Htop but for docker containers
 brew install watchexec # Run commands if something changes in a directory
 brew install git-delta # Better git-diff (replaces diff-so-fancy)
 brew install gh # Github CLI
+brew install glab # GitLab CLI
 
 brew install litecli # Better SQLite CLI
 brew install pgcli # Better PostgreSQL CLI (it will also install postgres!)
@@ -93,6 +94,7 @@ brew install pgcli # Better PostgreSQL CLI (it will also install postgres!)
 brew install pyenv
 brew install asdf
 brew install direnv
+brew install pipx
 # brew install rbenv # Replaced with asdf
 # brew install nodenv # Replaced with asdf
 

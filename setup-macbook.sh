@@ -18,6 +18,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ########################### Install fisher plugins ###################
 # ./fisher.sh
 
+########################### Install docker ###################
+# ./install-docker.sh
+
 ################################### Symlink stuff ############################
 ################### Always backs up the previous versions if they exist ###########
 # Fish symlinks
@@ -48,6 +51,9 @@ ln -sf "$DOTFILES_ROOT/.config/starship.toml" "$HOME/.config/starship.toml"
 
 # Symlink karabiner config
 ln -sf "$DOTFILES_ROOT/.config/karabiner" "$HOME/.config/karabiner"
+
+# Symlink direnv config
+ln -sf "$DOTFILES_ROOT/direnv/.direnvrc.symlink" "$HOME/.direnvrc"
 
 ########################## Setup Evernote backup folder #######################
 mkdir -p "$HOME/Backup/Evernote"
