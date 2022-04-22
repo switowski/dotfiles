@@ -6,7 +6,13 @@
 # * - day of the week (0-6, 0 is Sunday)
 # command - command to execute
 
+# Backup Evernote notes every day
 # Evernote Backup.scpt is actually stored in iCloud and should be available on this machine after iCloud synchronization
 00 20 * * * osascript /Users/switowski/Library/Mobile\ Documents/com~apple~ScriptEditor2/Documents/Evernote\ Backup.scpt daily ~/Backups/Evernote/
-00 *  * * * echo "Przerwa na oczy!" | /usr/local/bin/terminal-notifier
-30 *  * * * echo "Przerwa na oczy!" | /usr/local/bin/terminal-notifier
+
+# Every 30 minutes display a popup notification to take a break for your eyes
+00 * * * * echo "Przerwa na oczy!" | /opt/homebrew/bin/terminal-notifier
+30 * * * * echo "Przerwa na oczy!" | /opt/homebrew/bin/terminal-notifier
+
+# Backup obsidian notes to private github repo. It requires setting up the repo. I separated git folder from the workdir to not mess up iCloud sync (https://stackoverflow.com/a/8603156/2707311)
+00 * * * * /Users/switowski/workspace/dotfiles/scripts/backupObsidian.sh >/dev/null 2>&1
