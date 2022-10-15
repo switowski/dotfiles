@@ -89,7 +89,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
 # Remove the spring loading delay for directories
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
+defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -108,7 +108,8 @@ sudo chflags nohidden /Volumes
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
+# Disabled: removing the delay in the above command and keeping the animation at the default 0.5 works nicer
+# defaults write com.apple.dock autohide-time-modifier -float 0
 
 ###############################################################################
 # Safari & WebKit                                                             #

@@ -85,6 +85,7 @@
     old = red bold
     new = green bold
     whitespace = red reverse
+    # Bold cyan color is used for code that was moved
 
 [color "diff-highlight"]
     oldNormal = red bold
@@ -103,7 +104,7 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
-    pager = delta --diff-so-fancy
+    pager = delta #--diff-so-fancy
     # Configure Git on OS X to properly handle line endings
     # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
     #autocrlf = input
@@ -115,7 +116,7 @@
     navigate = true  # use n and N to move between diff sections
 
 [push]
-    default = current
+	default = current
 
 [diff]
     colorMoved = default

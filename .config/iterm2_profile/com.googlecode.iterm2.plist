@@ -1262,6 +1262,8 @@
 	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
+	<key>EnterCopyModeAutomatically</key>
+	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -1468,9 +1470,13 @@ Resize Split Pane.Move Divider Right</string>
 	<key>LeftOption</key>
 	<integer>2</integer>
 	<key>LeftTabBarWidth</key>
-	<real>50</real>
+	<real>78</real>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NeverWarnAboutShortLivedSessions_220D9AA6-9859-43FB-8A12-25F188BC5E0E</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_220D9AA6-9859-43FB-8A12-25F188BC5E0E_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_AFE5CB22-7390-4748-9852-9B5C0E96C242_selection</key>
@@ -2845,7 +2851,7 @@ Resize Split Pane.Move Divider Right</string>
 			<key>HotKey Window Animates</key>
 			<false/>
 			<key>HotKey Window AutoHides</key>
-			<true/>
+			<false/>
 			<key>HotKey Window Dock Click Action</key>
 			<integer>0</integer>
 			<key>HotKey Window Floats</key>
@@ -4240,7 +4246,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>

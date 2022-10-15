@@ -49,6 +49,8 @@ brew install --cask bettertouchtool # Custom gestures, touchbar icons and more.
 # Work
 brew install --cask citrix-workspace # VPN (technically, desktop virtualization) for work
 brew install --cask logitech-presentation # Software for my presentation clicker
+# Above app requires manual installation step:
+echo "Run installation app from /opt/homebrew/Caskroom/logitech-presentation/<version>/LogiPresentation Installer.app folder!"
 brew install --cask microsoft-teams # Work chat
 
 # Currently unused

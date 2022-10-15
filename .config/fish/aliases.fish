@@ -110,6 +110,9 @@ function sshn8n ; ssh root@139.162.253.212 $argv ; end
 function js ; bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml --livereload $argv ; end
 function watchpostimg ; watchexec -w _posts/img npm run gulp post-img $argv ; end
 
+# To not add conda to fish startup script, add a custom function
+function conda-init ; eval /Users/switowski/.pyenv/versions/anaconda3-2022.05/bin/conda "shell.fish" "hook" $argv | source ; end
+
 ######## Temporary stuff ########
 
 function ptimeit

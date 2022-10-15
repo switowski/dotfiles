@@ -1,0 +1,5 @@
+Colemak DH.bundle_OG -> original Colemak DH layout. To apply it:
+
+cp -r Colemak DH.bundle_OG /Library/Keyboard\ Layouts/Colemak\ DH.bundle
+
+And log out.

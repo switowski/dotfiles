@@ -1,6 +1,8 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
 
+  # Temporarily disable creation of pycache files
+  set -x PYTHONDONTWRITEBYTECODE 1
   # Disable greeting function
   set -U fish_greeting ""
 
@@ -30,7 +32,7 @@ if status is-interactive
   set -x COMPOSE_DOCKER_CLI_BUILD 1
   set -x DOCKER_BUILDKIT 1
 
-  # Source startp files
+  # Source startup files
   source ~/.config/fish/path.fish
   source ~/.config/fish/aliases.fish
   source ~/.config/fish/functions.fish
@@ -70,9 +72,23 @@ if status is-interactive
 
   # Created by `pipx` on 2022-04-06 19:51:59
   set PATH $PATH /Users/switowski/.local/bin
+
+  # Setup for Rust
+  fish_add_path "$HOME/.cargo/bin"
 end
 
 # Non-interactive session
 if status is-login
   pyenv init --path | source
 end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/switowski/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#eval /Users/switowski/.pyenv/versions/anaconda3-2022.05/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
