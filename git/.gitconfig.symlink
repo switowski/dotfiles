@@ -104,6 +104,7 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+    # diff tool that will be used is difft, configured under [diff]->external line 
     pager = delta #--diff-so-fancy
     # Configure Git on OS X to properly handle line endings
     # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
@@ -120,6 +121,7 @@
 
 [diff]
     colorMoved = default
+	external = difft
 
 [merge]
     conflictstyle = diff3

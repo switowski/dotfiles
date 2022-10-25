@@ -83,6 +83,7 @@ brew install ctop # Htop but for docker containers
 
 brew install watchexec # Run commands if something changes in a directory
 brew install git-delta # Better git-diff (replaces diff-so-fancy)
+brew install difftastic # Even better git-diff (replaces diff-so-fancy)
 brew install gh # Github CLI
 brew install glab # GitLab CLI
 
