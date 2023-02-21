@@ -98,6 +98,8 @@ function di ;                curl -XDELETE 'http://localhost:9200/_all' $argv ; 
 
 # Docker stuff
 function dps ;  docker ps --format 'table {{.Names}}\t{{.Image}}' $argv; end
+# Make lazydocker work with colima (see https://github.com/jesseduffield/lazydocker/issues/311)
+function lazydocker ; DOCKER_HOST=unix:///Users/switowski/.colima/default/docker.sock command lazydocker $args; end
 
 #  ---------------------------
 #  Work related functions

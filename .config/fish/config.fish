@@ -75,6 +75,7 @@ if status is-interactive
 
   # Setup for Rust
   fish_add_path "$HOME/.cargo/bin"
+
 end
 
 # Non-interactive session
