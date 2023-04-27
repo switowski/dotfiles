@@ -10,6 +10,8 @@
     co = checkout
     cp = cherry-pick
     d = diff
+    # Use delta for inline diff (works better for Markdown files)
+    di = diff --no-ext-diff
     ds = diff --staged
     l = log
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
@@ -107,6 +109,7 @@
     excludesfile = ~/.gitignore
     # diff tool that will be used is difft, configured under [diff]->external line
     pager = delta #--diff-so-fancy
+	ignoreCase = true
     # Configure Git on OS X to properly handle line endings
     # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
     #autocrlf = input
@@ -118,16 +121,17 @@
     navigate = true  # use n and N to move between diff sections
 
 [push]
-	default = current
+    default = current
 
 [diff]
     colorMoved = default
-	external = difft
+    external = difft
 
 [merge]
     conflictstyle = diff3
 
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
+
 [url "https://github.com/"]
-	insteadOf = git://github.com/
+    insteadOf = git://github.com/

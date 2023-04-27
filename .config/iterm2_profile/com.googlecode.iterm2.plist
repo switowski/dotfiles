@@ -2184,6 +2184,8 @@ Resize Split Pane.Move Divider Right</string>
 			<true/>
 			<key>Silence Bell</key>
 			<false/>
+			<key>Space</key>
+			<integer>-1</integer>
 			<key>Status Bar Layout</key>
 			<dict>
 				<key>advanced configuration</key>
@@ -2832,6 +2834,8 @@ Resize Split Pane.Move Divider Right</string>
 			<string>220D9AA6-9859-43FB-8A12-25F188BC5E0E</string>
 			<key>Has Hotkey</key>
 			<true/>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
@@ -3158,7 +3162,7 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Rows</key>
 			<integer>35</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>-2</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Selected Text Color</key>
@@ -4246,7 +4250,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>

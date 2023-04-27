@@ -62,6 +62,7 @@ function gcp    ; git cherry-pick $argv ; end
 function gco    ; git checkout $argv ; end
 function gca    ; git add -A; and git commit -av $argv; end
 function gd     ; git diff $argv ; end
+function gdi    ; git diff --no-ext-diff $argv ; end
 function gds    ; git diff --staged $argv ; end
 function gffs   ; git add --all; and git commit --amend --no-edit $argv ; end
 function gl     ; git log $argv ; end
