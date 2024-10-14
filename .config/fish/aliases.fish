@@ -39,6 +39,7 @@ function be ; bundle exec $argv ; end
 function dc ; docker-compose $argv ; end
 function k ; kubectl $argv ; end
 function i ; ipython $argv ; end
+function nf ; netlify $argv ; end
 
 # Ack is not installed, but we have ag which is supposed to be a replacement
 function ack ; ag $argv ; end
@@ -46,12 +47,14 @@ function ack ; ag $argv ; end
 function ackp ; ag $argv --page="less -R"; end
 # Run ripgrep (better version of ack and ag) output through pager
 function rgp      ; command rg -p $argv | less -RFX ; end
-function rga      ; command rg -uuu $argv ; end  # look everywhere (in the ignored and hidden files)
+# Look everywhere (in the ignored and hidden files)
+function rga      ; command rg -uuu $argv ; end
 
 # Searching for stuff
 # Add message when using the 'locate' command to use mdfind instead
 function locate ; echo "Use `fd`, `mdfind` or `mdfind -name foo` instead. Use 'command locate' if you really need to run it."; end
-function fda    ; fd -IH $argv ; end  # fd in all files
+# Search in all files
+function fda    ; fd -IH $argv ; end
 
 # Git functions
 function ga     ; git add $argv ; end
@@ -79,6 +82,7 @@ function gst    ; git status $argv ; end
 function gfo    ; git fetch origin $argv ; end
 function gdss   ; git diff -s $argv ; end  # Git diff side-by-side
 function gunpush    ; git push -f origin HEAD^:master $argv ; end # Undo git push
+function gx    ; git annex $argv ; end
 
 # Python
 function ppip ; env PIP_REQUIRE_VIRTUALENV="" pip $argv; end  # Run pip outside of a virtualenv

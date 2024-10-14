@@ -135,3 +135,7 @@
 
 [url "https://github.com/"]
     insteadOf = git://github.com/
+[init]
+	defaultBranch = master
+[help]
+	autocorrect = immediate

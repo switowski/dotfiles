@@ -61,3 +61,11 @@ function change_mac
         echo "Please install spoof (npm install spoof -g)"
     end
 end
+
+
+function resetsd
+    # Reset the streamdeck software when it's frozen
+    pkill -f "Elgato Stream Deck"
+    sleep 1
+    open /Applications/Elgato\ Stream\ Deck.app
+end

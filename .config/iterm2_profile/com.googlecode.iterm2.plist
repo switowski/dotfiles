@@ -8,6 +8,8 @@
 	<integer>2</integer>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlternateMouseScroll</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>WhiteTheme-for-talks</key>
@@ -1452,7 +1454,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
-	<false/>
+	<true/>
 	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HideTabNumber</key>
