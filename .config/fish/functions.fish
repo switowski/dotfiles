@@ -39,12 +39,6 @@ function sudo
     end
 end
 
-# This function was conflicting with my pipx installation
-#Run black in a docker container (doesn't mess up Python/virtualenv)
-#function black
-#    docker run -v (pwd):/code jbbarth/black $argv
-#end
-
 # Function to profile fish startup time - since I tend to mess it up often
 function fish_profile
     fish --profile prompt.prof -ic 'fish_prompt; exit'

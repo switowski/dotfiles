@@ -42,12 +42,6 @@ if status is-interactive
     source ~/.extra.fish
   end
 
-  # Enable virtualfish with some plugins
-  # Or find a prompt that supports it
-  # This eval slows down vf startup time by 0.4s that's a lot! So instead, I fixed it with a alias vf (see aliases.fish file)
-  #eval (~/.pyenv/shims/python -m virtualfish compat_aliases)
-  # Read more on virtualfish plugins: http://virtualfish.readthedocs.io/en/latest/plugins.html
-
   # Store history from all tabs
   history merge
   # History from various tabs is stored in separate sessions, so by default it's not possible to run a command in 1 tab and immediately have access to it in another tab (https://mvolkmann.github.io/fish-article/#CommandHistory).
@@ -58,38 +52,11 @@ if status is-interactive
   # zoxide (z replacement)
   zoxide init fish | source
 
-  # Start asdf
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-  # Enable direnv
-  direnv hook fish | source
-
   # Start starship prompt
   starship init fish | source
-
-  # Start pyenv
-  pyenv init - | source
-
-  # Created by `pipx` on 2022-04-06 19:51:59
-  set PATH $PATH /Users/switowski/.local/bin
 
   # Setup for Rust
   fish_add_path "$HOME/.cargo/bin"
 
 end
-
-# Non-interactive session
-if status is-login
-  pyenv init --path | source
-end
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/switowski/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#eval /Users/switowski/.pyenv/versions/anaconda3-2022.05/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 

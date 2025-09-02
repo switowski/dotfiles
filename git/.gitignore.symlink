@@ -1,26 +1,23 @@
 # Compiled Python files
 *.pyc
-# Pytest cache directory
-.pytest_cache*
-# Local version of python from pyenv
-.python-version
-# Local version of node from nodeenv
+# Various Python tools' cache
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local versions of tools
+# .python-version - sometimes I want to check in the Python version into the repo
 .node-version
 
 # Folder view configuration files
 .DS_Store
 Desktop.ini
-
 # Thumbnail cache files
 ._*
 Thumbs.db
-
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
-
-# Invenio local config
-invenio-local.conf
 
 # VS Code
 .vscode/*
@@ -31,3 +28,9 @@ invenio-local.conf
 
 # direnv config file
 .envrc
+# Local mise config
+mise.local.toml
+
+# AI Tools
+.claude/
+CLAUDE.local.md
