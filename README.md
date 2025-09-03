@@ -1,5 +1,11 @@
 # dotfiles
 
+## ⚠️ The following description of how to use my dotfiles is outdated
+I now use this repository as a backup of my dotfiles, but the shell commands will no longer correctly set everything up from scratch.
+
+
+## What is it?
+
 I use this repository to store my configuration files and make migrating to a new macbook faster.
 `archive` folder contains some old configuration files from the time when I was using Linux and a bunch of other tools that I no longer use.
 
