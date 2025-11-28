@@ -13,3 +13,5 @@ Package\ Control.ca-certs/
 .config/sublime-text-3/Packages/User/Projects/recent.json
 .config/sublime-text-3-mac/Packages/User/Color Highlighter/ColorPicker/ColorPicker_osx_x64
 .config/sublime-text-3-mac/Packages/User/oscrypto-ca-bundle.crt
+# Ignore old karabiner automatic backups
+.config/karabiner/automatic_backups/
