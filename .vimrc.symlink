@@ -170,10 +170,11 @@ endif
 set lazyredraw
 
 set showmatch                   " Higlight matching parenthesis
-set cursorline                  "Line to indicate the cursor location
+set cursorline                  " Line to indicate the cursor location
 set clipboard=unnamed           " Needed for MacOS clipboard sharing
-set history=1000                "Store lots of :cmdline history
-set gcr=a:blinkon0              "Disable cursor blink
+set history=1000                " Store lots of :cmdline history
+set gcr=a:blinkon0              " Disable cursor blink
+set conceallevel=0              " Disable that stupid hiding of matching quotes
 
 " No annoying sound on errors
 set noerrorbells
