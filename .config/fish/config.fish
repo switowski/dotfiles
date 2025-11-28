@@ -57,6 +57,20 @@ if status is-interactive
 
   # Setup for Rust
   fish_add_path "$HOME/.cargo/bin"
+  
+  # uv tools
+  fish_add_path "/Users/switowski/.local/bin"
+
 
 end
 
+
+# Set global pnpm folder
+set -gx PNPM_HOME "/Users/switowski/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+# Added by Antigravity
+fish_add_path /Users/switowski/.antigravity/antigravity/bin
