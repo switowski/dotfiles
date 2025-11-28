@@ -2,36 +2,66 @@
 	name = Sebastian Witowski
 	email = witowski.sebastian@gmail.com
 [alias]
+    ########## Simple aliases ##########
     amend = commit --amend
     amendf = commit --amend --no-edit
     br = branch
-    ci = commit
+    ci = commit -v
     co = checkout
     cl = clean -fd
     cp = cherry-pick
     d = diff
-    # Use delta for inline diff (works better for Markdown files)
-    di = diff --no-ext-diff
+    di = diff --no-ext-diff # Use delta for inline diff (works better for Markdown files)
     ds = diff --staged
-    fixup = "!f() { git commit --fixup=${1}; }; f"
     l = log
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     lp = log --pretty=oneline
     lnm = log --no-merges
+    pf = push --force-with-lease
+    pushf = push --force-with-lease
     sa = stash apply
     sh = show
     ss = stash save
     st = status
     unstage = restore --staged
-    # Squash last N commits together
-    # Usage: git squash N
+    ########## Advanced aliases ##########
+    # List all aliases
+    aliases = config --get-regexp alias
+    # Delete all local branches that has been merged
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+    # Remove given commit from current branch (reverse of cherry-pick) ($ git cherry-remove SHA)
+    cherry-remove = "!f() { git rebase --onto ${1}^ ${1}; }; f"
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
+    fixup = "!f() { git commit --fixup=${1}; }; f"
+    # Ignore or unignore some local files (https://stackoverflow.com/a/18317425) ($ git ignore path-to-file-to-ignore)
+    #
+    ignore = update-index --assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
+    unignore = update-index --no-assume-unchanged
+    # Squash last N commits together ($ git squash N)
     squash = "!f(){ \
         git reset --soft HEAD~${1} && \
         git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; \
     };f"
-    # Ignore repeated git command, like in: '$ git git git status'
-    # source http://caiustheory.com/git-git-git-git-git/
-    git = !exec git
+
+    ######### Github/Gitlab-related functions #########
+    # Switch to MR (GitLab)
+    # source https://stackoverflow.com/questions/44992512/git-how-to-checkout-merge-request-locally-and-create-new-local-branch
+    # $ git comr 1234
+    # or
+    # $ git comr 1234 upstream
+    comr = "!f() { git fetch -f ${2:-origin} merge-requests/$1/head:mr/$1 && \
+                   git checkout mr/$1; }; f"
+    # Switch to PR (GitHub)
+    # source https://nedbatchelder.com/blog/201407/fetching_github_pull_requests.html
+    # $ git copr 1234
+    # or
+    # $ git copr 1234 upstream
+    copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
+                   git checkout pr/$1; }; f"
+    # List all merge requests - works for GitLab for now
+    lmr = !echo "Remember to run 'git fetch' first!" && git branch -a --list "*merge-request*"
     # Merge GitHub pull request on top of the current branch or,
     # if a branch name is specified, on top of the specified branch.
     mpr = "!f() { \
@@ -46,58 +76,13 @@
             git branch -D pr/$1; \
         fi \
     }; f"
-    # Switch to PR (GitHub)
-    # source https://nedbatchelder.com/blog/201407/fetching_github_pull_requests.html
-    # usage: `git copr 1234` or `git copr 1234 upstream`
-    copr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && \
-                   git checkout pr/$1; }; f"
-    # Switch to MR (GitLab)
-    # source https://stackoverflow.com/questions/44992512/git-how-to-checkout-merge-request-locally-and-create-new-local-branch
-    # usage: `git comr 1234` or `git comr 1234 upstream`
-    comr = "!f() { git fetch -f ${2:-origin} merge-requests/$1/head:mr/$1 && \
-                   git checkout mr/$1; }; f"
-    pushf = push --force-with-lease
-    # Ignore or unignore some local files (https://stackoverflow.com/a/18317425)
-    # usage: git ignore path-to-file-to-ignore
-    ignore = update-index --assume-unchanged
-    unignore = update-index --no-assume-unchanged
-    ignored = !git ls-files -v | grep "^[[:lower:]]"
-    # Delete all local branches that has been merged
-    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-    # List aliases
-    aliases = config --get-regexp alias
-    # List contributors with number of commits
-    contributors = shortlog --summary --numbered
-    # List all merge requests - works for GitLab for now
-    lmr = !echo "Remember to run 'git fetch' first!" && git branch -a --list "*merge-request*"
-    # Remove given commit from current branch (reverse of cherry-pick)
-    # Usage: git cherry-remove SHA
-    cherry-remove = "!f() { git rebase --onto ${1}^ ${1}; }; f"
 
 [color]
     ui = auto
-
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
-
-# Following is no longer needed, difftastic has good default colors
-# [color "diff"]
-#     meta = yellow
-#     frag = magenta bold
-#     commit = yellow bold
-#     old = red bold
-#     new = green bold
-#     whitespace = red reverse
-#     # Bold cyan color is used for code that was moved
-
-# [color "diff-highlight"]
-#     oldNormal = red bold
-#     oldHighlight = red bold 52
-#     newNormal = green bold
-#     newHighlight = green bold 22
-
 [color "status"]
     added = yellow
     changed = green
@@ -111,7 +96,7 @@
     excludesfile = ~/.gitignore
     # diff tool that will be used is difft, configured under [diff]->external line
     pager = delta #--diff-so-fancy
-	ignoreCase = true
+    ignoreCase = true
     # Configure Git on OS X to properly handle line endings
     # Removed because of: https://www.reddit.com/r/programming/comments/afjilq/how_to_nicely_set_up_the_gitconfig_file/edzoat8
     #autocrlf = input
@@ -129,6 +114,9 @@
     colorMoved = default
     external = difft
 
+[fetch]
+    prune = true # auto-prune deleted remote branches
+
 [merge]
     conflictstyle = diff3
 
@@ -138,8 +126,8 @@
 [url "https://github.com/"]
     insteadOf = git://github.com/
 [init]
-	defaultBranch = master
+    defaultBranch = master
 [help]
-	autocorrect = immediate
+    autocorrect = immediate
 [rebase]
-	autosquash = true
+    autosquash = true
