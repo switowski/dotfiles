@@ -32,6 +32,7 @@ function gbr     ; git branch $argv ; end
 function gca     ; git add -A; and git commit -av $argv; end
 function gci     ; git commit $argv ; end
 function gco     ; git checkout $argv ; end
+function gcl     ; git clean -fd $argv ; end
 function gcp     ; git cherry-pick $argv ; end
 function gd      ; git diff $argv ; end
 function gdi     ; git diff --no-ext-diff $argv ; end
@@ -45,6 +46,8 @@ function gpf     ; git push --force-with-lease $argv ; end
 function gpl     ; git pull $argv ; end
 function gpr     ; git pull --rebase $argv ; end
 function gps     ; git push $argv ; end
+function grbi    ; git rebase -i $argv ; end
+function grbia   ; git rebase -i --autosquash main $argv ; end
 function gs      ; git status $argv ; end
 function gsa     ; git stash apply $argv ; end
 function gsh     ; git show $argv ; end

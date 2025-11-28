@@ -1,18 +1,19 @@
 [user]
-    name = Sebastian Witowski
-    email = witowski.sebastian@gmail.com
-
+	name = Sebastian Witowski
+	email = witowski.sebastian@gmail.com
 [alias]
     amend = commit --amend
     amendf = commit --amend --no-edit
     br = branch
     ci = commit
     co = checkout
+    cl = clean -fd
     cp = cherry-pick
     d = diff
     # Use delta for inline diff (works better for Markdown files)
     di = diff --no-ext-diff
     ds = diff --staged
+    fixup = "!f() { git commit --fixup=${1}; }; f"
     l = log
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     lp = log --pretty=oneline
@@ -21,6 +22,7 @@
     sh = show
     ss = stash save
     st = status
+    unstage = restore --staged
     # Squash last N commits together
     # Usage: git squash N
     squash = "!f(){ \
@@ -139,3 +141,5 @@
 	defaultBranch = master
 [help]
 	autocorrect = immediate
+[rebase]
+	autosquash = true
