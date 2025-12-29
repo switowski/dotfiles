@@ -27,7 +27,7 @@ function killport --argument port --description 'Kills process on a given port'
 end
 
 function ip
-    ifconfig | grep "broadcast" | awk '{print $2}'
+    ifconfig | grep broadcast | awk '{print $2}'
 end
 
 # Get back the "sudo !!" bash function
@@ -62,4 +62,77 @@ function resetsd
     pkill -f "Elgato Stream Deck"
     sleep 1
     open /Applications/Elgato\ Stream\ Deck.app
+end
+
+# Create a new worktree and branch from within current git directory.
+function gwa
+    if test (count $argv) -lt 1
+        echo "Usage: gwa [branch name]" >&2
+        return 1
+    end
+
+    set -l branch $argv[1]
+    set -l base (basename (pwd))
+    set -l path "../$base--$branch"
+
+    git worktree add -b $branch $path
+    mise trust $path
+    cd $path
+end
+
+# Remove worktree and branch from within active worktree directory.
+function gwd
+    set -l reply
+    read -l -P "Remove worktree and branch? [y/N] " reply
+
+    if not string match -qr '^(?i:y|yes)$' -- $reply
+        return 0
+    end
+
+    set -l worktree_root (git rev-parse --show-toplevel 2>/dev/null)
+    if test -z "$worktree_root"
+        echo "gwd: not inside a git worktree." >&2
+        return 1
+    end
+
+    set -l git_common_dir (git -C "$worktree_root" rev-parse --git-common-dir 2>/dev/null)
+    if test -z "$git_common_dir"
+        echo "gwd: could not resolve common git dir." >&2
+        return 1
+    end
+
+    if not string match -qr '^/' -- $git_common_dir
+        set git_common_dir "$worktree_root/$git_common_dir"
+    end
+
+    set -l main_worktree (dirname "$git_common_dir")
+
+    if test "$main_worktree" = "$worktree_root"
+        echo "gwd: refusing to remove the main worktree." >&2
+        return 1
+    end
+
+    if not git -C "$main_worktree" rev-parse --git-dir >/dev/null 2>&1
+        echo "gwd: main worktree is not a git repository: $main_worktree" >&2
+        return 1
+    end
+
+    set -l branch (git -C "$worktree_root" symbolic-ref --short -q HEAD 2>/dev/null)
+
+    cd "$main_worktree"
+    if test $status -ne 0
+        echo "gwd: could not cd to main worktree: $main_worktree" >&2
+        return 1
+    end
+
+    git -C "$main_worktree" worktree remove "$worktree_root" --force
+    if test $status -ne 0
+        return $status
+    end
+
+    if test -n "$branch"
+        git -C "$main_worktree" branch -D "$branch"
+    else
+        echo "gwd: no branch found for this worktree; skipped deleting branch." >&2
+    end
 end

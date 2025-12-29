@@ -29,6 +29,7 @@ function uvr ; uv run $argv ; end
 function ga      ; git add $argv ; end
 function gb      ; git branch $argv ; end
 function gbr     ; git branch $argv ; end
+function gbo     ; git branch --sort=committerdate $argv ; end
 function gca     ; git add -A; and git commit -av $argv; end
 function gci     ; git commit $argv ; end
 function gco     ; git checkout $argv ; end
@@ -48,6 +49,8 @@ function gpr     ; git pull --rebase $argv ; end
 function gps     ; git push $argv ; end
 function grbi    ; git rebase -i $argv ; end
 function grbia   ; git rebase -i --autosquash main $argv ; end
+function grc     ; git rebase --continue $argv ; end
+function grh     ; git reset --hard $argv ; end
 function gs      ; git status $argv ; end
 function gsa     ; git stash apply $argv ; end
 function gsh     ; git show $argv ; end

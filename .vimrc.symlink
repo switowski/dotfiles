@@ -128,9 +128,9 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" Set ruler on column 80
+" Set ruler on column 72
 " https://vi.stackexchange.com/questions/356/how-can-i-set-up-a-ruler-at-a-specific-column
-set colorcolumn=80
+set colorcolumn=72
 highlight ColorColumn ctermbg=8 guibg=lightgrey
 
 " }}}
